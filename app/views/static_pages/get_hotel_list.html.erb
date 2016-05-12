@@ -1,0 +1,204 @@
+main-cont -->
+
+<div class="main-cont">
+  <div class="body-wrapper">
+    <div class="wrapper-padding">
+    <div class="page-head">
+      <div class="page-title">Hotels - <span>list style</span></div>
+      <div class="breadcrumbs">
+        <a href="#">Home</a> / <a href="#">Hotel</a> / <span>List style one</span>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="two-colls">
+      <div class="two-colls-left">
+        
+        <div class="srch-results-lbl fly-in">
+          <span><%= @count.to_s + " RESULT".pluralize(@count)+ " FOUND"%></span>
+        </div>
+          <%= form_tag get_hotel_list_path do |f| %>
+        <div class="side-block fly-in">
+          <div class="side-block-search">
+            <div class="page-search-p">
+						<!-- // -->
+						<div class="srch-tab-line">
+							<label>Place / hotel name</label>
+							<div class="input-a"><%= text_field_tag "city",@country,placeholder: "Example: France" %></div>
+						</div>
+						<!-- // -->
+						<!-- // -->
+						<div class="srch-tab-line">
+							<div class="srch-tab-left">
+								<label>Check in</label>
+								<div class="input-a"><%= text_field_tag "dep_date", @check_in_date,placeholder: "mm/dd/yy",class: "date-inpt"%> <span class="date-icon"></span></div>	
+							</div>
+							<div class="srch-tab-right">
+								<label>Check out</label>
+								<div class="input-a"><%= text_field_tag "return_date", @check_out_date, placeholder: "mm/dd/yy",class: "date-inpt"%> <span class="date-icon"></span></div>	
+							</div>
+							<div class="clear"></div>
+						</div>
+
+              <button type="submit" class="btn pull-right srch-btn">Search</button>
+    					</div>        
+          </div>          
+        </div>
+        <%end%>
+        
+
+ 
+
+ 
+        
+      </div>
+      <div class="two-colls-right">
+        <div class="two-colls-right-b">
+          <div class="padding">
+          
+            <div class="catalog-head large fly-in">
+              <label>Sorting results by:</label>
+              <div class="search-select">
+    							<select>
+    								<option>Name</option>
+    								<option>Name</option>
+    								<option>Name</option>
+    								<option>Name</option>
+    								<option>Name</option>
+    							</select>
+    					</div>
+              <div class="search-select">
+    							<select>
+    								<option>Price</option>
+    								<option>Price</option>
+    								<option>Price</option>
+    								<option>Price</option>
+    								<option>Price</option>
+    							</select>
+    					</div>
+              <div class="search-select">
+    							<select>
+    								<option>Rating</option>
+    								<option>Rating</option>
+    								<option>Rating</option>
+    								<option>Rating</option>
+    								<option>Rating</option>
+    							</select>
+    					</div>
+              <div class="search-select">
+    							<select>
+    								<option>Popularity</option>
+    								<option>Popularity</option>
+    								<option>Popularity</option>
+    								<option>Popularity</option>
+    								<option>Popularity</option>
+    							</select>
+    					</div>
+              <a href="#" class="show-list"></a>              
+              <a href="#" class="show-table"></a>
+              <a href="#" class="show-thumbs chosen"></a> 
+              <div class="clear"></div>
+            </div>
+            
+            <div class="catalog-row list-rows">
+      
+              <% @key_hotel.each do |k,v|%>
+              <!-- // -->
+                <div class="cat-list-item fly-in">
+                  <div class="cat-list-item-l">
+                      <a href="#"><%= image_tag v['img'] if v['img']%><!-- <img alt="" src="img/lit-i-01.jpg"> --></a>
+                  </div>
+                  <div class="cat-list-item-r">
+                    <div class="cat-list-item-rb">
+                      <div class="cat-list-item-p">
+                        <div class="cat-list-content">
+                          <div class="cat-list-content-a">
+                            <div class="cat-list-content-l">
+                              <div class="cat-list-content-lb">
+                                <div class="cat-list-content-lpadding">
+                                  <div class="offer-slider-link"><a href="#"><%= v['name']%></a></div>
+                                  <div class="offer-slider-location"><%= v['city']%> </div>
+                                  <p><%= v['location'] %><br /><%= v['facilities'].join(",") if v['facilities']%></p>
+                                  <div class="cat-icons">
+                                     
+                                    <span class="cat-icon-01  <%= (v['facilities'].include?("Parking Facility") ? "active" : "") if v['facilities'] %>"></span>
+                                  
+             
+                                    <span class="cat-icon-02  <%= (v['facilities'].include?("Internet") ? "active" : "") if v['facilities'] %>"></span>
+                                   
+                      
+                                   <span class="cat-icon-03  <%= (v['facilities'].include?("Restaurant/Coffee Shop") ? "cat-icon-03 active" : "cat-icon-03") if v['facilities'] %>"></span>
+    
+                         
+                                   <span class="cat-icon-04  <%= (v['facilities'].include?("Room Service") ? "active" : "") if v['facilities'] %>"></span>
+
+                                   <span class="cat-icon-05  <%= (v['facilities'].include?("Travel Assistance") ? "active" : "") if v['facilities'] %>"></span>
+                           
+                                   <span class="cat-icon-06  <%= (v['facilities'].include?("Front desk") ? "active" : "") if v['facilities'] %>"></span>
+                                    <div class="clear"></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <br class="clear" />
+                            </div>
+                          </div>
+                          <div class="cat-list-content-r">
+                            <div class="cat-list-content-p">
+                              <nav class="stars">
+            										<ul>
+                                 <% v['rating'].times do |h|%>
+            											<li><a href="#"><img alt="" src="/assets/star-b.png" /></a></li>
+                                 <%end%>
+                                 <%(v['rating']..5).each do |h|%> 
+            											<li><a href="#"><img alt="" src="/assets/star-a.png" /></a></li>
+                                 <%end%> 
+            										
+            										</ul>
+            										<div class="clear"></div>
+            									</nav>
+                              <div class="cat-list-review"><%= v['total_review'].to_s + "  review".pluralize(@total_review) %></div>
+                              <% if v['price'].present?%>
+                              <div class="offer-slider-r">
+              									<b><%=  v['price'] %></b>
+              									<span>avg/night</span>
+              								</div>           
+                              <a href="#" class="cat-list-btn">Select</a>   
+                              <%else%>
+                              <b style="color: red;">We are sold out..</b>
+                              <%end%>
+                            </div>
+                          </div>
+                          <div class="clear"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <br class="clear" />
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              <!-- \\ -->
+              <!-- // -->
+          
+            
+
+              <%end%>
+            </div>
+            
+            <div class="clear"></div>
+            
+            <div class="pagination">
+              <a class="active" href="#">1</a>
+              <a href="#">2</a>
+              <a href="#">3</a>
+              <div class="clear"></div>
+            </div>            
+          </div>
+        </div>
+        <br class="clear" />
+      </div>
+    </div>
+    <div class="clear"></div>
+    
+    </div>	
+  </div>  
+</div>
+<!-- /main-cont

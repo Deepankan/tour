@@ -1,0 +1,234 @@
+<!-- main-cont -->
+<div class="main-cont">
+  <div class="body-wrapper">
+    <div class="wrapper-padding">
+    <div class="page-head">
+      <div class="page-title">Flights - <span><% @way = (@flag == true ? "ROUND TRIP" : "ONE WAY")%><%= @way%></span></div>
+      <div class="breadcrumbs">
+        <a href="#">Home</a> / <a href="#">Hotel</a> / <span>flight <%= @way.downcase%></span>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="two-colls">
+      <div class="two-colls-left">
+    
+        <div class="srch-results-lbl fly-in">
+         <span><%= @count.to_s + " RESULT".pluralize(@count)+ " FOUND"%></span>
+        </div> 
+         
+        <div class="side-block fly-in">
+          <div class="side-block-search">
+                 <%= form_tag go_search_flights_path do |f| %>
+                <div class="page-search-p">
+            <!-- // -->
+            <div class="srch-tab-line">
+              <div class="srch-tab-left">
+                <label>From</label>
+                <div class="input-a"><%= text_field_tag "origin",@from,placeholder: "BLR"%></div> 
+              </div>
+              <div class="srch-tab-right">
+                <label>To</label>
+                <div class="input-a"><%= text_field_tag "destination",@to,placeholder: "Lko" %></div> 
+              </div>
+              <div class="clear"></div>
+            </div>
+            <!-- \\ -->
+            <!-- // -->
+            <div class="srch-tab-line">
+              <div class="srch-tab-left">
+                <label>Departure</label>
+                <div class="input-a"><%= text_field_tag "dep_date1", @check_in_date,placeholder: "mm/dd/yy", class: "date-inpt" %> <span class="date-icon"></span></div>  
+              </div>
+              <div class="srch-tab-right">
+                <label>Return</label>
+                <div class="input-a"><%= text_field_tag "return_date1", @check_out_date, placeholder: "mm/dd/yy",class: "date-inpt" %><span class="date-icon"></span></div>  
+              </div>
+              <div class="clear"></div>
+            </div>
+              <div class="srch-tab-line">
+              <div class="srch-tab-left">
+                <label>Adult</label>
+                <div class="input-a"><%= text_field_tag "adults", @adult,placeholder: "Ex : 1"%> </div>  
+              </div>
+              <div class="srch-tab-right">
+                <label>Children</label>
+                <div class="input-a"><%= text_field_tag "children", @children, placeholder: "Ex: 0"%></div> 
+              </div>
+              <div class="clear"></div>
+            </div>
+            <!-- \\ -->
+            <div class="srch-tab-line no-margin-bottom">
+              <div class="srch-tab-left transformed">
+                <label>Infants</label>
+                <div class="input-a"><%= text_field_tag "infants",@infant,placeholder: "Ex: 0"%> </div>  
+              </div>
+              <div class="srch-tab-right transformed">
+                <label>Class</label>
+                <div class="select-wrapper ">
+          
+                <%= (select_tag "seatingclass", options_for_select(SEATING_CLASS,@class), class: "custom-select")%>
+                </div>  
+              </div>
+              <div class="clear"></div>
+            </div>
+            <!-- \\ --> 
+
+                  
+              </div>  
+          <footer class="search-footer">
+               <button type="submit" class="btn pull-right srch-btn">Search</button>
+            
+            <div class="clear"></div>
+          </footer> 
+          <%end%>
+                   
+          </div>          
+        </div>
+
+
+     
+   
+       
+        
+      </div>
+      <div class="two-colls-right">
+        <div class="two-colls-right-b">
+          <div class="padding">
+          
+            <div class="catalog-head fly-in">
+              <label>Sort results by:</label>
+              <div class="search-select">
+                  <select>
+                    <option>Name</option>
+                    <option>Name</option>
+                    <option>Name</option>
+                    <option>Name</option>
+                    <option>Name</option>
+                  </select>
+              </div>
+              <div class="search-select">
+                  <select>
+                    <option>Price</option>
+                    <option>Price</option>
+                    <option>Price</option>
+                    <option>Price</option>
+                    <option>Price</option>
+                  </select>
+              </div>
+              <div class="search-select">
+                  <select>
+                    <option>Duration</option>
+                    <option>Duration</option>
+                    <option>Duration</option>
+                    <option>Duration</option>
+                    <option>Duration</option>
+                  </select>
+              </div>
+              <a href="#" class="show-list"></a>              
+ 
+              <div class="clear"></div>
+            </div>
+            
+            <% if @flag == true%>
+             <%if @result['data']['onwardflights'].length > @result['data']['returnflights'].length%>
+              <% @flight = @result['data']['onwardflights'].zip(@result['data']['returnflights'])%>
+             <%else%>
+              <% @flight = @result['data']['returnflights'].zip(@result['data']['onwardflights'])%>
+             <%end%>
+             <%= render partial: "return_flight"%>
+            <%else%>
+             <%= render partial: "one_way"%>
+            <%end%>
+            
+            <div class="clear"></div>
+            
+            <div class="pagination">
+              <a class="active" href="#">1</a>
+              <a href="#">2</a>
+              <a href="#">3</a>
+              <div class="clear"></div>
+            </div>            
+          </div>
+        </div>
+        <br class="clear" />
+      </div>
+    </div>
+    <div class="clear"></div>
+    
+    </div>  
+  </div>  
+</div>
+<!-- /main-cont -->
+<script type="text/javascript">
+  $(document).ready(function(){
+      $('.date-inpt').datepicker({ dateFormat: 'yy-mm-dd' }); 
+      
+      (function($) {
+        $(function() {
+          $('input:checkbox,input:radio,.search-engine-range-selection-container input:radio').styler();
+        })
+      })(jQuery);   
+      $(function() {
+        $( "#slider-range" ).slider({
+          range: true,
+          min: 0,
+          max: 1500,
+          values: [ 275, 1100 ],
+          slide: function( event, ui ) {
+            $("#ammount-from").val(ui.values[0]+'$');
+            $("#ammount-to").val(ui.values[1]+'$');
+          }
+        });
+        $("#ammount-from").val($("#slider-range").slider("values",0)+'$');
+        $("#ammount-to").val($("#slider-range").slider("values",1)+'$');
+      });
+      
+      
+     
+        $(".side-time").each(function(){
+          var $this = $(this);
+          $this.find('.time-range').slider({
+              range: true,
+              min: 0,
+              max: 24,
+              values: [ 3, 20 ],
+              slide: function( event, ui ) {
+                $this.find(".time-from").text(ui.values[0]);
+                $this.find(".time-to").text(ui.values[1]);
+              }
+          });
+          
+          $(this).find(".time-from").text($this.find(".time-range").slider("values",0));
+          $(this).find(".time-to").text($this.find(".time-range").slider("values",1));
+                
+        });
+
+      $(function() {
+          $(document.body).on('appear', '.fly-in', function(e, $affected) {
+            $(this).addClass("appeared");
+          });
+          $('.fly-in').appear({force_process: true});
+      });
+
+        $('.flight-line .flight-line-b b').click(function(){
+            if ( $(this).is('.open') ) {
+            $(this).removeClass('open');
+            $(this).closest('.flight-line').find('.flight-details').slideUp();  
+            } else {
+            $(this).addClass('open');
+            $(this).closest('.flight-line').find('.flight-details').slideDown();  
+            }
+          });
+        $('.alt-flight .flight-line-b b').click(function(){
+          if ( $(this).is('.open') ) {
+          $(this).removeClass('open');
+          $(this).closest('.alt-flight').find('.alt-details').slideUp();  
+          } else {
+          $(this).addClass('open');
+          $(this).closest('.alt-flight').find('.alt-details').slideDown();  
+          }
+        });  
+    });
+
+   
+</script>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tour</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+     <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <meta charset="utf-8" /><link rel="icon" href="favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> 
+  <link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/themes/sunny/jquery-ui.css">
+  <link rel="stylesheet" href="/assets/owl.carousel.css">
+  <link rel="stylesheet" href="/assets/idangerous.swiper.css">
+  <link rel="stylesheet" href="/assets/jquery.ui.css">
+  <link rel="stylesheet" href="/assets/jquery.formstyler.css">
+  <link rel="stylesheet" href="/assets/style.css" />
+<!--   <link rel="stylesheet" href="/assets/calendar.css">
+  <link rel="stylesheet" href="/assets/jquery.formstyler.css">
+  <link rel="stylesheet" href="/assets/jquery.ui.css" />
+  <link rel="stylesheet" href="/assets/js_composer.css">
+  <link rel="stylesheet" href="/assets/responsive.css">
+ -->
+
+  <meta content="eTravel.flights.searches.new" name="js-namespace">
+ 
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Lora:400,400italic' rel='stylesheet' type='text/css'>    
+  <link href='http://fonts.googleapis.com/css?family=Raleway:300,400,500,700' rel='stylesheet' type='text/css'>  
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Lora:400,400italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,600,700,800' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,600' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css'>	
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Lora:400,400italic' rel='stylesheet' type='text/css'>    
+  <link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,600,700,800' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,600' rel='stylesheet' type='text/css'>  <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css'>  
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+</head>
+<body class="index-page">
+<%= render partial: "layouts/top_bar"%>
+<%= render partial: "layouts/header"%>
+<!-- < % if params[:action] != "get_hotel_list"%>
+< %= render partial: "layouts/static"%>
+< %end%>-->
+<%= yield %> 
+<%= render partial: "layouts/footer"%>
+<%= render partial: "layouts/footer_detail"%>
+
+  <script src="/assets/default.js"></script>
+  <script src="/assets/jquery.1.7.1.js"></script>
+  <script src="/assets/idangerous.swiper.js"></script>
+  <script src="/assets/slideInit.js"></script>
+  <script src="/assets/jqeury.appear.js"></script>  
+  <script src="/assets/script.js"></script>
+  <script src="/assets/owl.carousel.min.js"></script>
+  <script src="/assets/jquery.formstyler.js"></script>  
+  <script src="/assets/custom.select.js"></script>  
+  <script src="/assets/jqeury.appear.js"></script>  
+  <script src="/assets/jquery.ui.js"></script> 
+  
+
+
+  <!-- // <script src="/assets/bxSlider.js"></script> -->
+ <!--  // <script src="/assets/default.js"></script>
+  // <script src="/assets/isotope-a.js"></script>
+  // <script src="/assets/isotope.js"></script>  
+  // <script src="/assets/jquery.easypiechart.js"></script>
+  // <script src="/assets/jquery.form.js"></script>
+  // <script src="/assets/jquery.formstyler.js"></script>   -->
+
+<!-- 
+  // <script src="/assets/jquery.ui.js"></script>
+  // <script src="/assets/jquery_002.js"></script>
+  // <script src="/assets/numscroller-1.0.js"></script>
+  // <script src="/assets/plugins.js"></script>  
+  // <script src="/assets/viewport.js"></script> -->
+  
+  <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/jquery-ui.min.js"></script>  
+  <script type="text/javascript" src="/assets/twitterfeed.js"></script>
+  
+  <script>
+
+
+
+
+          $(document).ready(function(){
+     $('.date-inpt').datepicker({ dateFormat: 'yy-mm-dd' }); 
+    $('.custom-select').customSelect();
+    $(function() {
+        $(document.body).on('appear', '.fly-in', function(e, $affected) {
+          $(this).addClass("appeared");
+        });
+        $('.fly-in').appear({force_process: true});
+    });
+
+      $(".owl-slider").owlCarousel({
+        loop:true,
+        margin:28,
+        responsiveClass:true,
+        responsive:{
+        0:{
+            items:1,
+            nav:true
+        },
+        620:{
+            items:2,
+            nav:true
+        },
+        900:{
+            items:3,
+            nav:false
+        },
+        1120:{
+            items:4,
+            nav:true,
+            loop:false
+        }
+    }
+    });
+    $slideHover();
+    });
+  </script>
+<!-- \\ scripts \\ --> 
+</body>
+</html>

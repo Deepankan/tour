@@ -1,0 +1,122 @@
+        <div class="catalog-row">
+
+        <%@result['data']['onwardflights'].each do |k,v|%>
+         <div class="flight-item fly-in">
+                <div class="flt-i-a">
+                  <div class="flt-i-b">
+                    <div class="flt-i-bb">
+                    <div class="flt-l-a">
+                      <div class="flt-l-b">
+                        <div class="way-lbl">departure</div>
+            
+                        <%case k['airline'].upcase %>
+                         <%when "GOAIR" %>
+                         <% @img = "go_air.png" %>
+                         <% when "JET AIRWAYS" %>  <%@img = "jet_air.png"  %>
+                         <%when "INDIGO"  %> <% @img = "indigo.png"  %>
+                          <%when "AIR INDIA"  %>  <% @img = "air_india.png" %>
+                        <% when "SPICE JET"  %> <% @img = "spice_jet.png" %>
+                         <%when "AIR ASIA"  %> <% @img = "air_asia.jpg"  %>
+                         <%when "VISTARA"  %>  <% @img = "vistara.png"  %>
+                         <%else  %>
+                        <% @img = "default.jpg"  %>
+                        <% end%>
+                        <div class="company"><img alt="" src="/assets/<%= @img%>"></div>
+                      </div>
+                      <div class="flt-l-c">
+                        <div class="flt-l-cb">
+                          <div class="flt-l-c-padding">
+                            <div class="flyght-info-head"><%= k['DepartureTime'].to_date if k['DepartureTime']%><%= " "+@from + "  -  " + @to%></div>
+                            <!-- // -->
+                            <div class="flight-line">
+                              <div class="flight-radio"><label><input name="radio" type="radio" /></label> </div>
+                              <div class="flight-line-a">
+                                <b>departure</b>
+                                <span><%= k['deptime']%></span>
+                              </div>
+                              <div class="flight-line-d"></div>
+                              <div class="flight-line-a">
+                                <b>arrival</b>
+                                <span><%= k['onwardflights'].present? ? k['onwardflights'].last['arrtime'] : k['arrtime']%></span>
+                              </div>
+                              <div class="flight-line-d"></div>
+                              <div class="flight-line-a">
+                                <b>time</b>
+                                <span><%= k['duration']%></span>
+                              </div>
+                              <div class="flight-line-b">
+                                <b>details</b>
+                                <span>Only <%= k['seatsavailable'].to_s + " "+ "seat".pluralize(k['seatsavailable'])%>!</span>
+                              </div>
+                              <div class="clear"></div>
+                                <!-- // details // -->
+                                <div class="flight-details abc" id="k_<%= v%>">
+                                  <div class="flight-details-l">
+                                    <div class="flight-details-a"><%= k['DepartureTime'].to_date if k['DepartureTime']%></div>
+                                    <div class="flight-details-b"><%= k['deptime']%> </div>
+                                    <div class="flight-details-c"></div> 
+                                  </div>
+                                  <div class="flight-details-r">
+                                    <div class="flight-details-a"><%= k['onwardflights'].present? ? k['onwardflights'].last['arrdate'] : k['arrdate']%></div>
+                                    <div class="flight-details-b"> <%= k['onwardflights'].present? ? k['onwardflights'].last['arrtime'] : k['arrtime']%></div>
+                                    <div class="flight-details-c"></div>                                 
+                                  </div>
+                                  <div class="clear"></div>
+                                  <div class="flight-details-d">
+                                     <label> Origin :</label><b><%= k['origin']%></b>&nbsp;&nbsp;
+                                     <label> Destination :</label><b><%= k['destination']%></b><br / >
+
+                                     <label> Departure Time :</label><b><%= k['DepartureTime']%></b><br / >
+                                     <label> Arrival Time :</label><b><%= k['ArrivalTime']%></b><br / >
+
+                                  
+                                  
+                                    
+                                      <label> Flight No :</label><b><%= k['flightno']%></b>&nbsp;&nbsp;
+                                            <label> Airline :</label><b><%= k['airline']%></b><br / >
+                                     
+
+                                     <label> Stops :</label><b><%= k['stops']%></b><br /><br />
+                                         <% if k['onwardflights']%>
+                                           <label> Split Duration :</label><b><%= k['splitduration']%></b><br / ><br / >
+                                          <%  k['onwardflights'].each do |h|%>
+                                           <label> Origin :</label><b><%= h['origin']%></b>&nbsp;&nbsp;
+                                            <label> Destination :</label><b><%= h['destination']%></b><br / >
+                                            <label> Departure Time :</label><b><%= h['DepartureTime']%></b><br />
+                                              <label> Arrival Time :</label><b><%= h['ArrivalTime']%></b><br / >
+                                            <label> Flight Code :</label><b><%= h['flightcode']%></b>&nbsp;&nbsp;
+                                           <label> Carrier :</label><b><%= h['carrierid']%></b><br / >
+                                             <%end%>
+                                       <%end%>
+                                  </div>
+                                </div>
+                                <!-- \\ details \\ -->                              
+                            </div>
+                            <!-- \\ -->
+                            
+                    
+         
+                          </div>
+                        </div>
+                        <br class="clear" />
+                      </div>
+                    </div>
+                    <div class="clear"></div>
+                    </div>
+                    <br class="clear" />
+                  </div>
+                </div>
+                <div class="flt-i-c">
+                  <div class="flt-i-padding">
+                    <div class="flt-i-price-i">
+                      <div class="flt-i-price"><%=  k['fare']['totalfare']%></div>
+                      <div class="flt-i-price-b">avg/person</div>
+                    </div>
+                    <a href="#" class="cat-list-btn">select now</a>
+                  </div>
+                </div>
+                <div class="clear"></div>
+              </div>
+             
+        <%end%>      
+</div>
