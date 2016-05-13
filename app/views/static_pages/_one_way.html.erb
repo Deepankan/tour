@@ -12,14 +12,14 @@
                         <%case k['airline'].upcase %>
                          <%when "GOAIR" %>
                          <% @img = "go_air.png" %>
-                         <% when "JET AIRWAYS" %>  <%@img = "jet_air.png"  %>
-                         <%when "INDIGO"  %> <% @img = "indigo.png"  %>
-                          <%when "AIR INDIA"  %>  <% @img = "air_india.png" %>
-                        <% when "SPICE JET"  %> <% @img = "spice_jet.png" %>
-                         <%when "AIR ASIA"  %> <% @img = "air_asia.jpg"  %>
-                         <%when "VISTARA"  %>  <% @img = "vistara.png"  %>
+                         <% when "JET AIRWAYS" %>  <%@img = "rsz_jet_air.png"  %>
+                         <%when "INDIGO"  %> <% @img = "rsz_indigo.png"  %>
+                          <%when "AIR INDIA"  %>  <% @img = "rsz_air_india.jpg" %>
+                        <% when "SPICE JET"  %> <% @img = "rsz_spice_jet.png" %>
+                         <%when "AIR ASIA"  %> <% @img = "rsz_air_asia.jpg"  %>
+                         <%when "VISTARA"  %>  <% @img = "rsz_vistara.png"  %>
                          <%else  %>
-                        <% @img = "default.jpg"  %>
+                        <% @img = "rsz_default.jpg"  %>
                         <% end%>
                         <div class="company"><img alt="" src="/assets/<%= @img%>"></div>
                       </div>
