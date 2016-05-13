@@ -54,8 +54,30 @@ class StaticPagesController < ApplicationController
 	  end
 	  @result = JSON.parse(result)
 	  @count = @result['data']['onwardflights'].count + @result['data']['returnflights'].count
-
-
  
  end 
+
+def get_list_bus
+
+     @check_in_date = params['dep_date2']
+	 @check_out_date = params['return_date2']
+	 @from = params['bus_origin']
+	 @to = params['bus_destination']
+	
+    params['dep_date2']  = params['dep_date2'].gsub("-","")
+   	params['return_date2'] =  params['return_date2'].gsub("-","") if params['return_date2']
+      
+    if params['return_date2'].present?
+    
+    result = RestClient.get "http://developer.goibibo.com/api/bus/search/?app_id=#{API_APP_ID_GOIBIBO}&app_key=#{API_APP_KEY_GOIBIBO}&format=json&source=#{params['bus_origin']}&destination=#{params['bus_destination']}&dateofdeparture=#{params['dep_date2']}&dateofarrival=#{params['return_date2']}"
+    @flag = true
+   else
+    result = RestClient.get "http://developer.goibibo.com/api/bus/search/?app_id=#{API_APP_ID_GOIBIBO}&app_key=#{API_APP_KEY_GOIBIBO}&format=json&source=#{params['bus_origin']}&destination=#{params['bus_destination']}&dateofdeparture=#{params['dep_date2']}"
+    @flag = false
+   end
+   @result = JSON.parse(result)  
+   @count = @result['data']['onwardflights'].count + @result['data']['returnflights'].count if @result['data']
+
+end
+
 end

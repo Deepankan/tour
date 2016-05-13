@@ -157,22 +157,24 @@
 					</footer>	
 					<%end%>
 				</div>
-					</div>
+					
 					
 				<!-- // tab content tours // -->
 				
 				<!-- // tab content tickets // -->
 				<div class="search-tab-content tickets-tab">
+					
+		          					 <%= form_tag get_list_bus_path do |f| %>
 					<div class="page-search-p">
 						<!-- // -->
 						<div class="srch-tab-line">
 							<div class="srch-tab-left">
 								<label>From</label>
-								<div class="input-a"><input type="text" value="" placeholder="Austria, vienna"></div>	
+								<div class="input-a"><%= text_field_tag "bus_origin",@from,placeholder: "BLR"%></div>	
 							</div>
 							<div class="srch-tab-right">
-								<label>to</label>
-								<div class="input-a"><input type="text" value="" placeholder="--"></div>	
+								<label>To</label>
+								<div class="input-a"><%= text_field_tag "bus_destination",@to,placeholder: "Lko" %></div>	
 							</div>
 							<div class="clear"></div>
 						</div>
@@ -181,87 +183,29 @@
 						<div class="srch-tab-line">
 							<div class="srch-tab-left">
 								<label>Departure</label>
-								<div class="input-a"><input type="text" value="" class="date-inpt" placeholder="mm/dd/yy"> <span class="date-icon"></span></div>	
+								<div class="input-a"><%= text_field_tag "dep_date2", Date.today,placeholder: "mm/dd/yy",class: "date-inpt"%> <span class="date-icon"></span></div>	
 							</div>
 							<div class="srch-tab-right">
-								<label>arrivals</label>
-								<div class="input-a"><input type="text" value="" class="date-inpt" placeholder="mm/dd/yy"> <span class="date-icon"></span></div>	
+								<label>Return</label>
+								<div class="input-a"><%= text_field_tag "return_date2", nil, placeholder: "mm/dd/yy",class: "date-inpt"%><span class="date-icon"></span></div>	
 							</div>
 							<div class="clear"></div>
 						</div>
-						<!-- \\ -->	
-
-						<!-- // -->
-						<div class="srch-tab-line no-margin-bottom">
-							<div class="srch-tab-left transformed">
-								<label>Peoples</label>
-								<div class="select-wrapper">
-								<select class="custom-select">
-									<option>--</option>
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-								</select>
-								</div>	
-							</div>
-							<div class="srch-tab-right transformed">
-								<label>Class</label>
-								<div class="select-wrapper">
-								<select class="custom-select">
-									<option>--</option>
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-								</select>
-								</div>	
-							</div>
-							<div class="clear"></div>
+				
+						
+				 
+				
 						</div>
-						<!-- \\ -->	
-						<!-- // advanced // -->
-						<div class="search-asvanced">
-						<!-- // -->
-						<div class="srch-tab-line no-margin-bottom">
-							<div class="srch-tab-left">
-								<label>Price</label>
-								<div class="select-wrapper">
-								<select class="custom-select">
-									<option>--</option>
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-								</select>
-								</div>	
-							</div>
-							<div class="srch-tab-right">
-								<label>Air company</label>
-								<div class="select-wrapper">
-								<select class="custom-select">
-									<option>--</option>
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-								</select>
-								</div>	
-							</div>
-							<div class="clear"></div>
-						</div>
-						<!-- \\ -->			
-						</div>
-						<!-- \\ advanced \\ -->
-					</div>
-					<footer class="search-footer">
-						<a href="#" class="srch-btn">Search</a>	
-						<span class="srch-lbl">Advanced Search options</span>
+			           <footer class="search-footer">
+						<button type="submit" class="btn pull-right srch-btn">Search</button>
+						
 						<div class="clear"></div>
-					</footer>
+					</footer>	
+					<%end%>
 				</div>
 				<!-- // tab content // -->			
 			</div>
+		</div>
 		</div>
 		<!-- \\ search \\ -->
 		

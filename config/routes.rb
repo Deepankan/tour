@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   post 'static_pages/get_hotel_list' => 'static_pages#get_hotel_list', :as => "get_hotel_list"
   post 'static_pages/go_search_flights' => 'static_pages#go_search_flights', :as => "go_search_flights"
+  post 'static_pages/get_list_bus' => 'static_pages#get_list_bus', :as => "get_list_bus"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

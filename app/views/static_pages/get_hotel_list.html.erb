@@ -100,7 +100,7 @@ main-cont -->
             </div>
             
             <div class="catalog-row list-rows">
-      
+            <%if @key_hotel.present?%>  
               <% @key_hotel.each do |k,v|%>
               <!-- // -->
                 <div class="cat-list-item fly-in">
@@ -180,6 +180,9 @@ main-cont -->
           
             
 
+              <%end%>
+              <%else%>
+                 <%= render partial: "layouts/error"%>
               <%end%>
             </div>
             

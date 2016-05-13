@@ -87,7 +87,7 @@
 					<ul>
 						<li><a class="has-child" href="#">HOME</a>
 							<ul>
-								<li><a href="index.html">Home style one</a></li>
+								<li>   <%=link_to "Home style one",root_path %> </li>
 								<li><a href="index_02.html">Home style two</a></li>
 								<li><a href="index_03.html">Home style three</a></li>
 								<li><a href="index_04.html">Home style four</a></li>	
@@ -162,7 +162,9 @@
 		<!-- \\ mobile menu \\ -->
 			
 		<div class="wrapper-padding">
-			<div class="header-logo"><a href="index.html"><img alt="" src="/assets/logo.png" /></a></div>
+			<div class="header-logo">
+              <%=link_to (image_tag("/assets/logo.png")),root_path %> 
+			
 			<div class="header-right">
 				<div class="hdr-srch">
 					<a href="#" class="hdr-srch-btn"></a>
@@ -180,7 +182,7 @@
 					<ul>
 						<li><a href="#">Home</a>
 							<ul>
-								<li><a href="index.html">Home style one</a></li>
+								<li>   <%=link_to "Home style one",root_path %> </li>
 								<li><a href="index_02.html">Home style two</a></li>
 								<li><a href="index_03.html">Home style three</a></li>
 								<li><a href="index_04.html">Home style four</a></li>	

@@ -1,0 +1,145 @@
+        <div class="catalog-row">
+
+        <%@result['data']['onwardflights'].each do |k,v|%>
+         <div class="flight-item fly-in">
+                <div class="flt-i-a">
+                  <div class="flt-i-b">
+                    <div class="flt-i-bb">
+                    <div class="flt-l-a">
+                      <div class="flt-l-b">
+                        <div class="way-lbl">departure</div>
+            
+                      
+                        <div class="company"><%= k['TravelsName']%></div>
+                      </div>
+                      <div class="flt-l-c">
+                        <div class="flt-l-cb">
+                          <div class="flt-l-c-padding">
+                            <div class="flyght-info-head"><%= k['depdate'].to_date if k['depdate']%><%= " "+k['ServiceName']%></div>
+                            <!-- // -->
+                            <div class="flight-line">
+                              <div class="flight-radio"><label><input name="radio" type="radio" /></label> </div>
+                              <div class="flight-line-a">
+                                <b>departure</b>
+                                <span><%= k['DepartureTime'] %></span>
+                              </div>
+                              <div class="flight-line-d"></div>
+                              <div class="flight-line-a">
+                                <b>arrival</b>
+                                <span><%= k['ArrivalTime']%></span>
+                              </div>
+                              <div class="flight-line-d"></div>
+                              <div class="flight-line-a">
+                                <b>time</b>
+                                <span><%=  k['duration']%></span>
+                              </div>
+                              <div class="flight-line-b">
+                                <b>details</b>
+
+                                <span>Only <%= k['RouteSeatTypeDetail']['list'][0]['SeatsAvailable'].to_s + " "+ "seat".pluralize(k['RouteSeatTypeDetail']['list'][0]['SeatsAvailable'].to_i)%>!</span>
+                              </div>
+                              <div class="clear"></div>
+                                <!-- // details // -->
+                                <div class="flight-details abc" id="k_<%= v%>">
+                                  <div class="flight-details-l">
+                                    <div class="flight-details-a"><%= k['depdate'].to_date%></div>
+                                    <div class="flight-details-b"><%= k['DepartureTime']%> </div>
+                                    <div class="flight-details-c"></div> 
+                                  </div>
+                                  <div class="flight-details-r">
+                                    <div class="flight-details-a"><%= k['arrdate'].to_date %></div>
+                                    <div class="flight-details-b"> <%= k['ArrivalTime']%></div>
+                                    <div class="flight-details-c"></div>                                 
+                                  </div>
+                                  <div class="clear"></div>
+                                  <div class="flight-details-d">
+                                          <b><label>Bus Detail : </label></b><br/ >
+                                        <label> Bus Condition :</label>
+                                              <%k['RouteSeatTypeDetail']['list'].each do |m|%>
+                                              <label> BUS Condition :</label><b><%= m['busCondition']%></b>
+                                              <label> Seat Type :</label><b><%= m['seatType']%></b>
+                                                <br />
+                                              <%end%>
+                                        <br />&nbsp;&nbsp;
+                                              <label> Rating :</label><b><%= k['rating']%></b><br / >
+                                       
+
+                                      
+                                      <label><b>Boarding Point</b></label><br />
+                                    
+                                       <% if k['BPPrims']%>
+
+                                          <%  k['BPPrims']['list'].each do |h|%>
+                                           <label> Location :</label><b><%= h['BPLocation']%></b>&nbsp;&nbsp;
+                                            <label> Time :</label><b><%= h['BPTime']%></b><br / >
+                                             <%end%>
+                                       <%end%><br /><br />
+                                            <label><b>Dropping  Point</b></label><br />
+                                       <% if k['DPPrims']%>
+
+                                          <%  k['DPPrims']['list'].each do |h|%>
+                                           <label> Location :</label><b><%= h['DPLocation']%></b>&nbsp;&nbsp;
+                                            <label> Time :</label><b><%= h['DPTime']%></b><br / >
+                                             <%end%>
+                                       <%end%>
+                                  </div>
+                                </div>
+                                <!-- \\ details \\ -->                              
+                            </div>
+                            <!-- \\ -->
+                            
+                    
+         
+                          </div>
+                        </div>
+                        <br class="clear" />
+                      </div>
+                    </div>
+                    <div class="clear"></div>
+                    </div>
+                    <br class="clear" />
+                  </div>
+                </div>
+              <!--   <div class="flt-i-c">
+                  <div class="flt-i-padding">
+                    <div class="flt-i-price-i">
+                      <div class="flt-i-price">< %=  k['fare']['totalfare']%></div>
+                      <div class="flt-i-price-b">avg/person</div>
+                    </div>
+                    <a href="#" class="cat-list-btn">select now</a>
+                  </div>
+                </div> -->
+                     <div class="cat-list-content-r">
+                            <div class="cat-list-content-p">
+                              <nav class="stars">
+                                <ul>
+                                 <% k['rating'].to_i.times do |h|%>
+                                  <li><a href="#"><img alt="" src="/assets/star-b.png" /></a></li>
+                                 <%end%>
+                                 <%(k['rating'].to_i..5).each do |h|%> 
+                                  <li><a href="#"><img alt="" src="/assets/star-a.png" /></a></li>
+                                 <%end%> 
+                                
+                                </ul>
+                                <div class="clear"></div>
+                              </nav>
+                            
+                              <% if k['fare']['totalfare'].present?%>
+                              <div class="offer-slider-r">
+                                <b><%=  k['fare']['totalfare'] %></b>
+                                <span>avg/night</span>
+                              </div>           
+                              <a href="#" class="cat-list-btn">Select</a>   
+                              <%else%>
+                              <b style="color: red;">We are sold out..</b>
+                              <%end%>
+                            </div>
+                          </div>
+                <div class="clear"></div>
+              </div>
+             
+        <%end %>      
+  
+</div>
+
+  

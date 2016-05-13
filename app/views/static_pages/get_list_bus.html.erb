@@ -3,9 +3,9 @@
   <div class="body-wrapper">
     <div class="wrapper-padding">
     <div class="page-head">
-      <div class="page-title">Flights - <span><% @way = (@flag == true ? "ROUND TRIP" : "ONE WAY")%><%= @way%></span></div>
+      <div class="page-title">Bus - <span><% @way = (@flag == true ? "ROUND TRIP" : "ONE WAY")%><%= @way%></span></div>
       <div class="breadcrumbs">
-        <a href="#">Home</a> / <a href="#">Hotel</a> / <span>flight <%= @way.downcase%></span>
+        <a href="#">Home</a> / <a href="#">Hotel</a> / <span>bus <%= @way.downcase%></span>
       </div>
       <div class="clear"></div>
     </div>
@@ -18,65 +18,40 @@
          
         <div class="side-block fly-in">
           <div class="side-block-search">
-                 <%= form_tag go_search_flights_path do |f| %>
-                <div class="page-search-p">
+                               <%= form_tag get_list_bus_path do |f| %>
+          <div class="page-search-p">
             <!-- // -->
             <div class="srch-tab-line">
               <div class="srch-tab-left">
                 <label>From</label>
-                <div class="input-a"><%= text_field_tag "origin",@from,placeholder: "BLR"%></div> 
+                <div class="input-a"><%= text_field_tag "bus_origin",@from,placeholder: "BLR"%></div> 
               </div>
               <div class="srch-tab-right">
                 <label>To</label>
-                <div class="input-a"><%= text_field_tag "destination",@to,placeholder: "Lko" %></div> 
-              </div>
-              <div class="clear"></div>
-            </div>
-            <!-- \\ -->
-            <!-- // -->
-            <div class="srch-tab-line">
-              <div class="srch-tab-left">
-                <label>Departure</label>
-                <div class="input-a"><%= text_field_tag "dep_date1", @check_in_date,placeholder: "mm/dd/yy", class: "date-inpt" %> <span class="date-icon"></span></div>  
-              </div>
-              <div class="srch-tab-right">
-                <label>Return</label>
-                <div class="input-a"><%= text_field_tag "return_date1", @check_out_date, placeholder: "mm/dd/yy",class: "date-inpt" %><span class="date-icon"></span></div>  
-              </div>
-              <div class="clear"></div>
-            </div>
-              <div class="srch-tab-line">
-              <div class="srch-tab-left">
-                <label>Adult</label>
-                <div class="input-a"><%= text_field_tag "adults", @adult,placeholder: "Ex : 1"%> </div>  
-              </div>
-              <div class="srch-tab-right">
-                <label>Children</label>
-                <div class="input-a"><%= text_field_tag "children", @children, placeholder: "Ex: 0"%></div> 
-              </div>
-              <div class="clear"></div>
-            </div>
-            <!-- \\ -->
-            <div class="srch-tab-line no-margin-bottom">
-              <div class="srch-tab-left transformed">
-                <label>Infants</label>
-                <div class="input-a"><%= text_field_tag "infants",@infant,placeholder: "Ex: 0"%> </div>  
-              </div>
-              <div class="srch-tab-right transformed">
-                <label>Class</label>
-                <div class="select-wrapper ">
-          
-                <%= (select_tag "seatingclass", options_for_select(SEATING_CLASS,@class), class: "custom-select")%>
-                </div>  
+                <div class="input-a"><%= text_field_tag "bus_destination",@to,placeholder: "Lko" %></div> 
               </div>
               <div class="clear"></div>
             </div>
             <!-- \\ --> 
-
-                  
-              </div>  
-          <footer class="search-footer">
-               <button type="submit" class="btn pull-right srch-btn">Search</button>
+            <!-- // -->
+            <div class="srch-tab-line">
+              <div class="srch-tab-left">
+                <label>Departure</label>
+                <div class="input-a"><%= text_field_tag "dep_date2", @check_in_date,placeholder: "mm/dd/yy",class: "date-inpt"%> <span class="date-icon"></span></div>  
+              </div>
+              <div class="srch-tab-right">
+                <label>Return</label>
+                <div class="input-a"><%= text_field_tag "return_date2",  @check_out_date, placeholder: "mm/dd/yy",class: "date-inpt"%><span class="date-icon"></span></div>  
+              </div>
+              <div class="clear"></div>
+            </div>
+        
+            
+         
+        
+            </div>
+                 <footer class="search-footer">
+            <button type="submit" class="btn pull-right srch-btn">Search</button>
             
             <div class="clear"></div>
           </footer> 
@@ -128,20 +103,22 @@
  
               <div class="clear"></div>
             </div>
-            <%if @result['data']['onwardflights'].present?%>
-            <% if @flag == true%>
-             <%if @result['data']['onwardflights'].length > @result['data']['returnflights'].length%>
-              <% @flight = @result['data']['onwardflights'].zip(@result['data']['returnflights'])%>
-             <%else%>
-              <% @flight = @result['data']['returnflights'].zip(@result['data']['onwardflights'])%>
-             <%end%>
-             <%= render partial: "return_flight"%>
-            <%else%>
-             <%= render partial: "one_way"%>
-            <%end%>
-            <%else%>
-               <%= render partial: "layouts/error"%>
-            <%end%>
+                  <%if @result['data']['onwardflights'].present?%>
+                    <% if @flag == true%>
+                       <%if @result['data']['onwardflights'].length > @result['data']['returnflights'].length%>
+                        <% @flight = @result['data']['onwardflights'].zip(@result['data']['returnflights'])%>
+                       <%else%>
+                        <% @flight = @result['data']['returnflights'].zip(@result['data']['onwardflights'])%>
+                       <%end%>
+                     <%= render partial: "return_bus"%>
+                    <%else%>
+                     <%= render partial: "one_bus"%>
+                    <%end%>
+                  <%else%>
+                          <%= render partial: "layouts/error"%>
+                  <%end%>   
+           
+            
             <div class="clear"></div>
             
             <div class="pagination">
