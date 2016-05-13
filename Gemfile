@@ -38,6 +38,8 @@ gem 'pry'
 gem 'rest-client', '~> 1.8'
 # gem "mime-types"
 gem 'thin'
+gem 'sass-rails', '~> 3.2.6'
+gem 'sass', '~> 3.2.0'
 #-----------------------------------------------------------------------------------------------------------------------------
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
