@@ -38,7 +38,7 @@ gem 'pry'
 gem 'rest-client', '~> 1.8'
 # gem "mime-types"
 gem 'thin'
-
+gem 'rails_12factor', group: :production
 gem 'sass', '~> 3.2.0'
 #-----------------------------------------------------------------------------------------------------------------------------
 group :development, :test do
