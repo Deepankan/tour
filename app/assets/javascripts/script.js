@@ -44,7 +44,7 @@ $(document).ready(function(){
 		$('.header-b').addClass('fixed');
 		$('.header-logo').css('margin-top','10px')
 		$('.header-right').css('margin-top','21px');
-		$('.header-logo').find('img').attr('src','/assets/logo.png');
+		$('.header-logo').find('img').attr('src','/assets/tour_travel.jpg');
 
 	}
 	$headerUp = function() {
@@ -53,7 +53,7 @@ $(document).ready(function(){
 		$('.header-b').css('height','89px');
 		$('.header-logo').css('margin-top','26px');
 		$('.header-right').css('margin-top','37px');
-		$('.header-logo').find('img').attr('src','/assets/logo.png');
+		$('.header-logo').find('img').attr('src','/assets/tour_travel.jpg');
 	}
 
 	$(window).scroll(function(){
