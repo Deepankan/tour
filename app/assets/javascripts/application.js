@@ -26,6 +26,7 @@
 //= require isotope-a
 //= require isotope
 //= require jquery.easypiechart
+//= require jqeury.appear
 //= require jquery.form
 //= require jquery.ui
 //= require jquery_002

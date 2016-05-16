@@ -15,3 +15,9 @@ RAILWAY_SEAT_QUOTA = { 'General Quota' => 'GN', 'Ladies Quota' => 'LD', 'Head qu
 RAILWAY_SITTING_CLASS = { 'First class Air-Conditioned (AC)' => '1A','AC 2-tier sleeper' => '2A','First class' => 'FC','AC 3 Tier' => '3A','AC chair Car' => 'CC','Sleeper Class' => 'SL','Second Sitting' => '2S', 'AC 3 Tier Economy' => '3E'}
 
 SEATING_CLASS = {'Economy' => 'E','Bussiness Class' => 'B'}
+
+GeoNamesAPI.username = "deepankan@inmegh.com"
+GeoNamesAPI.lang = :en
+
+API_WEATHER = "50ea3106997945ff9af60514161605"
+NO_OF_DAY_WEATHER = 3

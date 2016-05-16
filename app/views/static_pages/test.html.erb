@@ -1,4 +1,3 @@
-
 <!-- main-cont -->
 <div class="main-cont">
 <div class="body-padding">
@@ -47,13 +46,13 @@
 	
 		<!-- // search // -->
 		<div class="page-search search-type-a">
-			<nav class="page-search-tabs">
+	<nav class="page-search-tabs">
 				<div class="search-tab active">Hotels</div>
-				<div class="search-tab">Flights</div>
+				<div class="search-tab">Flight</div>
 				<div class="search-tab nth">Bus</div>
 				<div class="clear"></div>	
-			</nav>		
-<div class="page-search-content">
+			</nav>			
+			<div class="page-search-content">
 				<!-- // tab content // -->
 				<div class="search-tab-content hotels-tab">
 			           <%= form_tag get_hotel_list_path do |f| %>
@@ -207,6 +206,7 @@
 				<!-- // tab content // -->			
 			</div>
 		</div>
+		</div>
 		<!-- \\ search \\ -->
 		
 		<!-- // offer // -->
@@ -233,33 +233,31 @@
 			<div class="weather-block">
 				<div class="weather-block-padding">
 					<!-- // -->
-					<%@result['weather'].each_with_index do |k,v|%>
 					<div class="weather-i">
-						<div class="weather-a"><%= v == 0 ? "Today" : k['date'].to_date.strftime("%A")%></div>
-						<div class="weather-b"><img alt="" src="<%= k['hourly'][0]['weatherIconUrl'][0]['value']%>" /></div>
-						<div class="weather-c"><%= k['hourly'][0]['tempC']%>°C</div>
+						<div class="weather-a">Today</div>
+						<div class="weather-b"><img alt="" src="/assets/weather-icon-02.png" /></div>
+						<div class="weather-c">15 M/S</div>
 					</div>
-					<%end%>
 					<!-- \\ -->
 					<!-- // -->
-				<!-- 	<div class="weather-i">
+					<div class="weather-i">
 						<div class="weather-a">tuesday</div>
 						<div class="weather-b"><img alt="" src="/assets/weather-icon-01.png" /></div>
 						<div class="weather-c">5 M/S</div>
-					</div> -->
+					</div>
 					<!-- \\ -->
 					<!-- // -->
-					<!-- <div class="weather-i">
+					<div class="weather-i">
 						<div class="weather-a">Wednesday</div>
 						<div class="weather-b"><img alt="" src="/assets/weather-icon-02.png" /></div>
 						<div class="weather-c">3 M/S</div>
-					</div> -->
+					</div>
 					<!-- \\ -->
 					<div class="weather-devider"></div>
 					<footer class="weather-footer">
 						<a href="#">
 							<span class="weather-foot-link">Find our special offers for</span>
-							<span class="weather-foot-link-a"><%= @result['nearest_area'][0]['areaName'][0]['value'].upcase%></span>
+							<span class="weather-foot-link-a">BROOKLYN</span>
 						</a>
 					</footer>					
 				</div>	
@@ -270,7 +268,7 @@
 	</div>
 	</div>
 		
-	<div class="mp-offesr">
+	<div class="mp-offesr" id="get_result">
 		<div class="wrapper-padding-a">
 			<div class="offer-slider">
 				<header class="fly-in page-lbl">
@@ -848,7 +846,7 @@ Travel, in the younger sort, is a part of education; in the elder, a part of exp
 						</ul>
 					</nav>
 				</div>
-							<div class="fly-in mp-b-right">
+				<div class="fly-in mp-b-right">
 					<div class="mp-b-lbl">reasons to book with us</div>
 					<div class="reasons-item-a">
 						<div class="reasons-lbl">Customer satisfaction</div>
@@ -878,55 +876,3 @@ Travel, in the younger sort, is a part of education; in the elder, a part of exp
 
 </div>
 <!-- /main-cont -->
-<script type="text/javascript">
- 	$(document).ready(function(){
-  		$('.date-inpt').datepicker({ dateFormat: 'yy-mm-dd' }); 
-      
-      (function($) {
-        $(function() {
-          $('input:checkbox,input:radio,.search-engine-range-selection-container input:radio').styler();
-        })
-      })(jQuery);   
-      $(function() {
-        $( "#slider-range" ).slider({
-          range: true,
-          min: 0,
-          max: 1500,
-          values: [ 275, 1100 ],
-          slide: function( event, ui ) {
-            $("#ammount-from").val(ui.values[0]+'$');
-            $("#ammount-to").val(ui.values[1]+'$');
-          }
-        });
-        $("#ammount-from").val($("#slider-range").slider("values",0)+'$');
-        $("#ammount-to").val($("#slider-range").slider("values",1)+'$');
-      });
-      
-      
-     
-        $(".side-time").each(function(){
-          var $this = $(this);
-          $this.find('.time-range').slider({
-              range: true,
-              min: 0,
-              max: 24,
-              values: [ 3, 20 ],
-              slide: function( event, ui ) {
-                $this.find(".time-from").text(ui.values[0]);
-                $this.find(".time-to").text(ui.values[1]);
-              }
-          });
-          
-          $(this).find(".time-from").text($this.find(".time-range").slider("values",0));
-          $(this).find(".time-to").text($this.find(".time-range").slider("values",1));
-                
-        });
-
-  		$(function() {
-    			$(document.body).on('appear', '.fly-in', function(e, $affected) {
-      			$(this).addClass("appeared");
-    			});
-    			$('.fly-in').appear({force_process: true});
-  		});
-  	});
-</script>
