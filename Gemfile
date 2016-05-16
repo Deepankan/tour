@@ -43,7 +43,7 @@ gem 'sass', '~> 3.2.0'
 gem  'geonames_api'
 gem 'forecast_io'
 gem 'geocoder'
-
+gem 'jquery-turbolinks'
 #-----------------------------------------------------------------------------------------------------------------------------
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

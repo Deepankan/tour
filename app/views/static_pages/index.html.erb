@@ -239,7 +239,7 @@
 						<div class="weather-b"><img alt="" src="<%= k['hourly'][0]['weatherIconUrl'][0]['value']%>" /></div>
 						<div class="weather-c"><%= k['hourly'][0]['tempC']%>°C</div>
 					</div>
-					<%end%>
+					<%end if @result%>
 					<!-- \\ -->
 					<!-- // -->
 				<!-- 	<div class="weather-i">
@@ -259,7 +259,7 @@
 					<footer class="weather-footer">
 						<a href="#">
 							<span class="weather-foot-link">Find our special offers for</span>
-							<span class="weather-foot-link-a"><%= @result['nearest_area'][0]['areaName'][0]['value'].upcase%></span>
+							<span class="weather-foot-link-a"><%= @result['nearest_area'][0]['areaName'][0]['value'].upcase if @result%></span>
 						</a>
 					</footer>					
 				</div>	

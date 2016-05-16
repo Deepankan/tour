@@ -1,46 +1,6 @@
-  <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
-        
-        <script type="text/javascript">
-            google.maps.event.addDomListener(window, 'load', init); 
-			
-            function init() {
-                var mylat = '12.926202';
-                var mylong ='77.632938';                
-                var mapOptions = {
-                    zoom: 13,
-                    disableDefaultUI: true,
-                    zoomControl: true,
-                    zoomControlOptions: {
-                      style: google.maps.ZoomControlStyle.LARGE,
-                      position: google.maps.ControlPosition.LEFT_CENTER
-                    },
-                    scrollwheel: false, 
-                    center: new google.maps.LatLng(mylat, mylong), // New York 
-              };
-                var mapElement = document.getElementById('map');
-                var map = new google.maps.Map(mapElement, mapOptions);
-                google.maps.event.addDomListener(window, 'resize', init);
-
-			google.maps.event.addListenerOnce(map, 'idle', function(){
-  			setTimeout( function() { 
-    			var place = new google.maps.LatLng(12.926202, 77.632938);   
-    			// var image = new google.maps.MarkerImage('/assets/map.png',      
-    			// 		new google.maps.Size(19, 29),      
-    			// 		new google.maps.Point(0,0),      
-    			// 		new google.maps.Point(0, 32));  
-     			var marker = new google.maps.Marker({
-        			map:map,
-        			draggable:false,
-        			animation: google.maps.Animation.DROP,
-        			position: place
-      			}); 
-    			$('.map-contacts').each(function(index){
-          			$(this).delay(141*index).fadeIn();     
-    			}); 
-  			} , 500);
-			});            	
-            }
- 			
+       
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuqlFM4pXF3sSOAukLnmCmlfid1FqdwzE&callback=init">
     </script>
 <!-- main-cont -->
 <div class="main-cont">   
@@ -124,4 +84,61 @@
   
 </div>
 <!-- /main-cont -->
- <script src="/assets/jqeury.appear.js"></script>  
+<script>
+      // function initMap() {
+      //   var mapDiv = document.getElementById('map');
+      //   var map = new google.maps.Map(mapDiv, {
+      //     zoom: 8,
+      //     center: new google.maps.LatLng(-34.397, 150.644)
+      //   });
+
+      //   // We add a DOM event here to show an alert if the DIV containing the
+      //   // map is clicked.
+      //   google.maps.event.addDomListener(window, 'load', function() {
+      //     alert(98)
+      //     window.alert('Map was clicked!');
+      //   });
+      // }
+
+
+      //             google.maps.event.addDomListener(window, 'load', init); 
+      
+            function init() {
+                var mylat = '12.926202';
+                var mylong ='77.632938';                
+                var mapOptions = {
+                    zoom: 13,
+                    disableDefaultUI: true,
+                    zoomControl: true,
+                    zoomControlOptions: {
+                      style: google.maps.ZoomControlStyle.LARGE,
+                      position: google.maps.ControlPosition.LEFT_CENTER
+                    },
+                    scrollwheel: false, 
+                    center: new google.maps.LatLng(mylat, mylong), // New York 
+              };
+                var mapElement = document.getElementById('map');
+                var map = new google.maps.Map(mapElement, mapOptions);
+                google.maps.event.addDomListener(window, 'resize', init);
+
+      google.maps.event.addListenerOnce(map, 'idle', function(){
+        setTimeout( function() { 
+          var place = new google.maps.LatLng(12.926202, 77.632938);   
+          // var image = new google.maps.MarkerImage('/assets/map.png',      
+          //    new google.maps.Size(19, 29),      
+          //    new google.maps.Point(0,0),      
+          //    new google.maps.Point(0, 32));  
+          var marker = new google.maps.Marker({
+              map:map,
+              draggable:false,
+              animation: google.maps.Animation.DROP,
+              position: place
+            }); 
+          $('.map-contacts').each(function(index){
+                $(this).delay(141*index).fadeIn();     
+          }); 
+        } , 500);
+      });             
+            }
+      
+    </script>
