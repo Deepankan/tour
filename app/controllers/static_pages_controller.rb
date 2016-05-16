@@ -2,9 +2,9 @@ class StaticPagesController < ApplicationController
 
       def index
       	@client_ip = remote_ip()
-        # result = RestClient.get "http://api.worldweatheronline.com/premium/v1/weather.ashx?key=#{API_WEATHER}&q=#{@client_ip}&format=json&num_of_days=#{NO_OF_DAY_WEATHER}&includelocation=yes&tp=24" 
-        # @result = JSON.parse(result)   
-        # @result = @result['data']
+        result = RestClient.get "http://api.worldweatheronline.com/premium/v1/weather.ashx?key=#{API_WEATHER}&q=#{@client_ip}&format=json&num_of_days=#{NO_OF_DAY_WEATHER}&includelocation=yes&tp=24" 
+        @result = JSON.parse(result)   
+        @result = @result['data']
 
       end 
 
