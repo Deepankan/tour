@@ -24,13 +24,12 @@
 			google.maps.event.addListenerOnce(map, 'idle', function(){
   			setTimeout( function() { 
     			var place = new google.maps.LatLng(12.926202, 77.632938);   
-    			var image = new google.maps.MarkerImage('/assets/map.png',      
-    					new google.maps.Size(19, 29),      
-    					new google.maps.Point(0,0),      
-    					new google.maps.Point(0, 32));  
+    			// var image = new google.maps.MarkerImage('/assets/map.png',      
+    			// 		new google.maps.Size(19, 29),      
+    			// 		new google.maps.Point(0,0),      
+    			// 		new google.maps.Point(0, 32));  
      			var marker = new google.maps.Marker({
         			map:map,
-        			icon: image, 
         			draggable:false,
         			animation: google.maps.Animation.DROP,
         			position: place
