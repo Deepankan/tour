@@ -15,6 +15,10 @@
  *= require jquery.ui
  *= require jquery.formstyler
  *= require style
+ *= require bootstrap
+ *= require font-awesome
+ *= require docs
+ *= require bootstrap-social
  *= require_tree .
  *= require_self
  */

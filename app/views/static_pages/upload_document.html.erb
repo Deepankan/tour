@@ -1,0 +1,268 @@
+<script src="/assets/jquery.fancybox.js"></script>
+<div class="main-cont">  	
+	
+	<div class="inner-page">
+		<div class="inner-breadcrumbs">
+			<div class="content-wrapper">
+				<div class="page-title">Uploaded Document</div>
+				<div class="breadcrumbs">
+        			
+      			</div>
+      			<div class="clear"></div>
+      		</div>		
+		</div>
+		
+		<div class="content-wrapper">
+		<div class="portfolio-filters">
+			<%= form_tag upload_doc_path, :multipart => true, :enctype =>"multipart/form-data" do |form|%>
+					<%= file_field_tag :avatars, multiple: true,name: "avatars[file][]"%>   
+					
+					<%= submit_tag "Import", class: "btn btn-primary" %> 
+				<%end%>
+		
+
+
+
+		  
+		   
+		</div>
+		</div>
+		<div class="portfolio-holder portfolio-holder-three">
+
+		<div class="portfolio-three-colls" style="position: relative; height: 1480px;">
+			<!-- // -->
+			
+			<div class="portfolio-i photography" >
+			<% @images.each do |h|%>
+				<div class="portfolio-i-img">	
+					<div class="portfolio-i-over">
+						<div class="portfolio-i-over-a">
+							<div class="portfolio-i-over-b">
+								<a href="<%= h%>" data-fancybox-group="gallery" class="fancybox portfolio-zoom"></a>
+								<a href="#" class="portfolio-more"></a>							
+							</div>
+						</div>
+					</div>
+					<img alt="" src="<%= h%>">
+				</div>
+				<div class="portfolio-i-text">
+					
+				</div>
+				<%end%>
+			</div>
+			
+			<!-- \\ -->
+			<!-- // -->
+	<!-- 		<div class="portfolio-i countries" style="position: absolute; left: 375px; top: 0px;">
+				<div class="portfolio-i-img">	
+					<div class="portfolio-i-over">
+						<div class="portfolio-i-over-a">
+							<div class="portfolio-i-over-b">
+								<a href="/assets/portfolio-b-02.jpg" data-fancybox-group="gallery" class="fancybox portfolio-zoom"></a>
+								<a href="#" class="portfolio-more"></a>								
+							</div>
+						</div>
+					</div>
+					<img alt="" src="/assets/portfolio-b-02.jpg">
+				</div>
+				<div class="portfolio-i-text">
+					<b>red Bicycle</b>
+					<span>Countries</span>
+				</div>
+			</div> -->
+			<!-- \\ -->
+			<!-- // -->
+<!-- 			<div class="portfolio-i travel" style="position: absolute; left: 751px; top: 0px;">
+				<div class="portfolio-i-img">	
+					<div class="portfolio-i-over">
+						<div class="portfolio-i-over-a">
+							<div class="portfolio-i-over-b">
+								<a href="/assets/portfolio-b-03.jpg" data-fancybox-group="gallery" class="fancybox portfolio-zoom"></a>
+								<a href="#" class="portfolio-more"></a>									
+							</div>
+						</div>
+					</div>
+					<img alt="" src="/assets/portfolio-b-03.jpg">
+				</div>
+				<div class="portfolio-i-text">
+					<b>Happy peoples</b>
+					<span>Travel</span>
+				</div>
+			</div> -->
+			<!-- \\ -->
+			<!-- // -->
+		<!-- 	<div class="portfolio-i photography" style="position: absolute; left: 0px; top: 370px;">
+				<div class="portfolio-i-img">	
+					<div class="portfolio-i-over">
+						<div class="portfolio-i-over-a">
+							<div class="portfolio-i-over-b">
+								<a href="/assets/portfolio-b-04.jpg" data-fancybox-group="gallery" class="fancybox portfolio-zoom"></a>
+								<a href="#" class="portfolio-more"></a>								
+							</div>
+						</div>
+					</div>
+					<img alt="" src="/assets/portfolio-b-04.jpg">
+				</div>
+				<div class="portfolio-i-text">
+					<b>Cup of hot drink</b>
+					<span>Photography</span>
+				</div>
+			</div> -->
+			<!-- \\ -->
+			<!-- // -->
+			<!-- <div class="portfolio-i countries" style="position: absolute; left: 375px; top: 370px;">
+				<div class="portfolio-i-img">	
+					<div class="portfolio-i-over">
+						<div class="portfolio-i-over-a">
+							<div class="portfolio-i-over-b">
+								<a href="/assets/portfolio-b-05.jpg" data-fancybox-group="gallery" class="fancybox portfolio-zoom"></a>
+								<a href="#" class="portfolio-more"></a>									
+							</div>
+						</div>
+					</div>
+					<img alt="" src="/assets/portfolio-b-05.jpg">
+				</div>
+				<div class="portfolio-i-text">
+					<b>Golden Gate Bridge</b>
+					<span>Countries</span>
+				</div>
+			</div> -->
+			<!-- \\ -->
+			<!-- // -->
+		<!-- 	<div class="portfolio-i travel" style="position: absolute; left: 751px; top: 370px;">
+				<div class="portfolio-i-img">	
+					<div class="portfolio-i-over">
+						<div class="portfolio-i-over-a">
+							<div class="portfolio-i-over-b">
+								<a href="/assets/portfolio-b-06.jpg" data-fancybox-group="gallery" class="fancybox portfolio-zoom"></a>
+								<a href="#" class="portfolio-more"></a>								
+							</div>
+						</div>
+					</div>
+					<img alt="" src="/assets/portfolio-b-06.jpg">
+				</div>
+				<div class="portfolio-i-text">
+					<b>grinded coffee</b>
+					<span>Travel</span>
+				</div>
+			</div> -->
+			<!-- \\ -->
+			<!-- // -->
+		<!-- 	<div class="portfolio-i photography" style="position: absolute; left: 0px; top: 740px;">
+				<div class="portfolio-i-img">	
+					<div class="portfolio-i-over">
+						<div class="portfolio-i-over-a">
+							<div class="portfolio-i-over-b">
+								<a href="/assets/portfolio-b-07.jpg" data-fancybox-group="gallery" class="fancybox portfolio-zoom"></a>
+								<a href="#" class="portfolio-more"></a>									
+							</div>
+						</div>
+					</div>
+					<img alt="" src="/assets/portfolio-b-07.jpg">
+				</div>
+				<div class="portfolio-i-text">
+					<b>Paris skyline</b>
+					<span>Photography</span>
+				</div>
+			</div> -->
+			<!-- \\ -->
+			<!-- // -->
+<!-- 			<div class="portfolio-i countries" style="position: absolute; left: 375px; top: 740px;">
+				<div class="portfolio-i-img">	
+					<div class="portfolio-i-over">
+						<div class="portfolio-i-over-a">
+							<div class="portfolio-i-over-b">
+								<a href="/assets/portfolio-b-08.jpg" data-fancybox-group="gallery" class="fancybox portfolio-zoom"></a>
+								<a href="#" class="portfolio-more"></a>									
+							</div>
+						</div>
+					</div>
+					<img alt="" src="/assets/portfolio-b-08.jpg">
+				</div>
+				<div class="portfolio-i-text">
+					<b>Fashion image</b>
+					<span>Countries</span>
+				</div>
+			</div> -->
+			<!-- \\ -->
+			<!-- // -->
+		<!-- 	<div class="portfolio-i travel" style="position: absolute; left: 751px; top: 740px;">
+				<div class="portfolio-i-img">	
+					<div class="portfolio-i-over">
+						<div class="portfolio-i-over-a">
+							<div class="portfolio-i-over-b">
+								<a href="/assets/portfolio-b-09.jpg" data-fancybox-group="gallery" class="fancybox portfolio-zoom"></a>
+								<a href="#" class="portfolio-more"></a>								
+							</div>
+						</div>
+					</div>
+					<img alt="" src="/assets/portfolio-b-09.jpg">
+				</div>
+				<div class="portfolio-i-text">
+					<b>Cup of hot drink</b>
+					<span>Travel</span>
+				</div>
+			</div> -->
+			<!-- \\ -->
+			<!-- // -->
+			<!-- <div class="portfolio-i travel" style="position: absolute; left: 0px; top: 1110px;">
+				<div class="portfolio-i-img">	
+					<div class="portfolio-i-over">
+						<div class="portfolio-i-over-a">
+							<div class="portfolio-i-over-b">
+								<a href="/assets/portfolio-10.jpg" data-fancybox-group="gallery" class="fancybox portfolio-zoom"></a>
+								<a href="#" class="portfolio-more"></a>							
+							</div>
+						</div>
+					</div>
+					<img alt="" src="/assets/portfolio-10.jpg">
+				</div>
+				<div class="portfolio-i-text">
+					<b>Cup of hot drink</b>
+					<span>Travel</span>
+				</div>
+			</div> -->
+			<!-- \\ -->
+			<!-- // -->
+			<!-- <div class="portfolio-i travel" style="position: absolute; left: 375px; top: 1110px;">
+				<div class="portfolio-i-img">	
+					<div class="portfolio-i-over">
+						<div class="portfolio-i-over-a">
+							<div class="portfolio-i-over-b">
+								<a href="/assets/portfolio-11.jpg" data-fancybox-group="gallery" class="fancybox portfolio-zoom"></a>
+								<a href="#" class="portfolio-more"></a>								
+							</div>
+						</div>
+					</div>
+					<img alt="" src="/assets/portfolio-11.jpg">
+				</div>
+				<div class="portfolio-i-text">
+					<b>Cup of hot drink</b>
+					<span>Travel</span>
+				</div>
+			</div> -->
+			<!-- \\ -->
+			<!-- // -->
+<!-- 			<div class="portfolio-i travel" style="position: absolute; left: 751px; top: 1110px;">
+				<div class="portfolio-i-img">	
+					<div class="portfolio-i-over">
+						<div class="portfolio-i-over-a">
+							<div class="portfolio-i-over-b">
+								<a href="/assets/portfolio-12.jpg" data-fancybox-group="gallery" class="fancybox portfolio-zoom"></a>
+								<a href="#" class="portfolio-more"></a>									
+							</div>
+						</div>
+					</div>
+					<img alt="" src="/assets/portfolio-12.jpg">
+				</div>
+				<div class="portfolio-i-text">
+					<b>Cup of hot drink</b>
+					<span>Travel</span>
+				</div>
+			</div> -->
+			<!-- \\ -->
+		</div>
+
+		</div>
+	</div>
+</div>

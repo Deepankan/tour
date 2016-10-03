@@ -1,6 +1,8 @@
 <!-- // authorize // -->
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 	<div class="overlay"></div>
-	<div class="autorize-popup">
+	<div class="autorize-popup" style="
+    height: auto;top:-354px">
 		<div class="autorize-tabs">
 			<a href="#" class="autorize-tab-a current">Sign in</a>
 			<a href="#" class="autorize-tab-b">Register</a>
@@ -10,24 +12,60 @@
 		<section class="autorize-tab-content">
 			<div class="autorize-padding">
 				<h6 class="autorize-lbl">Welocome! Login in to Your Accont</h6>
-				<input type="text" value="" placeholder="Name">
-				<input type="text" value="" placeholder="Password">
-				<footer class="autorize-bottom">
-					<button class="authorize-btn">Login</button>
-					<a href="#" class="authorize-forget-pass">Forgot your password?</a>
+			
+
+				 <%= form_for(resource, as: resource_name,:class => "form-vertical push-right",:id => "loginform", url: session_path(resource_name)) do |f| %>
+				 <%= f.email_field :email, autofocus: true,:id => "login-username", class: "form-control input-lg", placeholder: "Email" %>
+				  <%= f.password_field :password, autocomplete: "off",:id => "login-password", class: "form-control input-lg", placeholder: "Password" %>
+				<div class="autorize-bottom">
+				      <%= f.submit "LOGIN", class: "authorize-btn" %>
+				
+					<a href="#" class="authorize-forget-pass">Forgot your password?</a><br />
 					<div class="clear"></div>
-				</footer>
+                   <br />
+					<a href="/users/auth/facebook" class="btn btn-block btn-social btn-facebook">
+			          <span class="fa fa-facebook"></span> Sign in with Facebook
+			        </a>
+
+			        <a href="/users/auth/linkedin" class="btn btn-block btn-social btn-linkedin">
+			          <span class="fa fa-linkedin"></span> Sign in with Linkedin
+			        </a>
+
+			        <a href="/users/auth/twitter" class="btn btn-block btn-social btn-twitter">
+			          <span class="fa fa-twitter"></span> Sign in with Twitter
+			        </a>
+
+			        <a href="/users/auth/google_oauth2" class="btn btn-block btn-social btn-google">
+			          <span class="fa fa-google"></span> Sign in with Google
+			        </a>
+
+			        <a href="/users/auth/instagram" class="btn btn-block btn-social btn-instagram">
+			          <span class="fa fa-instagram"></span> Sign in with Instagram
+			        </a>
+
+			      
+			        <div class="clear"></div>
+				</div>
+				<%end%>
+				
+			<!-- <a href="/users/auth/facebook" class="social-facebook">Sign in with Facebook</a> -->
 			</div>
+	<!-- 		  <a href="/users/auth/facebook" class="btn btn-block btn-social btn-facebook" style="padding: 3%;
+    margin: 5%;">
+				    <span class="fa fa-facebook"></span> Sign in with Facebook
+				  </a> -->
+
 		</section>
+
 		<section class="autorize-tab-content">
 			<div class="autorize-padding">
 				<h6 class="autorize-lbl">Register for Your Account</h6>
 				<input type="text" value="" placeholder="Name">
 				<input type="text" value="" placeholder="Password">
-				<footer class="autorize-bottom">
+				<div class="autorize-bottom">
 					<button class="authorize-btn">Registration</button>
 					<div class="clear"></div>
-				</footer>
+				</div>
 			</div>
 		</section>
 	</div>

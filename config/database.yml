@@ -27,26 +27,26 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: test_new
+  database: tour_poc
   port: 5432
-  username: 'root'
+  username: 'postgres'
   password: 'root'
   host: localhost
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: test_new
+  database: tour_poc
   port: 5432
-  username: 'root'
+  username: 'postgres'
   password: 'root'
   #host: localhost
 
 test:
   adapter: postgresql
   encoding: unicode
-  database: test_new
+  database: tour_poc
   port: 5432
-  username: 'root'
+  username: 'postgres'
   password: 'root'
   #host: localhost

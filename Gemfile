@@ -44,6 +44,20 @@ gem  'geonames_api'
 gem 'forecast_io'
 gem 'geocoder'
 gem 'jquery-turbolinks'
+gem 'devise'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'twilio-ruby', '~> 4.11.1'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'omniauth-linkedin'
+gem 'whitelabel'
+gem 'skyscanner', :require => 'skyscanner'
+#gem 'geocoder'
+gem 'geokit-rails'
+gem "omniauth-google-oauth2"
+gem "instagram"
+gem 'omniauth-instagram', '~> 1.0', '>= 1.0.2'
 #-----------------------------------------------------------------------------------------------------------------------------
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

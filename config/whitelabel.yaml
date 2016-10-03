@@ -1,0 +1,4 @@
+
+ !ruby/struct:YourLabelClass
+  label_id: "white"
+  some_config: "for your application"

@@ -1,24 +1,31 @@
 class StaticPagesController < ApplicationController
 
       def index
-      	@client_ip = remote_ip()
+      
+      	#@client_ip = remote_ip()
+      	#@client_ip = "172.20.10.2"
+        @client_ip = "bangalore"
         result = RestClient.get "http://api.worldweatheronline.com/premium/v1/weather.ashx?key=#{API_WEATHER}&q=#{@client_ip}&format=json&num_of_days=#{NO_OF_DAY_WEATHER}&includelocation=yes&tp=24" 
+        
         @result = JSON.parse(result)   
         @result = @result['data']
-
+        # @result = []
+         
       end 
 
 	  def get_hotel_list
+	  	
 	  	   @check_in_date = params['dep_date']
 		   @check_out_date = params['return_date']
 		   @country = params[:city]
 		   params['dep_date']  = params['dep_date'].gsub("-","")
 		   params['return_date'] =  params['return_date'].gsub("-","")
 		   #city_id = City.find_by_city_name(params[:city]).city_id
-		    city_id = City.where("city_name ILIKE ?", "%#{params[:city]}%").first.city_id
+		    city_id = City.where("city_name ILIKE ?", "%#{params[:city].titleize}%").first.city_id
+		  
 		  get_name_result = RestClient.get "http://developer.goibibo.com/api/voyager/get_hotels_by_cityid/?app_id=#{API_APP_ID_GOIBIBO}&app_key=#{API_APP_KEY_GOIBIBO}&city_id=#{city_id}"
 		  @hotel_name = JSON.parse(get_name_result)   
-		  
+		 
 		  result = RestClient.get "http://developer.goibibo.com/api/cyclone/?app_id=#{API_APP_ID_GOIBIBO}&app_key=#{API_APP_KEY_GOIBIBO}&city_id=#{city_id}&check_in=#{params['dep_date']}&check_out=#{params['return_date']}"
 		  @result = JSON.parse(result)   
 		  @key_hotel = {}
@@ -83,5 +90,71 @@ def get_list_bus
    @count = @result['data']['onwardflights'].count + @result['data']['returnflights'].count if @result['data']
 
 end
+
+def get_place_search
+end
+
+def get_destination
+end
+
+def get_detail_tour
+end
+
+def get_booking_tour
+end
+
+def confirm_booking
+
+
+	if current_user
+        text = "Thanks for booking the deal"
+	else
+		
+	    if User.find_by_contact_no(params[:mob_no]) 
+	        user = User.find_by_contact_no(params[:mob_no]) 
+	    else
+	    	
+	    	user = User.create(email: params[:mob_no]+"@oasis.com", password: "12345678",contact_no: params[:mob_no])
+	    end
+        text = "Email : #{user.email} \n Password: #{user.password}.Thanks for booking the deal"
+	end
+   #   @client = Twilio::REST::Client.new ACCOUNT_SID, AUTH_TOKEN
+	  # @client.account.messages.create(
+	  #   from: '+15005550006',  
+	  #   to: "+91"+"8861353180",  
+	  #   body: "text"  
+	  # )  
+
+end
+
+def send_otp
+ @mob_no = params[:mobile_no]
+  otp = SecureRandom.hex(2)
+  mob = "+91"+params[:mobile_no]
+  # @client = Twilio::REST::Client.new ACCOUNT_SID, AUTH_TOKEN
+  # @client.account.messages.create(
+  #   from: '+12562026535',  
+  #   to: mob,  
+  #   body: otp  
+  # )  
+  if current_user
+    current_user.otps.create(code: otp)
+  else
+    Otp.create(phone_no: params['mobile_no'], code: otp)
+  end	
+end
+
+
+def upload_document
+   @images = current_user.avatars
+
+end
+
+def upload_doc
+	current_user.update({avatars: params[:avatars]['file']})
+	redirect_to upload_document_path
+
+end
+
 
 end

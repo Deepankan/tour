@@ -142,13 +142,13 @@ $(document).ready(function(){
 
 	$('.header-account a').click(function(){
 		$('.overlay').fadeIn(function(){
-			$('.autorize-popup').animate({top: '50%'}, 300).find('input:text').eq('0').focus();
+			$('.autorize-popup').animate({top: '45%'}, 300).find('input:text').eq('0').focus();
 		});
 		return false;
 	});
 
 	$('.overlay').click(function(){
-		$('.autorize-popup').animate({top: '-300px'}, 300, function(){
+		$('.autorize-popup').animate({top: '-400px'}, 300, function(){
 			$('.overlay').fadeOut();	
 		});
 	});
@@ -156,7 +156,7 @@ $(document).ready(function(){
 	$('.autorize-tab-content').eq('0').css('display','block');
 	$('.autorize-tabs a').click(function(){
 		if ( $(this).is('.autorize-close') ) {
-			$('.autorize-popup').animate({top: '-300px'}, 300, function(){
+			$('.autorize-popup').animate({top: '-400px'}, 300, function(){
 				$('.overlay').fadeOut();	
 			});
 		} else {

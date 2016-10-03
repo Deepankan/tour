@@ -1,0 +1,21 @@
+<div class="booking-left">
+
+							
+							<h2>Please Enter OTP</h2>
+							 <%= form_tag confirm_booking_path do |f| %>
+							<div class="booking-form">
+								<div class="booking-form-i">
+									<label>OTP</label>
+									<div class="input"><%= text_field_tag :otp_no %></div>
+								</div>
+					
+		
+							
+					           <%= hidden_field_tag :mob_no, @mob_no%>
+								<div class="clear"></div>
+							</div>
+							<div class="booking-devider no-margin"></div>	
+				              <%= submit_tag "Confirm OTP", class: "booking-complete-btn"%>
+                         <%end%>
+			
+						</div>
