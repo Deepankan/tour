@@ -23,6 +23,9 @@
   <link rel="stylesheet" href="/assets/js_composer.css">
   <link rel="stylesheet" href="/assets/responsive.css">
  -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -46,6 +49,7 @@
   <link href='http://fonts.googleapis.com/css?family=Raleway:400,600' rel='stylesheet' type='text/css'>  <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css'>  
   <link href='http://fonts.googleapis.com/css?family=Lato:400,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
 </head>
 <body class="index-page">
 <%= render partial: "layouts/top_bar"%>
@@ -66,8 +70,11 @@
   <script src="/assets/owl.carousel.min.js"></script>
   <script src="/assets/jquery.formstyler.js"></script>  
   <script src="/assets/custom.select.js"></script>  
-  <script src="/assets/jqeury.appear.js"></script>  
-  <script src="/assets/jquery.ui.js"></script> 
+  <script src="/assets/slider.js"></script>  
+
+  <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/jquery-ui.min.js"></script>
+
+
    <script src="/assets/jqeury.appear.js"></script>  
   
 
@@ -97,7 +104,7 @@
 
           $(document).ready(function(){
      $('.date-inpt').datepicker({ dateFormat: 'yy-mm-dd' }); 
-    $('.custom-select').customSelect();
+   
     $(function() {
         $(document.body).on('appear', '.fly-in', function(e, $affected) {
           $(this).addClass("appeared");

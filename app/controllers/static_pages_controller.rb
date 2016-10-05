@@ -5,8 +5,9 @@ class StaticPagesController < ApplicationController
       	#@client_ip = remote_ip()
       	#@client_ip = "172.20.10.2"
         @client_ip = "bangalore"
+      
         result = RestClient.get "http://api.worldweatheronline.com/premium/v1/weather.ashx?key=#{API_WEATHER}&q=#{@client_ip}&format=json&num_of_days=#{NO_OF_DAY_WEATHER}&includelocation=yes&tp=24" 
-        
+       
         @result = JSON.parse(result)   
         @result = @result['data']
         # @result = []
@@ -154,6 +155,15 @@ def upload_doc
 	current_user.update({avatars: params[:avatars]['file']})
 	redirect_to upload_document_path
 
+end
+
+def go_let_me_plan
+	
+	@start = params[:destination_city]
+	@end = params[:dest]
+end
+
+def get_review_path
 end
 
 

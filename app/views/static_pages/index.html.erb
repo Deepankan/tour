@@ -1,8 +1,12 @@
 <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!-- main-cont -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.2.0/bootstrap-slider.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.2.0/css/bootstrap-slider.css">
+
+
+
+
 <style>
 .ui-helper-hidden {
     display: none
@@ -8436,7 +8440,7 @@ a#next:hover {
            <tr>
              <td >
               
-              <div class="holC_interS_lhs flL holC_txt_white" style="margin: -6%;padding-bottom: 21%;">
+              <div class="holC_interS_lhs flL holC_txt_white" style="margin: -6%;padding-bottom: 75%;">
 
                 <h1 class="append_bottom20">Why Customize?</h1>
                 <ul>
@@ -8464,11 +8468,12 @@ a#next:hover {
              <div class="page-search-content">
                   <!-- // tab content // -->
                   <div class="search-tab-content hotels-tab">
-                    
+                     <%= form_tag go_let_me_plan_path do |f| %>
                      <div class="page-search-p">
                         <!-- // -->
                         <div class="srch-tab-line">
-                           <label>Destination</label>
+                           <label>Starting City
+</label>
                            <div class="input-a"><%= text_field_tag "destination_city",nil,placeholder: "Example: France" %></div>
                         </div>
                         <!-- // -->
@@ -8484,26 +8489,44 @@ a#next:hover {
                         </div>
                           <div class="srch-tab-line">
                            <div class="srch-tab-left">
-                              <label>Price</label>
-                              <%= date_field_tag(:datetime_ida, Date.today, class: "input-a")%>
+                            <label>Price</label>
+                          <span>10</span>
+                          <input class='span2' data-slider-min='1000' data-slider-step='5' data-slider-value='[250,450]' id='prices' type='text' value=''>
+                          <span>1000</span>
+
                             
                            </div>
                           
                            <div class="clear"></div>
                         </div>
+
+
+                            <div class="srch-tab-line">
+                           <div class="srch-tab-left">
+                              <label>Adult</label>
+                              <div class="input-a"><%= text_field_tag "adults", 1,placeholder: "Ex : 1"%> </div>
+                           </div>
+                           <div class="srch-tab-right">
+                              <label>Children</label>
+                              <div class="input-a"><%= text_field_tag "children", 0, placeholder: "Ex: 0"%></div>
+                           </div>
+                           <div class="clear"></div>
+                        </div>
+                          <%= hidden_field_tag :dest, ""%>
+
                      </div>
                      <div class="search-footer">
-                        <button type="submit" class="btn pull-right srch-btn">Search</button>
+                        <button type="submit" class="btn pull-right srch-btn">Go</button>
                         <div class="clear"></div>
                      </div>
-                     
+                     <%end%>
                   </div>
       </div></td>
            </tr>
          </table>
  
 
-    
+  
      
 <!--       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -8514,8 +8537,20 @@ a#next:hover {
 </div>
 </div>
 <!-- /main-cont -->
+<style type="text/css">
+  #ex1Slider .slider-selection {
+  background: #BABABA;
+}
+</style>
 <script type="text/javascript">
+   
+
    $(document).ready(function(){
+     
+
+  $("#prices").bootstrapSlider();
+
+
          $('.date-inpt').datepicker({ dateFormat: 'yy-mm-dd' }); 
        
        (function($) {
@@ -8754,7 +8789,14 @@ $(document).on("click", ".let_me",function(){
   }else{
     value = $('#pqr').val()
   }
-  $('#destination_city').val(value)
+   $('#dest').val(value)
  
 })
+</script>
+<script type="text/javascript">
+  // $(document).ready(function(){
+  //   alert(9)
+  //  $('.slider').slider()
+
+  // })
 </script>

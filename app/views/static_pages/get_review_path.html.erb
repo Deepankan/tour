@@ -1,0 +1,9004 @@
+<div class="main-cont">
+  <div class="body-wrapper">
+    <div class="wrapper-padding">
+
+
+     <div class=" accordian_section append_bottom">
+   <h3 class="abc1 accordian_info clearFix active active_one">
+      <span class="step_icon flL">1</span><span class="flL step_heading RobotoRegular">Review Package
+      Details</span>
+      <a class="flR edit hide" id="edit_icon" href="javascript:void(0);">Edit</a>
+   </h3>
+   <!-- Accordian-Details -->
+   <div class="xyz1 accordian_details accordian_detailsnoPadd" style="display: block;">
+      <!-- inner accordian section -->
+      <div class="inner_accordian_details">
+         <p class="heading_info font_18 red RobotoRegular append_bottom">Inclusions</p>
+         <!-- Section-Part -->
+         <div class="section_part section_box_align margn_bttm15 clearFix" id="dynamicHotelsSec">
+            <p class="clearFix section_info append_bottomHalf">
+               <span class="flL hotel_sectn"> <span class="flL hotel_icon"></span> <span class="sectn_label flL font_14 red">Hotel</span> 
+               </span>
+            </p>
+            <div class="section_details clearFix" id="dynamicOnlineHotel">
+               <p class="clearFix font_12 light_black default_info">
+                  <!-- Destination -->
+                  <span class="hotel_name flL"> Goa
+                  </span>
+                  <!-- /Destination -->
+                  <!-- Per-Nights -->
+                  <span class="pernight flL"> <strong> 3 Night(s)
+                  </strong>
+                  </span>
+                  <!-- /Per-Nights -->
+                  <!-- Hotel-Name -->
+                  <span class="flL hotel_type"> <span class="flL htl_type"> <strong> Marina Bay Beach Resort</strong> <span class="clearFix"><strong>Room Type : </strong> Studio Ac</span> <span class="clearFix"><strong>Meal Type : </strong> Breakfast</span>
+                  </span>
+                  </span>
+                  <!-- /Hotel-Name -->
+                  <span class="checkin_date flL"> <strong>In
+                  (</strong> 27/11/2016<strong>)</strong></span>
+                  <span class="checkin_date flL"> <strong>Out
+                  (</strong> 30/11/2016<strong>)</strong></span>
+                  <!-- Star Rating -->
+                  <span class="flL hotel_star"> 
+                  <span class="star_icon flL"></span>
+                  <span class="star_icon flL"></span>
+                  <span class="star_icon flL"></span>
+                  </span> <span class="flL htl_type"> 
+                  </span>
+                  <!-- /Star Rating -->
+               </p>
+            </div>
+         </div>
+         <!-- /Section-Part -->
+         <!-- Section-Part -->
+         <div class="section_part section_box_align margn_bttm15 clearFix">
+            <p class="clearFix section_info append_bottomHalf">
+               <span class="flL hotel_sectn"> <span class="icoflight flL"></span> <span class="sectn_labelflight flL font_14 red">Flight</span>
+               </span>
+            </p>
+            <script>
+               var tranLogoFlight = [ 'default=-52px -85px', '6E=0px -1px',
+               		'S2=0px -57px', 'G8=0px -85px', 'DN=-1px -113px', 'AI=-1px -169px',
+               		'9W=-38px -1px', 'IT=-38px -29px', 'SG=-38px -115px',
+               		'IX=-38px -175px' ];
+               var ltranLogoFlight = tranLogoFlight.length;
+               
+               $(document)
+               		.ready(
+               				function() {
+               					$(".flighLogo")
+               							.each(
+               									function() {
+               
+               										var fCode = $(this).attr("name");
+               										var foundFlight = 0;
+               
+               										if (fCode) {
+               											// Check for flights in sprite
+               											for (i = 0; i < ltranLogoFlight; i++) {
+               												var fCodeIn = tranLogoFlight[i]
+               														.split("=")[0];
+               												var posCode = tranLogoFlight[i]
+               														.split("=")[1];
+               												if (fCodeIn == fCode) {
+               													foundFlight = 1;
+               													$("span", this)
+               															.css(
+               																	"background-position",
+               																	posCode);
+               													break;
+               												}
+               											}
+               
+               											// Check for flights in international airlines
+               											if (!foundFlight) {
+               												$("span", this)
+               														.removeClass(
+               																"logoFlight");
+               												var imgAppend = "<img src='//cheapfaresindia.makemytrip.com/international/img/international/airline-logos/sm"+fCode+".gif'/>";
+               												if ($("span", this).find(
+               														"img").length == 0) {
+               													$("span", this).append(
+               															imgAppend);
+               												}
+               
+               												// If the image not found
+               												$("span", this)
+               														.find("img")
+               														.error(
+               																function() {
+               																	$(this)
+               																			.parent(
+               																					"span")
+               																			.addClass(
+               																					"logoFlight");
+               																	$(this)
+               																			.parent(
+               																					"span")
+               																			.css(
+               																					"background-position",
+               																					tranLogoFlight[0]
+               																							.split("=")[1]);
+               																	$(this)
+               																			.remove();
+               																});
+               											}
+               										} else {
+               											if ($(this)
+               													.hasClass("Multiple")) {
+               												$("span", this)
+               														.css(
+               																"background-position",
+               																"-38px -85px");
+               											} else if ($(this).hasClass(
+               													"Any")
+               													|| $(this).hasClass(
+               															"Single")) {
+               												$("span", this)
+               														.css(
+               																"background-position",
+               																tranLogoFlight[0]
+               																		.split("=")[1]);
+               											} else {
+               												$("span", this)
+               														.css(
+               																"background-position",
+               																tranLogoFlight[0]
+               																		.split("=")[1]);
+               											}
+               										}
+               
+               									});
+               
+               					
+               											
+               				});
+               
+               
+               
+               $("#inclusion_section .tabDetails ul>li a:eq(1)").removeClass("disabled");
+               $("#inclusion_section .tabDetails ul>li:eq(1) a span:eq(0)").removeClass(
+               		"icoFlightDisabled");
+               
+               
+            </script>
+            <div class="clearFix">
+               <div id="directFlight" class="clearFix append_bottomHalf ">
+                  <!--iterate over number of flights  -->
+                  <div id="flight0" class="append_bottom">
+                     <p class="flL fontSize11 flighLogo Single" name="6E"><span class="logoFlight clearFix" style="background-position: 0px -1px;"></span></p>
+                     <p class="flL fontSize11 flightName">IndiGo</p>
+                     <p class="flL fontSize11 flighDep"><span><strong>Bangalore
+                        </strong></span> <span class="clearFix" id="flightFromTime_0 ">
+                        Nov 27, 2016 at 06:30:00 AM
+                        </span>
+                     </p>
+                     <span class="arrow_sept hldy_arrw flL">
+                     </span>
+                     <p class="flL fontSize11 flighArr"><span> <strong>
+                        Goa
+                        </strong></span> <span class="clearFix" id="flightToTime_0">Nov 27, 2016 at 07:45:00 AM</span>
+                     </p>
+                     <span class="clearFix"></span>
+                  </div>
+                  <!-- flight detail dection -->
+                  <div id="flight1" class="append_bottom">
+                     <p class="flL fontSize11 flighLogo Single" name="6E"><span class="logoFlight clearFix" style="background-position: 0px -1px;"></span></p>
+                     <p class="flL fontSize11 flightName">IndiGo</p>
+                     <p class="flL fontSize11 flighDep"><span><strong>Goa
+                        </strong></span> <span class="clearFix" id="flightFromTime_1 ">
+                        Nov 30, 2016 at 08:15:00 AM
+                        </span>
+                     </p>
+                     <span class="arrow_sept hldy_arrw flL">
+                     </span>
+                     <p class="flL fontSize11 flighArr"><span> <strong>
+                        Bangalore
+                        </strong></span> <span class="clearFix" id="flightToTime_1">Nov 30, 2016 at 09:25:00 AM</span>
+                     </p>
+                     <span class="clearFix"></span>
+                  </div>
+                  <!-- flight detail dection -->
+                  <!--  here a condition would be requried to optionally make call to this method -->
+               </div>
+               <!--  FLight Departure Transport -->
+               <!--  Bus Departure Transport -->
+               <!--  FLight Arrival Transport -->
+               <!--  Bus Arrival Transport -->
+               <!--  Flight & Bus Departure/Arrival Headers -->
+               <!--  Other Cases Departure Transport -->
+               <!--  Other Cases Arrival Transport -->
+               <div id="transport_desc_dummy" style="display: none">
+                  <div class="flL containIco alC">
+                     <a href="javascript:void(0)" class="clearFix disabled" id="transportId"><span class="icoFlightDisabled clearFix"></span>
+                     <span class="title  RobotoLight clearFix append_bottomHalf" onclick="captureOmnitureClickDetails('DOM','inclusionTransportTabClickNewDetailsPage');"><strong>Transport</strong></span></a>
+                  </div>
+                  <div class="flL containDetail">
+                     <ul class="flL">
+                        <li class="fontSize11" style="width: 500px">This package
+                           doesn't include flight . To add flight please call us at
+                           1800-102-2509 ..
+                        </li>
+                     </ul>
+                     <a href="javascript:void(0)" title="View Details" class="secondary_button flR disabled hide">+ View Details</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Section-Part -->
+         <!--visa info -->
+         <!--/visa info -->
+         <!-- /Section-Part -->
+         <!-- /Section-Part -->
+         <!-- Discount & Royalty Section-Box -->
+         <div class="section_box margn_bttm15 clearFix" id="ecouponDiv">
+            <p id="dealStatus" class="deal_status font_12">&nbsp;
+            </p>
+            <!-- Deal code form -->
+            <div class="dealCode_formSection" style="margin-top: 5px; margin-bottom: 5px">
+               <form name="deal_form" id="deal_form" method="post" action="#" class="clearFix append_bottomHalf">
+                  <!-- Deal code input -->
+                  <!-- E Voucher input -->
+                  <span class="flL inner_dealfields voucher_effect last">
+                  <label for="e_vouchers">E Voucher/Deal Code</label> 
+                  <span class="deal_input input_field flL last"> 
+                  <input type="text" value="enter code" class="flL inpt_fld defaultVal" id="e_vouchers" onkeyup="toggleApplyButton();">
+                  </span>
+                  </span>
+                  <!-- /E Voucher input -->
+                  <a class="secondary_button flL btnDisabled" style="margin: 1%; height: auto">Apply</a>
+                  
+               </form>
+            </div>
+            <!-- /Deal code form -->
+         </div>
+         <!-- here -->
+         <!-- /Discount & Royalty Section-Box -->
+         <!-- Tnc -->
+         <p class="tnc_section append_bottom clearFix">
+            <input type="checkbox" name="tnc_cb" id="tnc_input" class="flL" checked="checked"> <label for="tnc_input" class="flL">
+            I agree to the <a href="//www.makemytrip.com/static/useragreement.html" target="_blank">terms and conditions</a> and have reviewed the <a href="onlineBookingPolicy" id="bkng_policy_link" target="_blank">policies</a>  and Cancellation Rules.
+            </label>
+         </p>
+         <!-- /Tnc -->
+         <p class="clearFix">
+             <a class="flL button_green rght_space bPayment" id= "payment" style="margin: 1%; height: auto">Continue to payment</a>
+           
+         </p>
+      </div>
+      <!-- /inner accordian section -->
+      <!-- inner accordian section -->
+      <div class="inner_accordian_details has_topborder">
+         <!-- Policy-Section -->
+         <div class="policy_section">
+            <p class="heading_info font_18 red RobotoRegular append_bottomHalf">Policies</p>
+            <div class="policy_accordian append_bottomHalf">
+               <!-- Policy-Info -->
+               <p class="policy_info clearFix active">
+                  <span class="font_12 light_black flL"><strong>Terms
+                  and Conditions </strong></span><span class="flR toggle_icon"></span>
+               </p>
+               <!-- /Policy-Info -->
+               <!-- Policy-Details -->
+               <div class="policy_details show_contner clearFix">
+                  <ul class="clearFix policy_list append_bottom">
+                     <li><b>The fares are subjected to availability. We  will confirm it to you in one working hour. Any change in fares has to be borne by customer.</b></li>
+                     <li>
+                        <p>Per person rates (in Rs.) - applicable on 2 persons staying together sharing the same room<br></p>
+                     </li>
+                     <li class="sub_policyinfo hide">
+                        <ul class="sub_policy">
+                           <li>Service Tax extra (as applicable)<br></li>
+                           <li>Transportation as per itinerary only (not available at disposal)<br></li>
+                           <li>The package does not include guide services. These can be availed at an additional cost<br></li>
+                           <li>Package rates are subject to change without prior notice<br></li>
+                           <li>Meal plan: EP - Accommodation only, CP - Accommodation with breakfast, MAP - Accommodation with breakfast, lunch or dinner, AP - Accommodation with breakfast, lunch and dinner<br></li>
+                           <li>The package cannot be combined with any other offer<br></li>
+                           <li>Refund on cancellation depends upon concerned hotel's cancellation policy<br></li>
+                           <li>The above package is not valid during national holidays, festivals, long weekends and New Year<br></li>
+                           <li>
+                              MakeMyTrip India (Pvt) Ltd reserves the right to change/modify or terminate the offer any time at its own discretion and without any prior notice
+                              <p></p>
+                           </li>
+                        </ul>
+                     </li>
+                  </ul>
+                  <p>
+                     <a href="javascript:void(0);" class="font_12 view_more">more..</a>
+                  </p>
+               </div>
+               <!-- /Policy-Details -->
+            </div>
+            <!-- Policy-Accordian-->
+            <!-- Policy-Accordian-->
+            <!-- Policy-Accordian-->
+            <!-- Policy-Accordian-->
+            <div class="policy_accordian append_bottomHalf">
+               <!-- Policy-Info -->
+               <p class="policy_info clearFix active">
+                  <span class="font_12 light_black flL"><strong>Cancellation
+                  Policy</strong></span><span class="flR toggle_icon"></span>
+               </p>
+               <!-- /Policy-Info -->
+               <!-- Policy-Details -->
+               <div class="policy_details show_contner clearFix">
+                  <ul class="clearFix policy_list append_bottom">
+                     <li><b> The fares are subjected to availability. We  will confirm it to you in one working hour. Any change in fares has to be borne by customer.
+                        </b>
+                     </li>
+                     <li><b>Cancellation stage: 31 or more days prior to departure.</b></li>
+                     <li class="sub_policyinfo hide">
+                        <ul class="sub_policy">
+                           <li>15% of package cost will be charged as penalty on cancellation 31 or more days before departure.</li>
+                           <li><b>Cancellation stage: 22 to 30 days prior to departure.</b></li>
+                           <li>35% of package cost will be charged as penalty on cancellation between 22 to 30 days before departure.</li>
+                           <li><b>Cancellation stage: 15 to 21 days prior to departure.</b></li>
+                           <li>50% of package cost will be charged as penalty on cancellation between 15 to 21 days before departure.</li>
+                           <li><b>Cancellation stage: Within 15 days before departure.</b></li>
+                           <li>100% of package cost will be charged as penalty on cancellation 15 days before departure.</li>
+                        </ul>
+                     </li>
+                  </ul>
+                  <p>
+                     <a href="javascript:void(0);" class="font_12 view_more">more..</a>
+                  </p>
+               </div>
+               <!-- /Policy-Details -->
+            </div>
+            <!-- Policy-Accordian-->
+         </div>
+         <!-- /Policy-Section -->
+      </div>
+      <!-- /inner accordian section -->
+   </div>
+   <!-- /Accordian-Details -->
+</div>
+
+
+
+<div class="abc2 accordian_section append_bottom hide" style="">
+   <form method="post" action="/holidays/rearchBookingTravellerAndPaymentDetails.act" name="payment_details_form" id="payment_details_form">
+      <input type="hidden" name="ecouponNo" value="" id="ecouponNo">
+      <input type="hidden" name="hotelsSelected" value="" id="hotelsSelected">
+      <input type="hidden" name="flightsSelected" value="" id="flightsSelected">
+      <input type="hidden" name="dealCode" value="" id="dealCode">
+      <input type="hidden" name="dealCodeMessage" value="" id="dealCodeMessage">
+      <input type="hidden" name="selectedAddons" value="" id="selAddons">
+      <input type="hidden" name="" value="" id="addonPrice">
+      <input type="hidden" name="paymentDiscount" value="0" id="paymentDiscount">
+      <input type="hidden" name="bkInfo.bookingAddInfo.totalEcouponDiscount" value="0" id="eCouponDiscount">
+      <input type="hidden" name="paymentSchedule" value="" id="partialPaymentSchedule">
+      <input type="hidden" name="searchKey" value="B2C_HLD5658_10.66.38.17_1475568179869$" id="searchKey">
+      <input type="hidden" name="validateOtherPax" value="true" id="validateOtherPax">
+      <!-- Token to prevent duplicate form submissions -->
+      <input type="hidden" name="receivedFormToken" value="B3DRUFYACRE6ITFJKREH4HDUCPOAZUQL" id="receivedFormToken">
+      <!--/ Token to prevent duplicate form submissions -->
+      <h3 class="accordian_info clearFix active active_one">
+         <span class="step_icon flL">2</span> <span class="flL step_heading RobotoRegular">Traveller
+         Details &amp; Payment</span> 
+      </h3>
+      <!-- Accordian-Details -->
+      <div class="accordian_details" style="display: block;">
+         <!-- Primary-Details -->
+         <div class="primary_details clearFix margn_bttm15">
+            <!-- Adult Section -->
+            <p class="heading_info font_18 red RobotoRegular append_bottomHalf">Primary
+               Traveller
+            </p>
+            <p class="clearFix append_bottom">
+               <!-- Full-Name -->
+               <span class="flL fullname"> <label for="fullname" class="make_block append_bottomHalf font_12 black"> <strong>Room
+               1, Adult 1
+               </strong>
+               </label>
+               </span>
+            </p>
+            <p class="clearFix append_bottom">
+               <!-- Full-Name -->
+               <span class="flL">
+                  <label for="fullname" class="make_block append_bottomHalf font_12 black"> <strong>Full
+                  Name (As per Valid Govt Id Proof valid for Air Travel)
+                  </strong>
+                  </label> 
+                  <span class="make_block clearFix">
+                     <!-- Title --> 
+                     <span class="input_field title flL">
+                        <select name="onlineBookedPax[0].title" id="ad_tit_0" class="lead_info pax_title">
+                           <option value="">Title</option>
+                           <option value="MR">Mr.</option>
+                           <option value="MRS">Mrs.</option>
+                           <option value="MS">Ms.</option>
+                        </select>
+                     </span>
+                     <!-- /Title --> <!-- First-Name --> 
+                     <span class="first_name input_field flL"> 
+                     <input type="text" name="onlineBookedPax[0].firstName" maxlength="20" value="First Name" id="ad_fn_0" class="flL inpt_fld defaultVal lead_info pax_name fname">
+                     </span>
+                     <!-- /First-Name --> <!-- Middle-Name --> 
+                     <span class="first_name input_field flL"> 
+                     <input type="text" name="onlineBookedPax[0].middleName" maxlength="20" value="Middle Name" id="ad_mn_0" class="flL inpt_fld defaultVal lead_info pax_mname">
+                     </span> <!-- /Middle-Name --> <!-- Last-Name --> 
+                     <span class="first_name input_field flL"> 
+                     <input type="text" name="onlineBookedPax[0].lastName" maxlength="20" value="Last Name" id="ad_ln_0" class="flL inpt_fld defaultVal lead_info pax_name">
+                     </span> <!-- /Last-Name -->
+                  </span>
+               </span>
+               <!-- /Full-Name -->
+               <!-- Age-Info -->
+               <!-- Date of Birth -->
+               <span class="flL"> <label class="make_block append_bottomHalf font_12 black adult_age"><strong>Date
+               of Birth</strong></label> <span class="make_block clearFix"> 
+               <span class="input_field date_expiry flL"> 
+               <input type="text" name="onlineBookedPax[0].dob" value="DD-MM-YYYY" readonly="readonly" id="ad_dob_0" class="primary_passenger_age lead_info pax_dob ad_dob hasDatepicker" onclick="dateSelector(this.id)">
+               </span>
+               </span> 
+               </span> 
+               <!--/ Date of Birth -->
+               <!-- Age-Info -->
+            </p>
+            <p class="clearFix append_bottom">
+               <label for="emailId" class="make_block append_bottomHalf font_12 black"> <strong>Email(For
+               Flight Information &amp; Updates) </strong>
+               </label> 
+               <span class="make_block clearFix">
+                  <!-- Email --> <span class="first_name input_field flL"> 
+                  <input type="text" name="onlineBookedPax[0].email" maxlength="100" value="Enter Email" id="prim_pax_email" class="flL inpt_fld defaultVal lead_info">
+                  </span> <!-- /Email --> <!-- Verify Email -->  <!-- /Verify Email -->
+               </span>
+            </p>
+            <p class="clearFix append_bottom">
+               <label for="mobile_no" class="make_block append_bottomHalf font_12 black"> <strong>Mobile
+               Number | Landline Number</strong>
+               </label> 
+               <span class="make_block clearFix">
+                  <!-- Mobile-Code -->
+                  <span class="mobile_code input_field flL"> 
+                  <input type="text" name="onlineBookedPax[0].mobileCountryCode" maxlength="4" value="91" id="prim_pax_mobile_country_code" class="flL inpt_fld mobile_fld lead_info">
+                  </span> <!-- /Mobile-Code --> <span class="flL seprator">-</span> <!-- Mobile-Number -->
+                  <span class="mobile_number input_field flL"> 
+                  <input type="text" name="onlineBookedPax[0].mobileNo" maxlength="20" value="Mobile" id="prim_pax_mobile_no" class="flL inpt_fld defaultVal lead_info">
+                  </span> <!-- /Mobile-Number --> <span class="flL seprator">|&nbsp;</span>
+                  <!-- Mobile-Code --> <span class="mobile_code input_field flL">
+                  <input type="text" name="onlineBookedPax[0].stdCode" maxlength="6" value="" id="prim_pax_std_code" class="flL inpt_fld mobile_fld lead_info">
+                  </span> <!-- /Mobile-Code --> <span class="flL seprator">-</span> <!-- Mobile-Number -->
+                  <span class="landline_number input_field flL"> 
+                  <input type="text" name="onlineBookedPax[0].landlineNo" maxlength="20" value="Mobile/Landline" id="prim_pax_landline_no" class="flL inpt_fld defaultVal lead_info">
+                  </span>
+               </span>
+            </p>
+            <input type="hidden" name="onlineBookedPax[0].primary" value="true" id="onlineBookedPax_0__primary" class="lead_info">
+            <!-- passport section -->
+            <!-- /passport section -->
+            <!-- Meal preference-->
+            <!--/Meal preference-->
+            <input type="hidden" name="onlineBookedPax[0].type" value="ADULT" id="onlineBookedPax_0__type" class="lead_info">
+            <input type="hidden" name="onlineBookedPax[0].roomIndex" value="1" id="onlineBookedPax_0__roomIndex" class="lead_info">
+            <p class="clearFix append_bottom otherPax" style="display: block;">
+               <!-- Full-Name -->
+               <span class="flL fullname"> <label for="fullname" class="make_block append_bottomHalf font_12 black"> <strong>Room
+               1, Adult 2
+               </strong>
+               </label>
+               </span>
+            </p>
+            <p class="clearFix append_bottom otherPax" style="display: block;">
+               <!-- Full-Name -->
+               <span class="flL">
+                  <label for="fullname" class="make_block append_bottomHalf font_12 black"> <strong>Full
+                  Name (As per Valid Govt Id Proof valid for Air Travel)
+                  </strong>
+                  </label> 
+                  <span class="make_block clearFix">
+                     <!-- Title --> 
+                     <span class="input_field title flL">
+                        <select name="onlineBookedPax[1].title" id="ad_tit_1" class="lead_info pax_title">
+                           <option value="">Title</option>
+                           <option value="MR">Mr.</option>
+                           <option value="MRS">Mrs.</option>
+                           <option value="MS">Ms.</option>
+                        </select>
+                     </span>
+                     <!-- /Title --> <!-- First-Name --> 
+                     <span class="first_name input_field flL"> 
+                     <input type="text" name="onlineBookedPax[1].firstName" maxlength="20" value="First Name" id="ad_fn_1" class="flL inpt_fld defaultVal lead_info pax_name fname">
+                     </span>
+                     <!-- /First-Name --> <!-- Middle-Name --> 
+                     <span class="first_name input_field flL"> 
+                     <input type="text" name="onlineBookedPax[1].middleName" maxlength="20" value="Middle Name" id="ad_mn_1" class="flL inpt_fld defaultVal lead_info pax_mname">
+                     </span> <!-- /Middle-Name --> <!-- Last-Name --> 
+                     <span class="first_name input_field flL"> 
+                     <input type="text" name="onlineBookedPax[1].lastName" maxlength="50" value="Last Name" id="ad_ln_1" class="flL inpt_fld defaultVal lead_info pax_name">
+                     </span> <!-- /Last-Name -->
+                  </span>
+               </span>
+               <!-- /Full-Name -->
+               <!-- Age-Info -->
+               <!-- Date of Birth -->
+               <span class="flL"> <label class="make_block append_bottomHalf font_12 black adult_age"><strong>Date
+               of Birth</strong></label> <span class="make_block clearFix"> 
+               <span class="input_field date_expiry flL"> 
+               <input type="text" name="onlineBookedPax[1].dob" value="DD-MM-YYYY" readonly="readonly" id="ad_dob_1" class="adult_age lead_info pax_dob ad_dob hasDatepicker" onclick="dateSelector(this.id)">
+               </span>
+               </span> 
+               </span> 
+               <!--/ Date of Birth -->
+               <!-- Age-Info -->
+            </p>
+            <input type="hidden" name="onlineBookedPax[1].primary" value="false" id="onlineBookedPax_1__primary" class="lead_info">
+            <!-- passport section -->
+            <!-- /passport section -->
+            <!-- Meal preference-->
+            <!--/Meal preference-->
+            <input type="hidden" name="onlineBookedPax[1].type" value="ADULT" id="onlineBookedPax_1__type" class="lead_info">
+            <input type="hidden" name="onlineBookedPax[1].roomIndex" value="1" id="onlineBookedPax_1__roomIndex" class="lead_info">
+            <!-- /Adult Section -->
+            <!-- Children with bed section -->
+            <!-- /Children with bed section -->
+            <!-- Children without bed section -->
+            <!-- /Children without bed section -->
+            <!-- Infants section -->
+            <!-- /Infants section -->
+         </div>
+         <!-- /Primary-Details -->
+         <!-- Add remarks section here -->
+         <label for="remarks" class="make_block append_bottomHalf font_12 black">
+         <strong>Remarks</strong> </label>
+         <span class="first_name input_field flL">
+         <input type="text" name="paxRemarks" value="Remarks" id="paxRemarks" class="flL inpt_fld defaultVal">
+         </span>
+         <!-- Remarks section Ends -->
+         <dd class="a-m-d" id="payDtlDD">
+            <div id="content">
+               <div class="total_amount" id="total_amount">
+                  <p class="clearFix" style="width:100%">
+                     <span class="flR">
+                     <span class="flL" style="margin: 3px 4px 0 0;">
+                     <strong>Total amount you need to pay:</strong>
+                     </span>
+                     <span style="color: #ca3900; font-size: 18px;">
+                     <span class="INR">Rs.</span>&nbsp;
+                     <strong id="totalAmtToPay">13,792</strong>
+                     </span>
+                     </span>
+                  </p>
+               </div>
+               <div class="total_amount" id="partial_amount" style="display:none">
+                  <div>
+                     <p class="clearFix" style="width:100%">
+                        <span class="flR" style="*width:400px">
+                        <span class="flL" style="margin: 3px 10px 0 0;">
+                        <strong>Partial amount you have decided to pay now : </strong>
+                        </span>
+                        <span style="color: #ca3900; font-size: 18px; text-align: center; " id="partial_amount_span">
+                        <span class="INR">Rs.</span>
+                        <strong id="currentPartialAmt">0</strong>
+                        </span>
+                        <br>
+                        </span>
+                     </p>
+                  </div>
+               </div>
+               <div class="clearFix">
+                  <p class="bottom alR">
+                     <button id="trav_pay_form_submit" type="button" value="Continue and Make Payment" class="button_green mrgnT5" onclick="createUserScoreCookie('review.makempayment');onClickOmniturePayment('DOM','')">Continue and Make Payment</button>
+                     <span id="wait_text">Please wait...</span>
+                  </p>
+               </div>
+            </div>
+         </dd>
+         <!--/ Package  important information -->
+         <div class="toolTip" id="errorOverlay" style="position:absolute;">
+            <ol>
+               <li style="list-style-type: none;">
+                  <span id="errorMessage"></span>&nbsp;&nbsp;<strong class="closeBtn" id="errorOverlayClose"></strong>
+               </li>
+            </ol>
+            <small class="pointerTooltipDown" id="errorOverlayTip"></small>
+         </div>
+         <input type="hidden" name="paymentOptionsInfo.selectedPaymentOption" value="" id="selPayOption">
+         <input type="hidden" name="paymentOptionsInfo.selectedPaymentOptionId" value="" id="selPayOptionId">
+         <input type="hidden" name="partPaymentOptionSelected" value="" id="partPaymentOptionSelected">
+         <script type="text/javascript">
+            var minimumPartialPaymentAmount=-1;
+            //Regex to format price in Indian style
+            var priceFormatRegex=/(?!^)(?=(\d{2})*\d{3}$)/g;
+            var indCurrSep=",";
+            var payOptions={'cc':'CC','emi':'EMI','dc':'DC','nb':'NB','ca':'CA','mo':'MO','ivrs':'IV'};
+            
+            var currentMonth=9+1;
+            var currentYear=2016;
+            
+            
+            function onClickOmniturePayment(lobname,packagename)
+            {
+            	var s=s_gi('mmtprod');
+            	s.linkTrackVars='prop54';
+            	s.prop54=lobname+'_'+packagename+'_'+document.getElementById('totalAmtToPay').innerHTML;
+            		
+            	s.tl(this,'o',lobname+'_'+packagename+'_'+document.getElementById('totalAmtToPay').innerHTML);
+            		
+            }
+         </script>
+         <!-- JS files -->
+         <script language="JavaScript" type="text/javascript" src="//jsak.mmtcdn.com/holidays/js/holidays3.0/holidays-review-payment-min_30092016.js"></script>
+         <script type="text/javascript" src="//jsak.mmtcdn.com/holidays/js/new_listing/jquery.jqtransform.js?d=16052012"></script>
+         <!--/ JS files -->
+      </div>
+      <!-- /Accordian-Details -->
+   </form>
+</div>
+
+    </div>
+  </div>
+</div>
+
+<style type="text/css">
+	@charset "utf-8";
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    background: transparent
+}
+
+ol,
+ul {
+    list-style: none
+}
+
+blockquote,
+q {
+    quotes: none
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none
+}
+
+:focus {
+    outline: 0
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+acronym {
+    cursor: help
+}
+
+html {
+    font-size: 100.01%
+}
+
+body {
+    font-size: 62.5%;
+    line-height: 1.2em;
+    background: #e2f4ff;
+    color: #231360
+}
+
+select,
+textarea {
+    font-size: 100%;
+    border: 1px solid #bbb
+}
+
+input {
+    font-size: 100%
+}
+
+.submit {
+    cursor: pointer
+}
+
+.ul,
+.ol {
+    margin: 0 0 1em 2em
+}
+
+.ul li,
+.ol li {
+    margin: .2em 0;
+    padding: 0
+}
+
+.flR {
+    float: right
+}
+
+.flL {
+    float: left
+}
+
+.alR {
+    text-align: right
+}
+
+.alC {
+    text-align: center
+}
+
+.vlT {
+    vertical-align: top
+}
+
+.vlB {
+    vertical-align: bottom
+}
+
+.hide {
+    display: none
+}
+
+.show {
+    display: block
+}
+
+.clear {
+    clear: both;
+    height: 1px;
+    line-height: 1px;
+    overflow: hidden
+}
+
+.clearFix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden
+}
+
+.clearFix {
+    display: inline-block
+}
+
+
+/*\*/
+
+* html .clearFix {
+    height: 1%
+}
+
+.clearFix {
+    display: block
+}
+
+
+/**/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li {
+    line-height: normal
+}
+
+.pointer {
+    cursor: pointer
+}
+
+.showgrid {
+    background: url(../images/grid.png)
+}
+
+.column,
+.span_1,
+.span_2,
+.span_3,
+.span_4,
+.span_5,
+.span_6,
+.span_7,
+.span_8,
+.span_9,
+.span_10,
+.span_11,
+.span_12,
+.span_13,
+.span_14,
+.span_15,
+.span_16,
+.span_17,
+.span_18,
+.span_19,
+.span_20,
+.span_21,
+.span_22,
+.span_23,
+.span_24 {
+    float: left;
+    margin-right: 16px
+}
+
+.last {
+    margin-right: 0
+}
+
+.span_1 {
+    width: 16px
+}
+
+.span_2 {
+    width: 48px
+}
+
+.span_3 {
+    width: 80px
+}
+
+.span_4 {
+    width: 112px
+}
+
+.span_5 {
+    width: 144px
+}
+
+.span_6 {
+    width: 176px
+}
+
+.span_7 {
+    width: 208px
+}
+
+.span_8 {
+    width: 240px
+}
+
+.span_9 {
+    width: 272px
+}
+
+.span_10 {
+    width: 304px
+}
+
+.span_11 {
+    width: 336px
+}
+
+.span_12 {
+    width: 368px
+}
+
+.span_13 {
+    width: 400px
+}
+
+.span_14 {
+    width: 432px
+}
+
+.span_15 {
+    width: 464px
+}
+
+.span_16 {
+    width: 496px
+}
+
+.span_17 {
+    width: 528px
+}
+
+.span_18 {
+    width: 560px
+}
+
+.span_19 {
+    width: 592px
+}
+
+.span_20 {
+    width: 624px
+}
+
+.span_21 {
+    width: 656px
+}
+
+.span_22 {
+    width: 688px
+}
+
+.span_23 {
+    width: 720px
+}
+
+.span_24 {
+    width: 752px
+}
+
+.span_25 {
+    width: 784px
+}
+
+.span_26 {
+    width: 816px
+}
+
+.span_27 {
+    width: 848px
+}
+
+.span_28 {
+    width: 880px
+}
+
+.span_29 {
+    width: 912px
+}
+
+.span_30 {
+    width: 944px
+}
+
+.span_31 {
+    width: 976px;
+    margin: 0
+}
+
+.append_1 {
+    padding-right: 32px
+}
+
+.append_2 {
+    padding-right: 64px
+}
+
+.append_3 {
+    padding-right: 96px
+}
+
+.append_4 {
+    padding-right: 128px
+}
+
+.append_5 {
+    padding-right: 160px
+}
+
+.append_6 {
+    padding-right: 192px
+}
+
+.append_7 {
+    padding-right: 224px
+}
+
+.append_8 {
+    padding-right: 256px
+}
+
+.append_9 {
+    padding-right: 288px
+}
+
+.append_10 {
+    padding-right: 320px
+}
+
+.append_11 {
+    padding-right: 352px
+}
+
+.append_12 {
+    padding-right: 384px
+}
+
+.append_13 {
+    padding-right: 416px
+}
+
+.append_14 {
+    padding-right: 448px
+}
+
+.append_15 {
+    padding-right: 480px
+}
+
+.append_16 {
+    padding-right: 512px
+}
+
+.append_17 {
+    padding-right: 544px
+}
+
+.append_18 {
+    padding-right: 576px
+}
+
+.append_19 {
+    padding-right: 608px
+}
+
+.append_20 {
+    padding-right: 640px
+}
+
+.append_21 {
+    padding-right: 672px
+}
+
+.append_22 {
+    padding-right: 704px
+}
+
+.append_23 {
+    padding-right: 736px
+}
+
+.append_24 {
+    padding-right: 768px
+}
+
+.append_25 {
+    padding-right: 800px
+}
+
+.append_26 {
+    padding-right: 832px
+}
+
+.append_27 {
+    padding-right: 864px
+}
+
+.append_28 {
+    padding-right: 896px
+}
+
+.append_29 {
+    padding-right: 928px
+}
+
+.append_30 {
+    padding-right: 960px
+}
+
+.prepend_1 {
+    padding-left: 32px
+}
+
+.prepend_2 {
+    padding-left: 64px
+}
+
+.prepend_3 {
+    padding-left: 96px
+}
+
+.prepend_4 {
+    padding-left: 128px
+}
+
+.prepend_5 {
+    padding-left: 160px
+}
+
+.prepend_6 {
+    padding-left: 192px
+}
+
+.prepend_7 {
+    padding-left: 224px
+}
+
+.prepend_8 {
+    padding-left: 256px
+}
+
+.prepend_9 {
+    padding-left: 288px
+}
+
+.prepend_10 {
+    padding-left: 320px
+}
+
+.prepend_11 {
+    padding-left: 352px
+}
+
+.prepend_12 {
+    padding-left: 384px
+}
+
+.prepend_13 {
+    padding-left: 416px
+}
+
+.prepend_14 {
+    padding-left: 448px
+}
+
+.prepend_15 {
+    padding-left: 480px
+}
+
+.prepend_16 {
+    padding-left: 512px
+}
+
+.prepend_17 {
+    padding-left: 544px
+}
+
+.prepend_18 {
+    padding-left: 576px
+}
+
+.prepend_19 {
+    padding-left: 608px
+}
+
+.prepend_20 {
+    padding-left: 640px
+}
+
+.prepend_21 {
+    padding-left: 672px
+}
+
+.prepend_22 {
+    padding-left: 704px
+}
+
+.prepend_23 {
+    padding-left: 736px
+}
+
+.prepend_24 {
+    padding-left: 768px
+}
+
+.prepend_25 {
+    padding-left: 800px
+}
+
+.prepend_26 {
+    padding-left: 832px
+}
+
+.prepend_27 {
+    padding-left: 864px
+}
+
+.prepend_28 {
+    padding-left: 896px
+}
+
+.prepend_29 {
+    padding-left: 928px
+}
+
+.prepend_30 {
+    padding-left: 960px
+}
+
+div.border {
+    padding-right: 7px;
+    margin-right: 8px;
+    border-right: 1px solid #eee
+}
+
+.colborder {
+    padding-right: 7px;
+    margin-right: 8px;
+    border-right: 1px solid #ddd
+}
+
+.pull_1 {
+    margin-left: -32px
+}
+
+.pull_2 {
+    margin-left: -64px
+}
+
+.pull_3 {
+    margin-left: -96px
+}
+
+.pull_4 {
+    margin-left: -128px
+}
+
+.pull_5 {
+    margin-left: -160px
+}
+
+.pull_6 {
+    margin-left: -192px
+}
+
+.pull_7 {
+    margin-left: -224px
+}
+
+.pull_8 {
+    margin-left: -256px
+}
+
+.pull_9 {
+    margin-left: -288px
+}
+
+.pull_10 {
+    margin-left: -320px
+}
+
+.pull_11 {
+    margin-left: -352px
+}
+
+.pull_12 {
+    margin-left: -384px
+}
+
+.pull_13 {
+    margin-left: -416px
+}
+
+.pull_14 {
+    margin-left: -448px
+}
+
+.pull_15 {
+    margin-left: -480px
+}
+
+.pull_16 {
+    margin-left: -512px
+}
+
+.pull_17 {
+    margin-left: -544px
+}
+
+.pull_18 {
+    margin-left: -576px
+}
+
+.pull_19 {
+    margin-left: -608px
+}
+
+.pull_20 {
+    margin-left: -640px
+}
+
+.pull_21 {
+    margin-left: -672px
+}
+
+.pull_22 {
+    margin-left: -704px
+}
+
+.pull_23 {
+    margin-left: -736px
+}
+
+.pull_24 {
+    margin-left: -768px
+}
+
+.pull_25 {
+    margin-left: -800px
+}
+
+.pull_26 {
+    margin-left: -832px
+}
+
+.pull_27 {
+    margin-left: -864px
+}
+
+.pull_28 {
+    margin-left: -896px
+}
+
+.pull_29 {
+    margin-left: -928px
+}
+
+.pull_30 {
+    margin-left: -960px
+}
+
+.pull_31 {
+    margin-left: -992px
+}
+
+.pull_1,
+.pull_2,
+.pull_3,
+.pull_4,
+.pull_5,
+.pull_6,
+.pull_7,
+.pull_8,
+.pull_9,
+.pull_10,
+.pull_11,
+.pull_12,
+.pull_13,
+.pull_14,
+.pull_15,
+.pull_16,
+.pull_17,
+.pull_18,
+.pull_19,
+.pull_20,
+.pull_21,
+.pull_22,
+.pull_23,
+.pull_24,
+.pull_25,
+.pull_26,
+.pull_27,
+.pull_28,
+.pull_29,
+.pull_30,
+.pull_31 {
+    float: left;
+    position: relative
+}
+
+.push_1 {
+    margin: 0 -32px 1.5em 32px
+}
+
+.push_2 {
+    margin: 0 -64px 1.5em 64px
+}
+
+.push_3 {
+    margin: 0 -96px 1.5em 96px
+}
+
+.push_4 {
+    margin: 0 -128px 1.5em 128px
+}
+
+.push_5 {
+    margin: 0 -160px 1.5em 160px
+}
+
+.push_6 {
+    margin: 0 -192px 1.5em 192px
+}
+
+.push_7 {
+    margin: 0 -224px 1.5em 224px
+}
+
+.push_8 {
+    margin: 0 -256px 1.5em 256px
+}
+
+.push_9 {
+    margin: 0 -288px 1.5em 288px
+}
+
+.push_10 {
+    margin: 0 -320px 1.5em 320px
+}
+
+.push_11 {
+    margin: 0 -352px 1.5em 352px
+}
+
+.push_12 {
+    margin: 0 -384px 1.5em 384px
+}
+
+.push_13 {
+    margin: 0 -416px 1.5em 416px
+}
+
+.push_14 {
+    margin: 0 -448px 1.5em 448px
+}
+
+.push_15 {
+    margin: 0 -480px 1.5em 480px
+}
+
+.push_16 {
+    margin: 0 -512px 1.5em 512px
+}
+
+.push_17 {
+    margin: 0 -544px 1.5em 544px
+}
+
+.push_18 {
+    margin: 0 -576px 1.5em 576px
+}
+
+.push_19 {
+    margin: 0 -608px 1.5em 608px
+}
+
+.push_20 {
+    margin: 0 -640px 1.5em 640px
+}
+
+.push_21 {
+    margin: 0 -672px 1.5em 672px
+}
+
+.push_22 {
+    margin: 0 -704px 1.5em 704px
+}
+
+.push_23 {
+    margin: 0 -736px 1.5em 736px
+}
+
+.push_24 {
+    margin: 0 -768px 1.5em 768px
+}
+
+.push_25 {
+    margin: 0 -800px 1.5em 800px
+}
+
+.push_26 {
+    margin: 0 -832px 1.5em 832px
+}
+
+.push_27 {
+    margin: 0 -864px 1.5em 864px
+}
+
+.push_28 {
+    margin: 0 -896px 1.5em 896px
+}
+
+.push_29 {
+    margin: 0 -928px 1.5em 928px
+}
+
+.push_30 {
+    margin: 0 -960px 1.5em 960px
+}
+
+.push_31 {
+    margin: 0 -992px 1.5em 992px
+}
+
+.push_1,
+.push_2,
+.push_3,
+.push_4,
+.push_5,
+.push_6,
+.push_7,
+.push_8,
+.push_9,
+.push_10,
+.push_11,
+.push_12,
+.push_13,
+.push_14,
+.push_15,
+.push_16,
+.push_17,
+.push_18,
+.push_19,
+.push_20,
+.push_21,
+.push_22,
+.push_23,
+.push_24,
+.push_25,
+.push_26,
+.push_27,
+.push_28,
+.push_29,
+.push_30,
+.push_31 {
+    float: right;
+    position: relative
+}
+
+.prepend_top {
+    margin-top: 16px
+}
+
+.append_bottom {
+    margin-bottom: 16px
+}
+
+.prepend_topHalf {
+    margin-top: 8px
+}
+
+.append_bottomHalf {
+    margin-bottom: 8px
+}
+
+.box {
+    padding: 1.5em;
+    margin-bottom: 1.5em;
+    background: #e5ecf9
+}
+
+hr {
+    background: #ddd;
+    color: #ddd;
+    clear: both;
+    float: none;
+    width: 100%;
+    height: 1px;
+    margin: 0 0 1.45em;
+    border: 0
+}
+
+hr.space {
+    background: #fff;
+    color: #fff;
+    visibility: hidden
+}
+
+@font-face {
+    font-family: 'Harabara';
+    src: url('../fonts/harabara/harabara-webfont.eot');
+    src: url('../fonts/harabara/harabara-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/harabara/harabara-webfont.woff') format('woff'), url('../fonts/harabara/harabara-webfont.ttf') format('truetype'), url('../fonts/harabara/harabara-webfont.svg#HarabaraRegular') format('svg');
+    font-weight: normal;
+    font-style: normal
+}
+
+.harabara_font {
+    font-family: 'Harabara', impact
+}
+
+@font-face {
+    font-family: 'RobotoRegular';
+    src: url('../../fonts/roboto/Roboto-Regular-webfont.eot');
+    src: url('../../fonts/roboto/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('../../fonts/roboto/Roboto-Regular-webfont.woff') format('woff'), url('../../fonts/roboto/Roboto-Regular-webfont.ttf') format('truetype'), url('../../fonts/roboto/Roboto-Regular-webfont.svg#RobotoRegular') format('svg');
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'RobotoThin';
+    src: url('../../fonts/roboto/Roboto-Thin-webfont.eot');
+    src: url('../../fonts/roboto/Roboto-Thin-webfont.eot?#iefix') format('embedded-opentype'), url('../../fonts/roboto/Roboto-Thin-webfont.woff') format('woff'), url('../../fonts/roboto/Roboto-Thin-webfont.ttf') format('truetype'), url('../../fonts/roboto/Roboto-Thin-webfont.svg#RobotoThin') format('svg');
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'RobotoLight';
+    src: url('../../fonts/roboto/Roboto-Light-webfont.eot');
+    src: url('../../fonts/roboto/Roboto-Light-webfont.eot?#iefix') format('embedded-opentype'), url('../../fonts/roboto/Roboto-Light-webfont.woff') format('woff'), url('../../fonts/roboto/Roboto-Light-webfont.ttf') format('truetype'), url('../../fonts/roboto/Roboto-Light-webfont.svg#RobotoLight') format('svg');
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'webRupee';
+    src: url('../../fonts/webrupee/WebRupee.V2.0.eot');
+    src: url('../../fonts/webrupee/WebRupee.V2.0.eot?#iefix') format('embedded-opentype'), url('../../fonts/webrupee/WebRupee.V2.0.woff') format('woff'), url('../../fonts/webrupee/WebRupee.V2.0.ttf') format('truetype'), url('../../fonts/webrupee/WebRupee.V2.0.svg#RobotoLight') format('svg');
+    font-weight: normal;
+    font-style: normal
+}
+
+.RobotoThin {
+    font-family: 'RobotoThin', Arial, Helvetica, sans-serif
+}
+
+.RobotoRegular {
+    font-family: 'RobotoRegular', Arial, Helvetica, sans-serif
+}
+
+.RobotoLight {
+    font-family: 'RobotoLight', Arial, Helvetica, sans-serif
+}
+
+.button {
+    background: #ce410c;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ff720a), to(#ad1900));
+    background-image: -moz-linear-gradient(top, #ff720a, #ad1900);
+    background-image: -o-linear-gradient(top, #ff720a, #ad1900);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ff720a', endColorstr='#ad1900');
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    font-size: 160%;
+    color: #fefeff;
+    padding: 5px 23px 4px;
+    height: 23px;
+    line-height: 23px;
+    border: solid 1px #ff6c00;
+    overflow: hidden
+}
+
+.button:hover {
+    background: #f16c17;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ad1900), to(#ff720a));
+    background-image: -moz-linear-gradient(top, #ad1900, #ff720a);
+    background-image: -o-linear-gradient(top, #ad1900, #ff720a);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ad1900', endColorstr='#ff720a')
+}
+
+.secondary_button,
+input.secondary_button {
+    background: #eeeded;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#e8e7e7));
+    background-image: -moz-linear-gradient(top, #fff, #e8e7e7);
+    background-image: -o-linear-gradient(top, #fff, #e8e7e7);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e8e7e7');
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-radius: 6px;
+    font-size: 150%;
+    color: #21519e;
+    border: 1px solid #cfcfcf;
+    padding: 5px 15px 7px;
+    text-decoration: none;
+    line-height: 23px;
+    height: 20px
+}
+
+.secondary_button:hover,
+input.secondary_button:hover {
+    color: #298cba;
+    border-color: #69acce;
+    -moz-box-shadow: 0 0 4px rgba(105, 172, 206, 1);
+    -webkit-box-shadow: 0 0 4px rgba(105, 172, 206, 1);
+    box-shadow: 0 0 4px rgba(105, 172, 206, 1);
+    -webkit-transition-duration: .5s;
+    -moz-transition-duration: .5s
+}
+
+.button_green {
+    background: #499d4b;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#98cd1b), to(#72ab37));
+    background-image: -moz-linear-gradient(top, #98cd1b, #72ab37);
+    background-image: -o-linear-gradient(top, #98cd1b, #72ab37);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#98CD1B', endColorstr='#72AB37');
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    font-size: 160%;
+    color: #fefeff;
+    padding: 5px 23px 4px;
+    height: 23px;
+    line-height: 23px;
+    border: solid 1px #499d4b;
+    overflow: hidden
+}
+
+.button_green:hover {
+    background: #499d4b;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#72ab37), to(#98cd1b));
+    background-image: -moz-linear-gradient(top, #72ab37, #98cd1b);
+    background-image: -o-linear-gradient(top, #72ab37, #98cd1b);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#72AB37', endColorstr='#98CD1B')
+}
+
+.error_nopkg_custom .msg_nopkg {
+    font-size: 150%
+}
+
+.error_nopkg_custom .offline_opt {
+    margin-left: 180px
+}
+
+.error_nopkg {
+    border: solid 2px #c7c7c7;
+    padding: 30px 45px;
+    background-color: #fdf2f2;
+    moz-box-shadow: 2px 2px 10px rgba(0, 0, 0, .2);
+    -webkit-box-shadow: 2px 2px 10px red;
+    -o-box-shadow: 2px 2px 10px rgba(0, 0, 0, .2);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, .2)
+}
+
+.msg_nopkg {
+    font-size: 180%
+}
+
+.error_blockI {
+    width: 750px;
+    margin: 0 auto
+}
+
+.connect_opt {
+    border: solid 1px #c7c7c7;
+    background-color: #fff;
+    padding: 10px 15px;
+    font-size: 120%;
+    font-family: 'RobotoRegular', Arial, Helvetica, sans-serif
+}
+
+.connect_opt>p {
+    line-height: 2.5em
+}
+
+.connect_opt>p>a {
+    margin: 0 3px
+}
+
+.error_blockI .offline_opt {
+    margin-left: 245px
+}
+
+#noPkg_Customise,
+#noPkg_Chat,
+#noPkg_Query {
+    padding: 10px;
+    margin: 0 5px;
+    font-size: 140%;
+    height: 15px;
+    line-height: 1em
+}
+
+#noPkg_Chat,
+#noPkg_Query {
+    width: 90px
+}
+
+.offline_opt {
+    margin-left: 225px
+}
+
+.noPkg_Customise,
+.noPkg_Chat,
+.noPkg_Query {
+    padding: 10px 30px 8px;
+    margin-right: 5px
+}
+
+.new_button_grey {
+    background: #686868;
+    filter: none;
+    color: #fefeff;
+    text-decoration: none;
+    border-radius: 3px
+}
+
+#tiptip_holder {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99999
+}
+
+#tiptip_holder.tip_top {
+    padding-bottom: 5px
+}
+
+#tiptip_holder.tip_bottom {
+    padding-top: 5px
+}
+
+#tiptip_holder.tip_right {
+    padding-left: 5px
+}
+
+#tiptip_holder.tip_left {
+    padding-right: 5px
+}
+
+#tiptip_content {
+    color: #2f2f2f;
+    padding: 8px;
+    border: 1px solid #bdbdbd;
+    background-color: #fff;
+    font: 110% Tahoma, Geneva, sans-serif;
+    box-shadow: 0 0 10px rgba(189, 189, 189, 0.6);
+    -webkit-box-shadow: 0 0 10px rgba(189, 189, 189, 0.6);
+    -moz-box-shadow: 0 0 10px rgba(189, 189, 189, 0.6);
+    -o-box-shadow: 0 0 10px rgba(189, 189, 189, 0.6)
+}
+
+#tiptip_arrow,
+#tiptip_arrow_inner {
+    position: absolute;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 7px;
+    height: 0;
+    width: 0
+}
+
+#tiptip_holder.tip_top #tiptip_arrow {
+    border-top-color: #fff;
+    border-top-color: rgba(189, 189, 189, 0.35)
+}
+
+#tiptip_holder.tip_bottom #tiptip_arrow {
+    border-bottom-color: #fff;
+    border-bottom-color: rgba(189, 189, 189, 0.35)
+}
+
+#tiptip_holder.tip_right #tiptip_arrow {
+    border-right-color: #fff;
+    border-right-color: rgba(189, 189, 189, 0.35)
+}
+
+#tiptip_holder.tip_left #tiptip_arrow {
+    border-left-color: #fff;
+    border-left-color: rgba(189, 189, 189, 0.35)
+}
+
+#tiptip_holder.tip_top #tiptip_arrow_inner {
+    margin-top: -8px;
+    margin-left: -7px;
+    border-top-color: #fff;
+    border-top-color: rgba(255, 255, 255, 0.92)
+}
+
+#tiptip_holder.tip_bottom #tiptip_arrow_inner {
+    margin-top: -7px;
+    margin-left: -8px;
+    border-bottom-color: #fff;
+    border-bottom-color: rgba(255, 255, 255, 0.92)
+}
+
+#tiptip_holder.tip_right #tiptip_arrow_inner {
+    margin-top: -7px;
+    margin-left: -6px;
+    border-right-color: #fff;
+    border-right-color: rgba(255, 255, 255, 0.92)
+}
+
+#tiptip_holder.tip_left #tiptip_arrow_inner {
+    margin-top: -7px;
+    margin-left: -8px;
+    border-left-color: #fff;
+    border-left-color: rgba(255, 255, 255, 0.92)
+}
+
+body {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #2f2f2f;
+    -webkit-font-smoothing: antialiased
+}
+
+a {
+    color: #174392;
+    text-decoration: none
+}
+
+::-webkit-selection,
+::-moz-selection,
+::selection {
+    background-color: #09c;
+    color: #fff
+}
+
+.wrapper {
+    width: 976px;
+    margin: 0 auto
+}
+
+@font-face {
+    font-family: 'webRupee';
+    src: url('../../fonts/webrupee/WebRupee.V2.0.eot');
+    src: url('../../fonts/webrupee/WebRupee.V2.0.eot?#iefix') format('embedded-opentype'), url('../../fonts/webrupee/WebRupee.V2.0.woff') format('woff'), url('../../fonts/webrupee/WebRupee.V2.0.ttf') format('truetype'), url('../../fonts/webrupee/WebRupee.V2.0.svg#RobotoLight') format('svg');
+    font-weight: normal;
+    font-style: normal
+}
+
+.RobotoThin {
+    font-family: 'RobotoThin', Arial, Helvetica, sans-serif
+}
+
+.RobotoRegular {
+    font-family: 'RobotoRegular', Arial, Helvetica, sans-serif
+}
+
+.RobotoLight {
+    font-family: 'RobotoLight', Arial, Helvetica, sans-serif
+}
+
+.fontSize11 {
+    font: normal 110% Tahoma, Geneva, sans-serif
+}
+
+.make_block {
+    display: block
+}
+
+.INR {
+    font-family: 'webRupee'
+}
+
+.step_icon,
+.arrow_sept,
+.arrow_down,
+.arrow_septleft,
+.left_icon,
+.cheapest_icon,
+.benefit_icon,
+.add_icon,
+.information_icon,
+.error_icon,
+.insurance_icon,
+.carbon_icon,
+.popup_close,
+.increased_icon,
+.decreased_icon,
+.tooltip_icon,
+.hotel_icon,
+.star_icon,
+.flght_icon,
+.holiday_icon,
+.toggle_icon,
+.map_icon,
+.deal_icon,
+.hldy_arrw,
+.success_icon {
+    background: url(/assets/common_sprite.png?d=25012016) left top no-repeat;
+    font-size: 0
+}
+
+.accordian_info {
+    padding: 5px 10px
+}
+
+.step_icon {
+    background-position: 0 0;
+    width: 28px;
+    height: 23px;
+    text-align: center;
+    font-size: 140%;
+    font-weight: bold;
+    color: #fff;
+    padding-top: 5px;
+    margin-right: 15px
+}
+
+.active_one {
+    background: #054482
+}
+
+.step_heading {
+    font-size: 180%;
+    color: #fff;
+    font-weight: normal;
+    line-height: 30px
+}
+
+.accordian_details {
+    border: 1px solid #dadada;
+    padding: 25px 40px
+}
+
+.accordian_detailsnoPadd {
+    padding: 0
+}
+
+.inner_accordian_details {
+    padding: 25px 40px 30px
+}
+
+.inner_accordian_details.has_topborder {
+    border-top: solid 1px #b0b0b0
+}
+
+.non_selected {
+    background: #797979
+}
+
+.selected {
+    background: #3bb435;
+    cursor: pointer
+}
+
+.edit {
+    font-size: 120%;
+    color: #fff;
+    margin: 4px 5px 0 0;
+    padding: 3px 8px;
+    border: solid 1px #fff
+}
+
+.rgt_mark img {
+    margin-top: 3px
+}
+
+.margn_bttm3 {
+    margin-bottom: 3px
+}
+
+.margn_bttm5 {
+    margin-bottom: 5px
+}
+
+.margn_bttm15 {
+    margin-bottom: 15px
+}
+
+.margn_bttm30 {
+    margin-bottom: 30px
+}
+
+.font_11 {
+    font-size: 110%;
+    line-height: 11px
+}
+
+.font_12 {
+    font-size: 120%;
+    line-height: 12px
+}
+
+.font_14 {
+    font-size: 140%;
+    line-height: 14px
+}
+
+.font_16 {
+    font-size: 160%;
+    line-height: 16px
+}
+
+.font_18 {
+    font-size: 180%;
+    line-height: 18px
+}
+
+.font_22 {
+    font-size: 220%;
+    line-height: 22px
+}
+
+.hotel_sectn .red {
+    color: #cb3904
+}
+
+.light_black {
+    color: #2f2f2f
+}
+
+.grey {
+    color: #c4c4c4
+}
+
+.heading_info {
+    line-height: 24px
+}
+
+.section_box {
+    border: 1px solid #c4c4c4;
+    padding: 12px
+}
+
+.airline_info {
+    width: 110px;
+    margin-right: 10px
+}
+
+.airline_logo {
+    margin-right: 8px
+}
+
+.airline_informtn {
+    width: 65px
+}
+
+.airline_details {
+    width: 170px;
+    margin-right: 10px
+}
+
+.airline_time {
+    margin-right: 10px;
+    width: 50px
+}
+
+.stop_info {
+    width: 88px;
+    margin-right: 45px
+}
+
+.stop_info .arrow_sept {
+    display: block;
+    margin: 0 auto
+}
+
+.stop_info .arrow_septleft {
+    display: block;
+    margin: 0 auto
+}
+
+.fare_rules {
+    width: 90px;
+    margin-top: 10px
+}
+
+.seat_left {
+    background: #fffbe6;
+    padding: 5px;
+    width: 108px
+}
+
+.cheapest {
+    background: #e7f7ca;
+    padding: 5px;
+    width: 108px
+}
+
+.left_txt {
+    margin-top: 4px
+}
+
+.left_icon {
+    background-position: 0 -35px;
+    width: 18px;
+    height: 18px;
+    margin-right: 5px
+}
+
+.cheapest_icon {
+    background-position: 0 -58px;
+    width: 18px;
+    height: 18px;
+    margin-right: 5px
+}
+
+.layover {
+    border-top: 1px solid #e3e3e3;
+    height: 10px;
+    position: relative
+}
+
+.layover_txt {
+    border: 1px solid #e3e3e3;
+    width: 130px;
+    position: absolute;
+    background: #fff;
+    padding: 6px 5px;
+    left: 340px;
+    top: -14px
+}
+
+.discount_section {
+    width: 446px
+}
+
+.royality_point {
+    width: 354px
+}
+
+.section_boxone {
+    background: #fffbe6;
+    padding: 15px 20px
+}
+
+.label_fld {
+    width: 180px;
+    margin: 10px 10px 0 0
+}
+
+.input_field {
+    border: 1px solid #b0b0b0;
+    background: #fff;
+    padding: 6px 8px;
+    margin-right: 10px
+}
+
+.input_field input {
+    font-size: 130%;
+    color: #c4c4c4;
+    border: 0;
+    background: 0
+}
+
+.input_field .mobile_fld {
+    width: 25px;
+    color: currentcolor
+}
+
+.discount_section input {
+    width: 155px
+}
+
+.my_trip {
+    width: 362px
+}
+
+.label_fldone {
+    width: 200px
+}
+
+.price_info {
+    width: 120px
+}
+
+.border_bottom {
+    border-bottom: 1px solid #b0b0b0;
+    padding-bottom: 14px
+}
+
+.benefits_heading {
+    margin-bottom: 20px
+}
+
+.green {
+    color: #1f5508
+}
+
+.mmt_benefits {
+    width: 288px
+}
+
+.benefits_info {
+    width: 135px
+}
+
+.benefit_icon {
+    background-position: -22px -35px;
+    width: 12px;
+    height: 12px;
+    margin-right: 8px
+}
+
+.benefit_txt {
+    width: 112px
+}
+
+.label_fldtwo {
+    margin: 12px 0 0 15px
+}
+
+.login_details {
+    width: 425px
+}
+
+.login_details input.inpt_fld {
+    width: 265px
+}
+
+.rad_bttn {
+    width: 14px;
+    height: 14px;
+    margin: 0 8px 0 0
+}
+
+a.continue {
+    padding: 8px 10px;
+    width: 263px
+}
+
+a.continue.active,
+a.continue:hover {
+    background: #f3f3f3
+}
+
+.continue_txt {
+    margin-top: 2px
+}
+
+.fullname {
+    width: 580px
+}
+
+.faccordian_details {
+    width: 580px
+}
+
+.input_field select {
+    border: none medium;
+    font-size: 120%;
+    background: 0;
+    width: 104px
+}
+
+.title select {
+    width: 70px
+}
+
+.first_name input {
+    width: 190px
+}
+
+.fullnameone .first_name input {
+    width: 185px
+}
+
+.input_field.last {
+    margin-right: 0
+}
+
+.gender select {
+    width: 70px
+}
+
+.age_info {
+    width: 95px
+}
+
+.age input {
+    width: 104px
+}
+
+.mobile_code {
+    margin-right: 5px
+}
+
+.mobile_code select {
+    width: 48px
+}
+
+.mobile_number input {
+    width: 80px
+}
+
+.landline_number input {
+    width: 120px
+}
+
+.seprator {
+    margin: 8px 5px 0 0
+}
+
+.add_another {
+    margin-top: 10px;
+    width: 100px
+}
+
+.add_icon {
+    background-position: -23px -52px;
+    width: 11px;
+    height: 11px;
+    margin-right: 5px
+}
+
+.redeem_info {
+    padding: 0
+}
+
+.redeem_left {
+    width: 375px;
+    border-right: 1px solid #b0b0b0;
+    padding: 15px 30px 15px 15px
+}
+
+.labelfld_two {
+    width: 245px
+}
+
+.amount_info {
+    width: 100px
+}
+
+.redeem_point {
+    border: 1px solid #b0b0b0;
+    padding: 8px 10px
+}
+
+.redeem_right {
+    width: 430px;
+    padding: 15px
+}
+
+.label_fldthree {
+    width: 100px;
+    margin-right: 10px
+}
+
+.rght_info {
+    width: 285px
+}
+
+.redeem_fld input {
+    width: 150px;
+    width: 50px
+}
+
+.margntop10 {
+    margin-top: 10px
+}
+
+.enter_pin input {
+    width: 180px
+}
+
+.chck_fld {
+    width: 12px;
+    height: 12px;
+    margin: 0 10px 0 0
+}
+
+.accpet_txt {
+    margin-right: 3px
+}
+
+.redeem_right a.button_green {
+    margin-right: 10px
+}
+
+.skip_details {
+    color: #fff;
+    width: 150px;
+    margin-top: 10px
+}
+
+.skip_details .skip_txt {
+    color: #fff;
+    text-decoration: underline
+}
+
+.left_addons {
+    width: 421px;
+    border-right: 1px solid #b0b0b0;
+    padding-right: 20px;
+    min-height: 85px
+}
+
+.check_info {
+    background: #e5e5e5;
+    width: 40px;
+    height: 40px;
+    margin-right: 15px
+}
+
+.addons_details {
+    width: 340px
+}
+
+.right_addons {
+    width: 422px;
+    padding-left: 20px
+}
+
+.heading_info a {
+    line-height: 18px
+}
+
+.footprint_fld {
+    width: 168px
+}
+
+.label_fldfour {
+    width: 125px;
+    line-height: 15px
+}
+
+.fph {
+    background: #f7f7f7;
+    height: 120px
+}
+
+.redeem_reward {
+    padding: 0
+}
+
+.mytrip_reward {
+    width: 390px;
+    padding: 10px 15px;
+    border-right: 1px solid #b0b0b0
+}
+
+.reward_info {
+    width: 315px
+}
+
+.redeem_payback {
+    width: 430px;
+    padding: 10px 15px
+}
+
+.earn_info {
+    width: 186px;
+    margin-right: 5px
+}
+
+.payback_no input {
+    width: 138px
+}
+
+.traveller_left {
+    width: 640px
+}
+
+.addons_tab {
+    margin-right: 10px
+}
+
+.mobile_information {
+    width: 400px
+}
+
+.mrgn_rght10 {
+    margin-right: 10px
+}
+
+.traveller_right {
+    width: 202px
+}
+
+.information_icon {
+    background-position: 0-82px;
+    width: 19px;
+    height: 19px
+}
+
+.trvllr_txt {
+    margin: 4px 6px 0 0;
+    width: 105px
+}
+
+.original {
+    z-index: 1000
+}
+
+.fixed {
+    position: fixed;
+    z-index: 1000;
+    width: 100%
+}
+
+.error_fld {
+    border: 1px solid #f99bab;
+    background: #fff4f4
+}
+
+.error_fld input,
+.error_fld select {
+    color: #d90303
+}
+
+.error_icon {
+    background-position: -22px -69px;
+    width: 15px;
+    height: 15px;
+    margin-right: 8px
+}
+
+.error_txt {
+    color: #d90303;
+    margin-top: 2px
+}
+
+.error_messsage {
+    margin-top: 3px
+}
+
+.error_sectn {
+    background: #fff4f4;
+    padding: 8px;
+    color: #d90303
+}
+
+.addone_section {
+    width: 440px
+}
+
+.addone_section .chck_fld {
+    margin-top: 5px
+}
+
+.addone_section .addons_details {
+    margin-top: 5px
+}
+
+.addone_section .section_box {
+    min-height: 124px
+}
+
+.insurance_icon {
+    background-position: -45px -48px;
+    width: 34px;
+    height: 33px;
+    margin-right: 12px
+}
+
+.carbon_icon {
+    background-position: -82px -48px;
+    width: 34px;
+    height: 33px;
+    margin-right: 12px
+}
+
+.shadow_genrator {
+    -moz-box-shadow: 0 0 3px rgba(0, 0, 0, .1);
+    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, .1);
+    box-shadow: 0 0 3px rgba(0, 0, 0, .1)
+}
+
+.shadow_genrator_1 {
+    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+    box-shadow: 0 0 5px rgba(0, 0, 0, .3)
+}
+
+.view_tab {
+    border: 1px solid #d1d1d1;
+    font-size: 120%;
+    color: #054482;
+    background: #fbfbfb;
+    padding: 8px 10px
+}
+
+.popup {
+    width: 410px;
+    border: 1px solid #d7d7d7;
+    padding: 15px;
+    position: relative;
+    background: #fff
+}
+
+.popup .font_12 {
+    line-height: 16px
+}
+
+.popup_close {
+    background-position: -45px -84px;
+    width: 13px;
+    height: 12px;
+    position: absolute;
+    top: 15px;
+    right: 15px
+}
+
+.incresed_popup {
+    width: 180px;
+    border: 1px solid #d7d7d7;
+    padding: 15px;
+    position: absolute;
+    background: #fff;
+    padding: 10px;
+    margin-top: 64px;
+    margin-left: -69px
+}
+
+.increased_icon {
+    background-position: -62px -84px;
+    width: 29px;
+    height: 29px;
+    margin-right: 8px
+}
+
+.decreased_icon {
+    background-position: -95px -84px;
+    width: 29px;
+    height: 29px;
+    margin-right: 8px
+}
+
+.increased_txt {
+    width: 140px;
+    line-height: 14px
+}
+
+.tooltip_icon {
+    background-position: -33px -101px;
+    width: 24px;
+    height: 12px;
+    position: absolute;
+    top: -12px;
+    right: 8px
+}
+
+.passwrd {
+    margin-left: 72px
+}
+
+.incresed_popup {
+    *margin-left: -209px
+}
+
+.section_info {
+    padding-bottom: 5px;
+    border-bottom: 1px solid #e3e3e3
+}
+
+.hotel_icon {
+    background-position: -2px -114px;
+    width: 22px;
+    height: 20px;
+    margin-right: 10px
+}
+
+.sectn_label {
+    line-height: 20px
+}
+
+.view_info {
+    line-height: 20px
+}
+
+.section_details {
+    padding-top: 5px
+}
+
+.hotel_name {
+    width: 140px;
+    margin-right: 10px
+}
+
+.hotel_type {
+    width: 260px;
+    margin-right: 10px
+}
+
+.checkin_date {
+    margin-right: 10px
+}
+
+.hotel_star {
+    width: 75px;
+    margin-right: 10px
+}
+
+.pernight {
+    width: 75px
+}
+
+.star_icon {
+    background-position: -28px -116px;
+    width: 13px;
+    height: 13px
+}
+
+.htl_type {
+    margin: 0 3px 0 0
+}
+
+.default_info {
+    line-height: 16px;
+    padding: 10px 12px
+}
+
+.checked_info {
+    background: #f8f8f8
+}
+
+.startng_cty {
+    margin-right: 10px
+}
+
+.flght_icon {
+    background-position: -1px -140px;
+    width: 24px;
+    height: 13px;
+    margin: 6px 10px 0 0
+}
+
+.holiday_icon {
+    background-position: -33px -132px;
+    width: 22px;
+    height: 21px;
+    margin-right: 10px
+}
+
+.other_list {
+    margin-left: 16px
+}
+
+.other_list li {
+    font-size: 120%;
+    color: #2f2f2f;
+    line-height: 12px;
+    margin-bottom: 6px;
+    list-style: disc
+}
+
+.policy_info {
+    border: 1px solid #b0b0b0;
+    padding: 12px 15px;
+    cursor: pointer
+}
+
+.policy_details {
+    border: 1px solid #b0b0b0;
+    padding: 12px 15px;
+    border-top: none medium
+}
+
+.policy_list {
+    margin-left: 16px
+}
+
+.policy_list li {
+    font-size: 120%;
+    color: #2f2f2f;
+    margin-bottom: 8px;
+    list-style-type: square;
+    list-style-position: outside
+}
+
+.sub_policy li {
+    font-size: 100%
+}
+
+.toggle_icon {
+    background-position: -82px 0;
+    width: 14px;
+    height: 11px
+}
+
+.active .toggle_icon {
+    background-position: -97px -0px
+}
+
+.show {
+    display: block
+}
+
+.flighLogo {
+    width: 50px
+}
+
+.flightName {
+    width: 100px
+}
+
+.flighDep {
+    width: 220px
+}
+
+.flighArr {
+    width: 220px
+}
+
+.flightDur {
+    width: 50px
+}
+
+.flightName,
+.flighDep,
+.flighArr,
+.flightDur,
+.flightLayovr {
+    padding: 0 5px
+}
+
+.hldy_arrw {
+    margin: 2px 40px 0 20px;
+    background-position: -119px -4px;
+    width: 15px;
+    height: 5px
+}
+
+.withLayovr .flightName {
+    width: 100px
+}
+
+.withLayovr .flighDep {
+    width: 110px
+}
+
+.withLayovr .flighArr {
+    width: 110px
+}
+
+.withLayovr .flightDur {
+    width: 50px
+}
+
+.withLayovr .icoArrow {
+    margin: 0
+}
+
+.flightLayovr {
+    width: 100px
+}
+
+.layoverBar {
+    width: 100%
+}
+
+.layoverBar span {
+    border: solid 1px #dedede;
+    padding: 5px 20px;
+    background-color: #f9f9f9;
+    top: -25px;
+    left: 40%
+}
+
+.layovrDetails {
+    display: none
+}
+
+.layovrDetails .last {
+    border-bottom: solid 1px #e3e3e3;
+    padding: 8px 0;
+    width: 100%
+}
+
+.header_menus {
+    padding: 12px 0;
+    border-bottom: solid 1px #b2b2b2;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+    -o-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+    background: #fff
+}
+
+.rght_space {
+    margin-right: 8px
+}
+
+.flight_leftinfo {
+    width: 685px
+}
+
+.flight_leftinfo_1 {
+    width: 520px
+}
+
+.flight_leftinfo .airline_name {
+    font-size: 120%;
+    line-height: 24px;
+    width: 75px;
+    margin-right: 10px
+}
+
+.hasborder_bottom {
+    border-bottom: solid 1px #ccc;
+    padding-bottom: 8px;
+    margin-bottom: 8px
+}
+
+.flight_leftinfo .dept_time {
+    font-weight: bold;
+    font-size: 180%;
+    width: 110px
+}
+
+.flight_leftinfo .arrow_sept {
+    background-position: -41px -1px;
+    width: 34px;
+    height: 18px;
+    margin: 2px 30px 0 15px
+}
+
+.flight_leftinfo .arr_time {
+    font-weight: bold;
+    font-size: 180%;
+    width: 110px
+}
+
+.flight_leftinfo_1 h2 {
+    font: 200%/26px RobotoRegular, Arial, Helvetica, sans-serif;
+    margin-bottom: 4px;
+    color: #cb3904
+}
+
+.flight_leftinfo_1 .htl_address {
+    color: #7f7f7f;
+    font-size: 120%
+}
+
+.flight_leftinfo_1 .map_icon {
+    background-position: -83px -14px;
+    width: 10px;
+    height: 13px;
+    display: inline-block;
+    margin: 6px 2px 0 0;
+    vertical-align: text-bottom
+}
+
+.stops_duration {
+    color: #969393;
+    font-size: 120%;
+    line-height: 24px
+}
+
+.top_rightmenus {
+    width: 257px
+}
+
+.top_rightmenus_1 {
+    width: 445px
+}
+
+.top_rightmenuList li {
+    float: left;
+    margin-right: 10px;
+    position: relative
+}
+
+.top_rightmenuList li.last {
+    margin-right: 0
+}
+
+.top_rightmenuList>li>a {
+    border: solid 1px #d6d6d6;
+    padding: 12px 12px 10px;
+    min-height: 40px;
+    background-color: #fff;
+    z-index: 1;
+    cursor: pointer
+}
+
+.top_rightmenuList>li>a.active {
+    border-bottom: 0;
+    position: relative;
+    z-index: 3;
+    -moz-box-shadow: 0 -2px 2px 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 -2px 2px 0 rgba(0, 0, 0, 0.1);
+    -o-box-shadow: 0 -2px 2px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -2px 2px 0 rgba(0, 0, 0, 0.1)
+}
+
+.top_rightmenuList a.traveller_menuItem {
+    width: 88px
+}
+
+.top_rightmenuList a.room_menuItem {
+    width: 110px
+}
+
+a.traveller_menuItem .left_text {
+    width: 72px
+}
+
+.top_rightmenuList a.grandtotal_menuItem {
+    width: 107px
+}
+
+a.grandtotal_menuItem .left_text {
+    width: 90px
+}
+
+.top_rightmenuList a.checkin_outdetail {
+    width: 164px
+}
+
+a.checkin_outdetail .left_text {
+    width: 61px
+}
+
+.top_rightmenuList .title_menu {
+    color: #969393
+}
+
+.top_rightmenuList .value_menu {
+    color: #cb3904;
+    font: normal 180%/26px RobotoRegular, Arial, Helvetica, sans-serif
+}
+
+.top_rightmenuList .arrow_down {
+    background-position: -82px 0;
+    width: 14px;
+    height: 10px;
+    margin: 5px 0 0
+}
+
+.top_rightmenuList .checkout {
+    border-left: solid 1px #ccc;
+    padding-left: 15px;
+    margin-left: 10px
+}
+
+.dropdown_menu {
+    width: 270px;
+    padding: 12px;
+    border: solid 1px #d6d6d6;
+    -webkit-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+    -o-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    position: absolute;
+    z-index: 2;
+    top: 63px;
+    right: 0
+}
+
+.dropdown_menu li {
+    margin-bottom: 5px
+}
+
+.dropdown_menu .ddn_leftval {
+    width: 187px;
+    color: #666
+}
+
+.dropdown_menu .ddn_rightval {
+    width: 73px;
+    text-align: right
+}
+
+.discountCode_Left {
+    width: 240px;
+    margin-right: 10px;
+    font-size: 120%
+}
+
+.discountCode_Left .font_11 {
+    font-size: 11px
+}
+
+.dealCode_formSection label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 120%;
+    font-weight: bold;
+    width: 180px
+}
+
+.deal_input {
+    width: 140px
+}
+
+.inner_dealfields {
+    width: 180px;
+    padding-right: 12px;
+    margin-right: 12px;
+    border-right: solid 1px #e5e5e5
+}
+
+.inner_dealfields.last {
+    border-right: 0;
+    padding-right: 0
+}
+
+.section_box .dealCode_formSection .secondary_button {
+    margin-top: 17px
+}
+
+.error_section {
+    background-color: #fff4f4;
+    padding: 15px
+}
+
+.error_section .error_icon {
+    background-position: -128px -83px;
+    width: 34px;
+    height: 34px;
+    margin-right: 8px
+}
+
+.error_head {
+    color: #d70303;
+    font-size: 180%;
+    line-height: 28px;
+    margin-bottom: 4px
+}
+
+.error_section .error_right {
+    width: 565px
+}
+
+.error_section .error_hpnd {
+    font-size: 120%
+}
+
+.error_hpndlist {
+    font-size: 120%;
+    padding-left: 15px
+}
+
+.error_hpndlist li {
+    margin-bottom: 4px;
+    list-style: none disc
+}
+
+.section_box_hotel {
+    padding-left: 30px;
+    font-size: 12px
+}
+
+.section_box_align {
+    padding-left: 30px
+}
+
+.section_box_hotel .grey,
+.fare_breaktooltip .grey {
+    color: #878787
+}
+
+.htlTitle {
+    width: 73px;
+    display: inline-block
+}
+
+.hotel_checkinoutInfo .hotel_checkinInfo {
+    width: 90px;
+    border-right: solid 1px #c4c4c4;
+    margin-right: 25px;
+    padding-right: 15px
+}
+
+.hotel_checkinoutInfo .hotel_checkinInfo.last {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: 0
+}
+
+.hotel_checkinInfo .make_block {
+    margin-bottom: 3px
+}
+
+table.roomInfoTable th {
+    color: #666;
+    text-align: left;
+    padding: 8px 5px;
+    border-style: solid;
+    border-width: 1px 0 1px;
+    border-color: #c4c4c4
+}
+
+table.roomInfoTable .alR {
+    text-align: right
+}
+
+table.roomInfoTable td {
+    padding: 12px 5px;
+    vertical-align: top
+}
+
+table.roomInfoTable td p {
+    margin-bottom: 5px
+}
+
+table.roomInfoTable .total_section {
+    background-color: #f3f3f3;
+    padding: 5px
+}
+
+table.roomInfoTable .total_section td {
+    padding: 8px 8px 5px
+}
+
+table.roomInfoTable .grand_total {
+    color: #cb3904;
+    font-size: 170%;
+    padding: 15px 10px 0
+}
+
+.fare_breaktooltip {
+    width: 165px
+}
+
+.addons_items {
+    width: 130px;
+    border-right: solid 1px #e5e5e5;
+    font-size: 120%;
+    margin-right: 10px
+}
+
+.addons_items .make_block {
+    margin-bottom: 4px
+}
+
+.addons_items input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    margin-right: 6px
+}
+
+.addons_items.last {
+    border-right: 0;
+    margin-right: 0
+}
+
+.deal_section {
+    background-color: #fffbe6;
+    border: solid 1px #e1e5ed
+}
+
+.deal_icon {
+    background-position: -124px -48px;
+    width: 22px;
+    height: 23px;
+    margin: 5px
+}
+
+.deal_text {
+    font-size: 120%;
+    line-height: 32px;
+    border-left: solid 1px #e1e5ed;
+    padding: 0 10px
+}
+
+.discountCode_Left {
+    width: 240px;
+    margin-right: 10px;
+    font-size: 120%
+}
+
+.discountCode_Left .font_11 {
+    font-size: 11px
+}
+
+.dealCode_formSection label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 120%;
+    font-weight: bold;
+    width: 180px
+}
+
+.deal_input input {
+    width: 140px
+}
+
+.deal_input input.activeText {
+    color: #2f2f2f
+}
+
+.inner_dealfields {
+    width: 170px;
+    padding-right: 12px;
+    margin-right: 12px;
+    border-right: solid 1px #e5e5e5
+}
+
+.inner_dealfields.last {
+    border-right: 0;
+    padding-right: 0
+}
+
+.dealCode_formSection .secondary_button {
+    margin-top: 14px
+}
+
+.btnDisabled {
+    background: #d0d0d0;
+    color: #999!important;
+    cursor: default!important;
+    border: none!important;
+    filter: none!important
+}
+
+.btnDisabled:hover {
+    background: #d0d0d0;
+    color: #999!important;
+    cursor: default!important;
+    border: none!important;
+    filter: none!important;
+    border-color: none!important;
+    box-shadow: none!important
+}
+
+.tnc_section {
+    background-color: #c4f5b0;
+    padding: 6px 12px;
+    font-size: 120%;
+    color: #19850e
+}
+
+.tnc_section input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    margin-right: 6px
+}
+
+.tnc_section label {
+    margin-top: 2px;
+    width: 750px
+}
+
+.onemoreStep {
+    margin-top: 10px
+}
+
+.part_payment input[type="radio"] {
+    width: 14px;
+    height: 20px;
+    margin-right: 6px
+}
+
+.part_pText {
+    font-size: 120%;
+    margin-top: 3px;
+    cursor: pointer
+}
+
+.part_payment a.make_block {
+    padding: 5px 0;
+    color: #2f2f2f
+}
+
+.part_payment a.make_block:hover {
+    background: #e5e5e5
+}
+
+.logoFlight {
+    width: 35px;
+    height: 24px;
+    margin: 0
+}
+
+.logoFlight {
+    background: url(/assets/logo_sprite.png) no-repeat;
+    font-size: 0
+}
+
+.icoFlightDisabled,
+.icoflight,
+.icobus,
+.icocruise,
+.icocar,
+.icotrain,
+.logoBus,
+.icoDeal,
+.visa_icon {
+    background: url(/assets/main_content.png?d=16032015) no-repeat;
+    font-size: 0
+}
+
+.icoFlightDisabled {
+    background-position: -106px -680px;
+    width: 35px;
+    height: 20px;
+    margin: 6px 10px 0 0
+}
+
+.icoflight {
+    background-position: -260px -229px;
+    width: 29px;
+    height: 19px;
+    margin: 6px 10px 0 0
+}
+
+.visa_icon {
+    background-position: -152px -547px;
+    width: 22px;
+    height: 21px;
+    margin-right: 10px
+} 
+  
+.icobus {
+    background-position: 0 -680px;
+    width: 28px;
+    height: 25px;
+    margin: 2px 5px 0 0
+}
+
+.icocruise {
+    background-position: -33px -710px;
+    width: 32px;
+    height: 28px;
+    margin: -5px 1px 0 0
+}
+
+.icocar {
+    background-position: -67px -710px;
+    width: 26px;
+    height: 28px;
+    margin: -4px 5px 0 0
+}
+
+.icotrain {
+    background-position: 0 -710px;
+    width: 30px;
+    height: 25px;
+    margin: -5px 1px 0 0
+}
+
+.logoBus {
+    background-position: 0 -680px;
+    width: 34px;
+    height: 34px
+}
+
+.icoDeal {
+    background-position: -316px -600px;
+    height: 15px;
+    width: 20px;
+    display: inline-block
+}
+
+.sectn_labelflight {
+    line-height: 20px
+}
+
+.sectn_labelbus {
+    line-height: 25px
+}
+
+.sectn_labelcruise {
+    line-height: 20px
+}
+
+.sectn_labelcar {
+    line-height: 20px
+}
+
+.sectn_labeltrain {
+    line-height: 15px
+}
+
+.sectn_labelDisabled {
+    line-height: 20px
+}
+
+.input_field input.activeText {
+    color: #2f2f2f
+}
+
+#viewPaymentSchedule .dealsoverlay {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #d6d6d6;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 1px 1px 10px #000;
+    left: -9px;
+    position: relative;
+    top: -5px;
+    width: 800px;
+    z-index: 10
+}
+
+.dealsoverlay .closeIcon {
+    background: url("/holidays/images/new/common_sprite_list.png") no-repeat scroll -19px -111px transparent;
+    cursor: pointer;
+    height: 23px;
+    position: absolute;
+    right: -11px;
+    top: -11px;
+    width: 23px
+}
+
+.dealsoverlay h3 {
+    background: url("/holidays/images/new/headerPopupBg.png") repeat-x scroll left top transparent;
+    border-bottom: 1px solid #d6d6d6;
+    border-radius: 6px 6px 0 0;
+    color: #d03e05!important;
+    font-size: 14px!important;
+    font-weight: normal;
+    line-height: 26px;
+    margin: 0;
+    padding: 0 0 0 15px
+}
+
+.textshadow_none {
+    text-shadow: none
+}
+
+.dealsoverlay {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #d6d6d6;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 1px 1px 10px #000;
+    left: -19px;
+    position: absolute;
+    top: 25px;
+    width: 500px;
+    z-index: 5
+}
+
+.dealsoverlay ul {
+    list-style: none outside none;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0
+}
+
+.dealsoverlay li {
+    border-bottom: 1px solid #d6d6d6;
+    font-size: 12px;
+    overflow: hidden;
+    padding: 10px 15px
+}
+
+.dealsoverlay li.last {
+    border-bottom: 0 none
+}
+
+.dealsoverlay li div {
+    float: left;
+    margin-right: 10px
+}
+
+.dealsoverlay li div span {
+    color: #d03e05
+}
+
+.dealsoverlay a {
+    color: #174392;
+    text-decoration: none
+}
+
+.dealsoverlay a:hover {
+    text-decoration: underline
+}
+
+.grandtotal_menuItem.flL {
+    padding: 12px 12px 8px
+}
+
+.grandtotal_menuItem.flL {
+    *padding: 12px 12px 10px
+}
+
+.morePointer {
+    position: fixed;
+    left: 980px;
+    bordeR: 1px solid #054482;
+    border-radius: 5px;
+    color: #054482;
+    padding: 10px;
+    width: 85px;
+    text-align: center;
+    font-size: 11px;
+    font-family: tahoma;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    bottom: 90px;
+    background-color: #fff;
+    z-index: 10;
+    cursor: pointer
+}
+
+.morePointer .arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #054482;
+    position: absolute;
+    top: 50px;
+    left: 44px
+}
+
+.clearRel {
+    height: 0;
+    width: 0;
+    position: relative
+}
+
+.popup_arrow_right,
+.popup_arrow_left {
+    background: url(file:///D:/Work/Projects/2014/%28Mar14%29Addon%20Admin%20and%20B2C/Reviewpayment/images/main_content.png?d=16032015) no-repeat;
+    font-size: 0
+}
+
+.popup_arrow_right {
+    background-position: -326px -705px;
+    width: 14px;
+    height: 22px
+}
+
+.popup_arrow_left {
+    background-position: -308px -705px;
+    width: 14px;
+    height: 22px
+}
+
+.addOn_block,
+.addOn_exp,
+.addOn_col {
+    border: solid 1px #e3e3e3;
+    width: 165px;
+    margin-right: 10px
+}
+
+.addOn_block.last,
+.addOn_exp.last,
+.addOn_col.last {
+    margin-right: 0
+}
+
+.addOn_details {
+    font-size: 120%
+}
+
+.addOn_rows {
+    border-bottom: 1px solid #000;
+    padding-bottom: 8px
+}
+
+.addOn_rows.last {
+    border-bottom: 0;
+    padding-bottom: 0
+}
+
+.addOn_details a:last-child {
+    text-decoration: underline;
+    margin-top: 16px
+}
+
+.addOn_select {
+    border-top: solid 1px #e3e3e3
+}
+
+.addOn_price {
+    width: 100px;
+    border-right: solid 1px #e3e3e3;
+    padding: 10px
+}
+
+.addOn_check {
+    width: 44px;
+    height: 51px;
+    font-size: 120%
+}
+
+.addOn_check input {
+    margin: 10px 10px 3px 15px
+}
+
+.addOn_check span {
+    margin: 4px 0 0 10px
+}
+
+.addOn_price .red_color {
+    margin-left: 5px;
+    display: inline-block;
+    font-weight: bold
+}
+
+.addOn_price .light_gray {
+    margin-top: 5px
+}
+
+.addOn_exp,
+.addOn_col {
+    font-size: 160%;
+    padding: 10px;
+    width: 145px
+}
+
+.addOn_exp .popup_arrow_right,
+.addOn_col .popup_arrow_left {
+    margin: 58px 0 8px 60px
+}
+
+.txt_addOn_exp {
+    margin-bottom: 80px
+}
+
+.addOn_check.selected {
+    background-color: #e3ffd8
+}
+
+.addOn_check.selected span {
+    margin: 4px 0 0 5px
+}
+
+.addOn_rhs {
+    padding: 10px 10px;
+    background-color: #f9f9f9;
+    border: solid 1px #c8c8c8;
+    display: none
+}
+
+.addOn_rhs h4 {
+    font-size: 140%
+}
+
+.addOn_remove {
+    font-size: 90%
+}
+
+.addOn_list {
+    border-bottom: 1px solid #c8c8c8;
+    padding-bottom: 5px
+}
+
+.addOn_list.last {
+    border-bottom: 0;
+    padding-bottom: 0
+}
+
+.addOn_section_II ul {
+    border: solid 1px #e3e3e3
+}
+
+.addOn_name_II,
+.addOn_price_II,
+.addOn_check_II,
+.addOns_more,
+.addOns_hide {
+    font-size: 120%
+}
+
+.addOn_name_II {
+    height: 45px;
+    padding: 10px 0 0 10px
+}
+
+.addOn_name_II>a {
+    margin-bottom: 5px
+}
+
+.addOn_row_II>a {
+    text-decoration: underline;
+    width: 110px;
+    height: 40px;
+    padding: 20px 0 0 10px
+}
+
+.addOn_name_II {
+    width: 230px
+}
+
+.addOn_price_II {
+    width: 148px;
+    height: 40px;
+    padding: 20px 0 0 30px
+}
+
+.addOn_check_II {
+    width: 108px;
+    height: 60px;
+    background-color: #f5f5f5
+}
+
+.addOn_check_II input {
+    margin-top: 15px
+}
+
+.addOn_row_II {
+    border-bottom: solid 1px #e3e3e3
+}
+
+.addOn_row_II.last {
+    border-bottom: 0
+}
+
+.addOn_check_II.selected {
+    background-color: #e3ffd8
+}
+
+.addOns_more,
+.addOns_hide {
+    text-decoration: underline
+}
+
+.addOn_section_II,
+.addOn_section_II ul {
+    width: 698px
+}
+
+.view_link_details {
+    width: 660px;
+    padding: 20px;
+    border: solid 1px #e6e6e6
+}
+
+.lhs_addon {
+    width: 400px;
+    padding-right: 15px;
+    border-right: solid 1px #e6e6e6
+}
+
+.lhs_addon p,
+.lhs_addon li,
+.accordian_addon p {
+    font-size: 120%
+}
+
+.lhs_addon h4 {
+    font-size: 140%;
+    font-weight: normal
+}
+
+.TnC_addon {
+    border: solid 1px #e6e6e6;
+    padding: 10px;
+    font-size: 140%
+}
+
+.accordian_addon p {
+    border: solid 1px #e6e6e6;
+    border-width: 0 1px 1px;
+    padding: 10px
+}
+
+.rhs_addon {
+    padding-left: 15px;
+    width: 34%
+}
+
+.view_addon_block {
+    border: solid 1px #e6e6e6
+}
+
+.color_band {
+    display: inline-block;
+    height: 5px
+}
+
+.red_band {
+    background-color: #e0532d;
+    height: 5px;
+    width: 55px
+}
+
+.yellow_band {
+    background-color: #fab800;
+    height: 5px;
+    width: 55px
+}
+
+.green_band {
+    background-color: #73b600;
+    height: 5px;
+    width: 55px
+}
+
+.blue_band {
+    background-color: #35a6e3;
+    height: 5px;
+    width: 57px
+}
+
+.cta_addons {
+    padding: 20px 10px 10px
+}
+
+.price_addOn {
+    font-size: 200%;
+    margin-top: 5px
+}
+
+.btn_addOn {
+    background-color: #cf3200;
+    padding: 10px;
+    border: solid 1px #cf3200;
+    color: #fff;
+    font-size: 150%;
+    width: 100px
+}
+
+.package_heading {
+    color: #d4672c;
+    font-size: 180%;
+    margin-top: 5px
+}
+
+.red_color {
+    color: #cb3904
+}
+
+#cboxContent {
+    padding: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #b9b9b9
+}
+
+#cboxClose {
+    background: url(../../images/close.png)!important;
+    width: 37px!important;
+    height: 32px!important;
+    top: -16px;
+    left: 700px;
+    !important;
+    left: 680px
+}
+
+#cboxClose {
+    position: absolute;
+    left: 680px
+}
+
+#cboxLoadedContent {
+    overflow-x: hidden!important
+}
+
+.arrow_drop {
+    background: url(/assets/main_content.png?d=16032015) no-repeat;
+    font-size: 0;
+    background-position: -266px -55px;
+    display: inline-block;
+    height: 6px;
+    margin-top: 6px;
+    width: 8px
+}
+
+.light_gray {
+    color: #878787!important
+}
+
+.head_day_activities {
+    list-style: none;
+    font-weight: bold;
+    margin-left: -14px;
+    border-bottom: 1px
+}
+
+.head_day {
+    list-style: none!important;
+    font-weight: bold;
+    margin-left: -14px;
+    padding: 5px 0
+}
+
+.price_note_accordian {
+    position: relative
+}
+
+.price_note {
+    height: 45px;
+    line-height: 45px;
+    background-color: #f1dedd;
+    border: solid 1px #ae5651;
+    cursor: pointer;
+    padding: 0 15px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px
+}
+
+.red_arrow {
+    float: left;
+    background: url(/assets/main_content.png?d=16032015) no-repeat;
+    background-position: -350px -406px;
+    width: 45px;
+    height: 27px;
+    display: inline-block;
+    margin: 9px 9px 0 0
+}
+
+.font_small_red {
+    font-size: 12px;
+    color: #ce2801
+}
+
+.price_note_detail {
+    position: absolute;
+    width: 944px;
+    padding: 12px 15px;
+    background-color: #f1dedd;
+    border: solid 1px #ae5651;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px
+}
+
+.price_note_detail ol {
+    list-style-type: decimal;
+    padding-left: 10px
+}
+
+.price_note_detail li {
+    font-size: 12px;
+    color: #ce2801;
+    padding: 10px 0 5px 0
+}
+
+.price_dec_note {
+    height: 45px;
+    line-height: 45px;
+    background-color: #cee8c6;
+    border: solid 1px #1d7305;
+    cursor: pointer;
+    padding: 0 15px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px
+}
+
+.green_arrow {
+    float: left;
+    background: url(/assets/main_content.png?d=05022015) no-repeat;
+    background-position: -350px -437px;
+    width: 45px;
+    height: 27px;
+    display: inline-block;
+    margin: 9px 9px 0 0
+}
+
+.font_small_green {
+    font-size: 12px;
+    color: #237c0a
+}
+
+.price_dec_note_detail {
+    position: absolute;
+    width: 944px;
+    padding: 12px 15px;
+    background-color: #cee8c6;
+    border: solid 1px #1d7305;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px
+}
+
+.price_dec_note_detail ol {
+    list-style-type: decimal;
+    padding-left: 10px
+}
+
+.price_dec_note_detail li {
+    font-size: 12px;
+    color: #237c0a;
+    padding: 10px 0 5px 0
+}
+
+.success_txt {
+    color: #19850e;
+    margin-top: 2px
+}
+
+.coupon_tnc {
+    display: inline-block;
+    margin: 2px 0 0 5px
+}
+
+.success_icon {
+    background-position: -97px -131px;
+    width: 15px;
+    height: 15px;
+    margin-right: 8px
+}
+
+#applyECouponBtn.btnDisabled {
+    border: solid 1px #d0d0d0!important
+}
+
+body {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #2f2f2f;
+    -webkit-font-smoothing: antialiased
+}
+
+input {
+    font-family: Tahoma, Geneva, sans-serif
+}
+
+div.chf_wrapper {
+    width: 976px;
+    margin: 0 auto;
+    min-width: 976px
+}
+
+.header {
+    border-bottom: solid 2px #3a5bb0;
+    margin-bottom: 10px
+}
+
+.drop_arrow,
+.my_booking,
+.indian_flag,
+.drop_down,
+small.ghf_canada_icn,
+small.ghf_uae_icn,
+small.ghf_india_icn,
+small.ghf_us_icn,
+small.ghf_sin_icn,
+.worldwide_droparrow {
+    background: url(/assets/common_header_footer_sprite.png) no-repeat;
+    font-size: 0
+}
+
+ul.navigation li a,
+.chf_grey_btn {
+    background: url(/assets/center_nav_arc.gif) left top repeat-x
+}
+
+div.header p.logo {
+    margin-right: 25px
+}
+
+div.header .chf_padTop8 {
+    padding-top: 8px
+}
+
+div.header div.top_part_hdr {
+    margin-bottom: 5px
+}
+
+div.header div.left_portion_hdr {
+    width: 415px
+}
+
+div.header span.drop_arrow {
+    background-position: 0 0;
+    width: 8px;
+    height: 6px;
+    margin-top: 6px
+}
+
+div.header div.right_portion_hdr {
+    width: 541px
+}
+
+div.header div.top_nav {
+    margin-bottom: 6px
+}
+
+.posRel {
+    position: relative;
+    z-index: 2
+}
+
+.posRel_1 {
+    position: relative;
+    z-index: 3
+}
+
+ul.list_hdr_1 li {
+    float: left;
+    font-size: 110%;
+    border-right: 1px solid #dddee0;
+    padding: 0 8px;
+    line-height: 18px;
+    height: 18px
+}
+
+ul.list_hdr_1 li.last {
+    border-right: 0;
+    padding-right: 0
+}
+
+ul.list_hdr_1 li a {
+    text-decoration: none;
+    float: left
+}
+
+ul.list_hdr_1 li span.wlcm {
+    padding: 0 3px 0 1px
+}
+
+ul.list_hdr_1 li .my_booking {
+    background-position: -10px 0;
+    width: 19px;
+    height: 20px;
+    margin-right: 8px
+}
+
+div.ghf_other_countries {
+    border: 1px solid #ccc;
+    width: 140px;
+    padding: 5px 10px;
+    position: absolute;
+    right: 0;
+    top: 18px;
+    background: #fff
+}
+
+div.ghf_other_countries p {
+    color: #b4b4b4;
+    font-size: 110%;
+    margin-bottom: 4px
+}
+
+div.ghf_other_countries a {
+    text-decoration: none
+}
+
+div.ghf_other_countries a:hover {
+    text-decoration: underline
+}
+
+div.ghf_other_countries p.ghf_selectCountryTxt {
+    margin-bottom: 5px;
+    color: #d03e05
+}
+
+small.ghf_canada_icn,
+small.ghf_uae_icn,
+small.ghf_india_icn,
+small.ghf_us_icn,
+small.ghf_sin_icn {
+    width: 16px;
+    height: 11px;
+    margin-right: 4px;
+    border: 1px solid #d6d6d6;
+    display: inline-block;
+    vertical-align: middle
+}
+
+small.ghf_canada_icn {
+    background-position: 0 -50px
+}
+
+small.ghf_us_icn {
+    background-position: -41px -50px
+}
+
+small.ghf_uae_icn {
+    background-position: -61px -50px
+}
+
+small.ghf_india_icn {
+    background-position: -20px -50px
+}
+
+small.ghf_sin_icn {
+    background-position: -80px -50px
+}
+
+div.chf_other_countries p a {
+    text-decoration: underline
+}
+
+div.chf_other_countries p a:hover {
+    text-decoration: none
+}
+
+div.currency_DDN {
+    width: 135px;
+    border: 1px solid #ccc;
+    padding: 12px 10px 2px;
+    position: absolute;
+    right: 0
+}
+
+div.ghf_select_city {
+    width: 135px;
+    border: 1px solid #ccc;
+    padding: 12px 10px 2px;
+    position: absolute;
+    right: 175px
+}
+
+ul.currency_list {
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+ul.currency_list li {
+    font-size: 110%;
+    line-height: 14px;
+    margin-bottom: 5px
+}
+
+ul.currency_list li.last {
+    margin: 0;
+    padding: 0
+}
+
+ul.currency_list li.top_currency {
+    color: #d03e05;
+    border-bottom: 1px solid #ebebeb;
+    padding-bottom: 5px
+}
+
+.chf_flR {
+    float: right
+}
+
+.chf_flL {
+    float: left
+}
+
+.chf_hide {
+    display: none
+}
+
+.chf_show {
+    display: block
+}
+
+.chf_clearFix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0
+}
+
+.chf_clearFix {
+    display: inline-block
+}
+
+html[xmlns] .chf_clearFix {
+    display: block
+}
+
+* html .chf_clearFix {
+    height: 1%;
+    overflow: visible
+}
+
+.chf_worldwide {
+    background-color: #ffffc5;
+    margin-left: 5px
+}
+
+ul.list_hdr_1 li.chf_worldwide {
+    padding-right: 5px
+}
+
+.chf_worldwide .ghf_india_icn {
+    display: inline-block;
+    margin-right: 3px
+}
+
+.worldwide_droparrow {
+    background-position: -43px -14px;
+    width: 11px;
+    height: 6px;
+    display: inline-block
+}
+
+@charset "utf-8";
+ul.cpay_advantage_tabs span.cpay_info {
+    font-size: 11px!important
+}
+
+ul.cpay_advantage_tabs span.cpay_info_bottom {
+    font-size: 11px!important
+}
+
+div.cpay_payment_advantages {
+    height: 50px;
+    top: -28px;
+    width: 691px!important;
+    margin-left: -19px!important;
+    *z-index: -1
+}
+
+div.cpay_payment_advantages {
+    background: url(../images/new/payment_horizontal_sprite.png) repeat-x;
+    background-color: #fff;
+    background-position: 0 -105px;
+    height: 50px;
+    padding: 5px 15px 0;
+    border: 1px solid #eaeaea;
+    border-right: 0;
+    position: relative;
+    margin-left: -19px;
+    top: -28px;
+    width: 691px!important
+}
+
+div.cpay_payment_advantages span.cpay_ribbon {
+    background-position: -87px -60px!important;
+    width: 10px;
+    height: 9px;
+    left: -1px;
+    bottom: -10px;
+    position: absolute;
+    background: url(../../images/new/common_payment_sprite.png) no-repeat;
+    font-size: 0
+}
+
+ul.cpay_advantage_tabs {
+    list-style-type: none
+}
+
+ul.cpay_advantage_tabs li.cpay_first {
+    padding-left: 0;
+    margin-left: 0;
+    border-left: 0
+}
+
+.cpay_flL {
+    float: left
+}
+
+.cpay_flR {
+    float: right
+}
+
+ul.cpay_advantage_tabs li {
+    float: left;
+    width: 180px;
+    padding: 6px 12px;
+    border-right: 1px solid #efedef
+}
+
+ul.cpay_advantage_tabs span.cpay_secure {
+    background-position: 0 -73px!important;
+    width: 19px;
+    height: 25px;
+    margin-right: 10px;
+    background: url(../../images/new/common_payment_sprite.png) no-repeat
+}
+
+ul.cpay_advantage_tabs span.cpay_info {
+    font-size: 11px!important;
+    width: 138px;
+    margin-bottom: 2px
+}
+
+ul.cpay_advantage_tabs span.cpay_info_bottom {
+    font-size: 11px!important;
+    width: 138px;
+    color: #878787
+}
+
+ul.cpay_advantage_tabs span.cpay_customers {
+    background-position: -21px -73px!important;
+    width: 25px;
+    height: 26px;
+    margin-right: 10px;
+    background: url(../../images/new/common_payment_sprite.png) no-repeat
+}
+
+ul.cpay_advantage_tabs span.cpay_payment_option {
+    background-position: -51px -73px!important;
+    width: 28px;
+    height: 25px;
+    margin-right: 10px;
+    background: url(../../images/new/common_payment_sprite.png) no-repeat
+}
+
+ul.cpay_advantage_tabs li.cpay_verisign_last {
+    width: 69px;
+    padding: 2px 0 0 12px;
+    margin-right: 0;
+    border-right: 0
+}
+
+.cpay_top_section {
+    margin-top: -15px
+}
+
+a.cpay_need_helps_1 {
+    color: #0671c1
+}
+
+span.cpay_info_icon,
+.cpay_info_icon {
+    background-position: 0 0!important;
+    width: 14px;
+    height: 14px;
+    background: url(../../images/new/common_payment_sprite.png) no-repeat
+}
+
+span.cpay_need {
+    text-decoration: underline;
+    margin-right: 5px
+}
+
+.cpay_clearFix::after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+    overflow: hidden
+}
+
+.cpay_banks {
+    margin-right: 10px
+}
+
+div.term_period p.cpay_select_debit {
+    margin-bottom: 8px!important;
+    font-size: 9px!important
+}
+
+ul.term_list li a {
+    text-decoration: none;
+    margin-right: 7px
+}
+
+ul.term_list li a {
+    width: 163px;
+    height: 169px;
+    float: left;
+    border: 1px solid #e6e6e6
+}
+
+ul.term_list p.month {
+    background: #f7f7f7;
+    border-bottom: 1px solid #e6e6e6;
+    padding: 5px 10px;
+    margin-bottom: 0!important
+}
+
+ul.term_list a.active p.month {
+    background: #ffffcd;
+    border-bottom: 1px solid #ffc136
+}
+
+ul.term_list a.active div.month_details {
+    background: #ffffe7
+}
+
+ul.term_list li div.month_details {
+    padding: 8px 10px;
+    background: #fff;
+    font-size: 9px
+}
+
+ul.term_list li a.active div.bottom_arow {
+    background-position: -42px -239px!important;
+    width: 22px;
+    height: 12px;
+    position: relative;
+    top: -15px;
+    border: 0;
+    left: 60px;
+    background: url(../../images/new/common_payment_sprite.png) no-repeat
+}
+
+div.month_details p.one_time {
+    margin-bottom: 5px
+}
+
+div.month_details p.rupee {
+    color: #d03e05!important;
+    margin-bottom: 10px
+}
+
+div.month_details p.emi {
+    margin-bottom: 3px
+}
+
+div.month_details p.excluding {
+    color: #878787!important;
+    margin-bottom: 8px
+}
+
+.month_details {
+    padding-bottom: 0!important
+}
+
+.cpay_information {
+    position: relative;
+    top: 10px
+}
+
+span.cpay_info_icon_1 {
+    background-position: -105px -41px!important;
+    width: 14px;
+    height: 14px;
+    margin-right: 5px;
+    background: url(../../images/new/common_payment_sprite.png) no-repeat
+}
+
+ul.cpay_advantage_tabs a.cpay_verisign {
+    background-position: -82px -73px!important;
+    width: 69px;
+    height: 36px;
+    background: url(../../images/new/common_payment_sprite.png) no-repeat
+}
+
+div.cpay_card_description div.cpay_card_steps {
+    padding: 5px 0 1px 0
+}
+
+div.cpay_top_section div.cpay_s_card_left {
+    width: 395px
+}
+
+.billingInfo {
+    padding: 10px
+}
+
+.billingInfo>div {
+    padding: 5px 0 0 0
+}
+
+.billingInfo ul {
+    float: left
+}
+
+.cardDetails ul:first-child {
+    width: 55%
+}
+
+.addDetails textarea {
+    width: 550px
+}
+
+.billingInfo ul li:first-child label {
+    width: 20%
+}
+
+.billingInfo li {
+    padding: 0 10px 10px 0
+}
+
+.billingInfo ul li input {
+    width: 200px
+}
+
+.cpay_red {
+    color: red
+}
+
+div.cpay_range_tooltip {
+    width: 316px;
+    margin: 20px 0
+}
+
+div.cpay_range_tooltip p.cpay_range {
+    background: #f7f7f7;
+    background: -moz-linear-gradient(top, #fcfcfc, #f4f4f4);
+    background: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#f4f4f4));
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f4f4f4');
+    line-height: 26px;
+    font-size: 120%;
+    color: #d03e05;
+    padding-left: 10px;
+    -moz-border-radius: 6px 6px 0 0;
+    -webkit-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0;
+    border: 1px solid #d6d6d6
+}
+
+div.cpay_range_tooltip div.cpay_range_section {
+    background: #fff;
+    padding: 10px;
+    border: 1px solid #d6d6d6;
+    border-top: 0;
+    -moz-border-radius: 0 0 6px 6px;
+    -webkit-border-radius: 0 0 6px 6px;
+    border-radius: 0 0 6px 6px
+}
+
+div.cpay_range_tooltip a.cpay_cross_icon {
+    background-position: -88px -111px!important;
+    width: 29px;
+    height: 29px;
+    position: absolute;
+    right: -10px;
+    top: -15px;
+    background: url(../../images/new/common_payment_sprite.png) no-repeat
+}
+
+.cpay_range {
+    margin-bottom: 0!important;
+    font-size: 9px!important;
+    color: #d03e05!important
+}
+
+.cpay_range_section {
+    font-size: 9px
+}
+
+.cpay_banks input,
+.cpay_banks label {
+    margin: 0 6px;
+    background-repeat:
+}
+
+.cpay_mentioned {
+    font-size: 10px;
+    color: #ccc;
+    display: block
+}
+
+.addExtra {
+    float: left;
+    width: 45%
+}
+
+.addExtra:nth-child(2n-1) {
+    margin-left: 62px
+}
+
+.addExtra li:nth-child(2n-1) {
+    width: 70px;
+    float: left
+}
+
+.addDetails {
+    border-top: 1px dashed #ccc;
+    padding-top: 20px!important
+}
+
+#learn_more_EMI_div {
+    margin-top: 20px
+}
+
+.cpay_visa,
+.cpay_master_card,
+.cpay_american_express {
+    background: url(../../images/new/common_payment_sprite.png) no-repeat;
+    font-size: 0
+}
+
+.cpay_visa {
+    background-position: -19px 0;
+    width: 35px;
+    height: 21px
+}
+
+.cpay_master_card {
+    background-position: -58px 0;
+    width: 35px;
+    height: 21px;
+    margin-left: 14px
+}
+
+.cpay_american_express {
+    background-position: -97px -0px;
+    width: 33px;
+    height: 21px;
+    margin-left: 14px
+}
+
+.cpay_fadeOpacity {
+    -moz-opacity: .20;
+    filter: alpha(opacity=20);
+    opacity: .20
+}
+
+.cpay_noOpacity {
+    -moz-opacity: 1;
+    filter: alpha(opacity=100);
+    opacity: 1.0
+}
+
+body {
+    background: #fff!important
+}
+
+input,
+select,
+textarea {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0
+}
+
+div.contactus span.need,
+div.contactus span.frequently,
+div.contactus span.chat,
+div.contactus span.email,
+div.contactus span.call,
+div#slideshow p a.left_button,
+span.lock,
+span.american,
+span.open1,
+span.open2,
+.close1,
+.close2,
+span.plane1,
+span.plane2,
+span.mark,
+ul.steps li small,
+span.plus,
+span.minus,
+span.visa1,
+a.center,
+span.comment,
+span.top_arrow,
+small.closeTop,
+small.verisign,
+span.cvvPic,
+p.bus_included small,
+small.done_card,
+small.itzCash,
+span.down,
+span.up,
+span.select_star,
+span.unselect_star,
+a.bus_img,
+span.right_mark,
+span.printer,
+span.cap,
+.pointer1,
+.errorIcon,
+.pointerTooltip,
+.pointerTooltipDown,
+.closeToolTip,
+.pointerTooltipRight,
+.closeBtn {
+    background: url('../../images/content.png') no-repeat;
+    font-size: 0
+}
+
+div#container {
+    min-width: 950px;
+    width: 950px;
+    border-left: 1px solid #c3c3c3;
+    border-right: 1px solid #c3c3c3;
+    border-bottom: 1px solid #c3c3c3;
+    padding: 0 10px;
+    margin: 0 auto
+}
+
+div#content {
+    margin-bottom: 15px;
+    padding-top: 10px
+}
+
+div.customer_support {
+    padding-bottom: 80px
+}
+
+div#sidebar {
+    width: 201px;
+    padding: 0 25px 0 20px
+}
+
+div.contact_us div#sidebar {
+    width: 208px;
+    padding: 0 0 0 25px;
+    margin-top: 5px
+}
+
+div.Payment div#sidebar {
+    width: 225px;
+    padding: 0;
+    display: inline
+}
+
+div#main {
+    width: 698px;
+    display: inline
+}
+
+div.contact_us div#main {
+    width: 710px
+}
+
+div.Payment div#main {
+    width: 715px;
+    padding-right: 9px
+}
+
+div#content ul.steps {
+    margin-bottom: 15px
+}
+
+div#content ul.steps li {
+    float: left;
+    margin-right: 12px
+}
+
+div#content ul.steps li small {
+    background-position: -20px -116px;
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    font-size: 100%;
+    font-weight: bold;
+    color: #000;
+    float: left;
+    color: #fff
+}
+
+div#content ul.steps li span {
+    line-height: 26px;
+    margin: 4px 0 0 2px;
+    padding: 0 13px 0 4px
+}
+
+div#content ul.steps li.visited small {
+    background-position: -77px -109px
+}
+
+div#content ul.steps li.nextsteps small {
+    background-position: -48px -109px
+}
+
+div#content ul.steps li.visited span {
+    color: #676767
+}
+
+div#content ul.steps li.current span {
+    color: #0671c1
+}
+
+div#content ul.steps li.nextsteps span {
+    color: #b1b1b1
+}
+
+button::-moz-focus-inner {
+    border: 0;
+    padding: 0
+}
+
+.button a:hover {
+    background: 0
+}
+
+.htl_srch_btn {
+    color: #000;
+    border: 1px solid #71b2da;
+    margin-left: 10px
+}
+
+.fntSize11 {
+    font-size: 11px!important;
+    padding: 6px 8px 7px!important
+}
+
+.button {
+    background: #0671c1;
+    display: inline-block;
+    padding: 5px 15px 6px;
+    font-size: 13px;
+    color: #fff;
+    font-weight: bold;
+    line-height: 1;
+    text-decoration: none;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    overflow: visible;
+    width: auto;
+    text-decoration: none!important
+}
+
+.button:hover {
+    background: #0671c1!important;
+    color: #fff
+}
+
+.no_border {
+    border: none medium
+}
+
+.border_bottom {
+    border-bottom: 3px solid #fbdb0c;
+    margin-bottom: 8px
+}
+
+.border_bottom1 {
+    border-bottom: 2px solid #fedc08
+}
+
+.dotted_border {
+    border-bottom: 1px dotted #dfdede;
+    margin: 0 0 10px 0;
+    padding-bottom: 10px
+}
+
+.dotted_border1 {
+    border-bottom: 1px solid #fedc08;
+    margin: 0;
+    padding-bottom: 10px
+}
+
+.dotted_border2 {
+    border-bottom: 1px solid #dfdede;
+    margin: 0;
+    padding-bottom: 4px
+}
+
+span.red {
+    color: #f11;
+    padding: 0 5px
+}
+
+.sepratr {
+    border-right: 1px solid #c0c0c0
+}
+
+div#content h1 {
+    font-size: 13px;
+    color: #0671c1;
+    padding-bottom: 8px
+}
+
+div#content h2 {
+    color: #3f3f3f;
+    margin-bottom: 10px
+}
+
+div#content p {
+    color: #3f3f3f;
+    margin-bottom: 15px
+}
+
+div#content p.discount {
+    color: #d20101
+}
+
+div#content p a {
+    color: #1066a0
+}
+
+div#content span.small {
+    font-size: 9px;
+    color: #000;
+    margin-top: 4px
+}
+
+span.large {
+    width: 358px
+}
+
+div.Payment div#main h1 {
+    width: 715px
+}
+
+div#content span.recieve {
+    font-size: 11px;
+    color: #676767;
+    padding: 2px 0 0 4px
+}
+
+div.border {
+    border-left: 2px dotted #d8d8d8;
+    border-right: 2px dotted #d8d8d8;
+    padding-left: 25px;
+    margin: 0 30px
+}
+
+div#sidebar p.bus_included {
+    font-size: 11px
+}
+
+div#sidebar p.bus_included small {
+    background-position: -19px 0;
+    width: 12px;
+    height: 13px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px
+}
+
+div#sidebar p.bus_included a {
+    text-decoration: underline!important
+}
+
+div#sidebar div.contactus p {
+    margin-bottom: 5px;
+    border-bottom: 1px dotted #d8d8d8;
+    padding-bottom: 8px;
+    color: #525254
+}
+
+div#sidebar div.contactus p.help {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 30px;
+    margin-bottom: 0;
+    border-bottom: 0
+}
+
+div#sidebar div.contactus p.send {
+    border-bottom: 0
+}
+
+div#sidebar div.contactus p span {
+    float: left;
+    margin-right: 5px;
+    margin-top: 2px
+}
+
+div#sidebar div.contactus p a {
+    font-weight: bold;
+    text-decoration: none
+}
+
+div#sidebar div.contactus span.need {
+    background-position: 0 -17px;
+    height: 29px;
+    width: 22px
+}
+
+div#sidebar div.contactus span.frequently {
+    background-position: 0 -48px;
+    height: 12px;
+    margin-right: 5px;
+    width: 12px;
+    line-height: 11px
+}
+
+div#sidebar div.contactus span.chat {
+    background-position: 0 -62px;
+    width: 13px;
+    height: 13px
+}
+
+div#sidebar div.contactus span.call {
+    background-position: 0 -76px;
+    width: 11px;
+    height: 13px
+}
+
+div#sidebar div.contactus span.email {
+    background-position: 0 -135px;
+    width: 11px;
+    height: 8px;
+    margin-top: 6px
+}
+
+div.contact-_info {
+    padding: 10px 0 25px 0;
+    position: relative
+}
+
+div#content.Payment h1 {
+    padding-bottom: 3px
+}
+
+div#content div.contact-_info p {
+    margin-bottom: 9px;
+    width: 680px
+}
+
+div.contact-_info label.first {
+    width: 100px;
+    padding-top: 2px
+}
+
+div.contact-_info label.first span {
+    font-size: 10px
+}
+
+div#content div.contact-_info p.ageField_Line {
+    margin-bottom: 0
+}
+
+div.contact-_info span.ageField {
+    margin: 5px 0 0 1px
+}
+
+div.contact-_info span.adultAgeField {
+    margin: 5px 0 0 101px
+}
+
+div.contact-_info span.ageField input,
+div.contact-_info span.ageField select {
+    width: 85px
+}
+
+div.contact-_info span.ageField span {
+    font-size: 10px
+}
+
+div.contact-_info span.red {
+    padding: 5px 6px 0 6px
+}
+
+div.contact-_info span.dash {
+    padding: 0 5px;
+    margin-top: 3px
+}
+
+div.contact-_info select {
+    padding: 0;
+    width: 60px;
+    color: #3f3f3f;
+    height: 20px
+}
+
+div.contact-_info input {
+    padding: 1px 0 1px 4px;
+    color: #3f3f3f;
+    height: 15px;
+    width: 122px
+}
+
+div.contact-_info input.part1 {
+    width: 28px
+}
+
+div.contact-_info input.part2 {
+    width: 72px;
+    margin-right: 5px
+}
+
+div.contact-_info span.space {
+    width: 85px
+}
+
+div.contact-_info span.space1 {
+    width: 100px
+}
+
+div.contact-_info span.plus {
+    background-position: -86px -88px;
+    width: 14px;
+    height: 14px;
+    margin-right: 4px
+}
+
+div.contact-_info span.minus {
+    background-position: -86px -72px;
+    width: 14px;
+    height: 14px;
+    margin-right: 4px
+}
+
+div.contact-_info span.calender {
+    background-position: -102px -88px;
+    width: 16px;
+    height: 15px;
+    margin-right: 4px;
+    margin: 2px 2px 0 5px
+}
+
+div.contact-_info span.airline {
+    margin-left: 22px
+}
+
+div.contact-_info span.preference select {
+    width: 160px
+}
+
+div.contact-_info span.airline label {
+    margin: 1px 2px 0 0
+}
+
+div.contact-_info span.date_month input {
+    width: 85px
+}
+
+div#content a.flyer {
+    color: #3f3f3f;
+    padding-top: 2px;
+    width: 128px;
+    padding-bottom: 4px
+}
+
+div.deal span.opnl {
+    font-size: 11px;
+    padding: 0 4px
+}
+
+div.deal input {
+    width: 95px
+}
+
+div.payment_info div.deal {
+    background-color: #e6f1f9;
+    padding: 5px 0 5px 7px;
+    margin-bottom: 18px
+}
+
+div#content div.deal p {
+    margin: 0;
+    color: #2b2b2b;
+    width: 353px
+}
+
+div.deal span.seprator {
+    height: 16px;
+    padding-left: 8px;
+    margin: 4px 0 0 0
+}
+
+span.lock {
+    background-position: 0 -112px;
+    width: 18px;
+    height: 20px;
+    margin-top: 0;
+    line-height: 20px
+}
+
+div.card_type {
+    border: 2px solid #fed65c;
+    padding: 11px 18px;
+    margin-bottom: 5px
+}
+
+div.card_type p.type1 {
+    width: 358px
+}
+
+div.card_type p.type2 {
+    width: 290px;
+    padding-left: 20px
+}
+
+div.card_type input.radio_button {
+    float: left;
+    margin: 0 5px 0 0;
+    padding: 0;
+    height: 15px;
+    width: 14px
+}
+
+div.card_type span.crdt {
+    background-position: -23px 0;
+    width: 79px;
+    height: 20px;
+    margin: -3px 0 0 10px
+}
+
+div.card_type span.seprator {
+    height: 50px;
+    width: 1px
+}
+
+div#content div.card_type span.recieve {
+    padding: 4px 0 0 0
+}
+
+div.card_type span.american {
+    background-position: -23px -22px;
+    width: 114px;
+    height: 18px;
+    margin-left: 10px
+}
+
+div#content div.card_type p {
+    margin-bottom: 0
+}
+
+div.card_details {
+    padding: 10px 0 0 0
+}
+
+div.card_details input {
+    margin: 0;
+    float: left;
+    height: 15px;
+    width: 14px;
+    margin-right: 4px;
+    height: 16px;
+    padding-top: 2px 0 0 2px;
+    color: #000
+}
+
+div.card_details select {
+    color: #000;
+    padding: 0;
+    width: 80px;
+    margin-right: 10px
+}
+
+div.card_details span.first {
+    width: 110px
+}
+
+div.card_details span.second {
+    margin-right: 20px
+}
+
+div.card_details span.what {
+    color: #0061aa;
+    font-size: 11px;
+    padding-top: 4px
+}
+
+div.card_details span.visa1 {
+    background-position: -120px -127px;
+    width: 76px;
+    height: 70px;
+    margin: -10px 0 0 25px
+}
+
+div.card_details span.cvv_number {
+    margin: 20px 0 0 4px
+}
+
+div.card_details span.name_description input {
+    width: 280px
+}
+
+div.card_details span.cvv2 input {
+    width: 80px
+}
+
+div.card_details span.name_1 input {
+    width: 48px;
+    margin-right: 5px
+}
+
+div.card_details span.address input {
+    width: 240px
+}
+
+div.card_details span.zip input {
+    width: 128px
+}
+
+div.card_details span.locatn select {
+    width: 130px;
+    height: 22px;
+    margin: 0;
+    padding: 0
+}
+
+div#content div.card_details p {
+    margin-bottom: 10px
+}
+
+div#content div.card_details p.manadatory {
+    font-size: 11px;
+    color: #353535;
+    margin-bottom: 10px
+}
+
+div.Payment div#sidebar div.contactus {
+    padding-left: 5px
+}
+
+div#sidebar div.booking {
+    margin-bottom: 20px
+}
+
+div#sidebar div.booking a {
+    text-decoration: none
+}
+
+div#sidebar p.summary {
+    background: url('../../images/summary_bg.gif') left top repeat-x;
+    height: 28px;
+    line-height: 28px;
+    padding-left: 17px;
+    margin: 0
+}
+
+div#sidebar p.summary a {
+    color: #fff
+}
+
+div#sidebar p.summary a strong {
+    margin-left: 1px
+}
+
+div#sidebar p.summary span.open1 {
+    background-position: -21px -99px;
+    width: 9px;
+    height: 8px;
+    margin: 10px 6px 0 0
+}
+
+.close1 {
+    background-position: -45px -98px;
+    width: 9px;
+    height: 8px;
+    margin: 10px 6px 0 0
+}
+
+div#sidebar div.booking_summary {
+    background-color: #fffdf2;
+    border: 1px solid #d5d5d5;
+    border-top: 0;
+    padding: 18px 8px 15px 16px
+}
+
+.detail {
+    padding-bottom: 5px;
+    margin-bottom: 10px!important
+}
+
+.detail span.open2 {
+    background-position: -32px -99px;
+    width: 9px;
+    height: 8px;
+    margin: 4px 6px 0 0;
+    padding: 0
+}
+
+.detail span.close2 {
+    background-position: -55px -98px;
+    width: 9px;
+    height: 8px;
+    margin: 4px 6px 0 0;
+    padding: 0
+}
+
+div.booking_summary div.summary1 {
+    margin-bottom: 10px
+}
+
+div.booking_summary div.summary1 p {
+    margin-bottom: 15px
+}
+
+div#content div.summary1 p.going {
+    margin-bottom: 10px
+}
+
+div#content div.Itinerary {
+    padding-bottom: 10px
+}
+
+div#content div.Itinerary p {
+    margin-bottom: 5px
+}
+
+div#content div.summary1 p.coming {
+    margin-bottom: 10px
+}
+
+span.plane1 {
+    background-position: -24px -47px;
+    width: 21px;
+    height: 19px;
+    margin-right: 8px
+}
+
+div.summary1 p.coming span.plane2 {
+    background-position: -50px -47px;
+    width: 21px;
+    height: 19px;
+    margin-right: 8px
+}
+
+div.summary1 a.more_flight {
+    font-size: 11px;
+    color: #4086b3
+}
+
+div.total_amount {
+    background-color: #e2eff8;
+    padding: 6px 12px;
+    margin: 10px 0
+}
+
+div#content div.total_amount p {
+    margin-bottom: 0
+}
+
+div#content p.bottom a {
+    color: #fff
+}
+
+div#content p.heading {
+    font-size: 13px;
+    font-weight: bold;
+    color: #0671c1;
+    padding-bottom: 8px;
+    margin-bottom: 10px
+}
+
+html.accordion-menu-js dd.a-m-d {
+    display: none
+}
+
+html.accordion-menu-js dd.a-m-d-expand {
+    display: block
+}
+
+html.accordion-menu-js dd.a-m-d-before-expand {
+    display: block;
+    position: relative;
+    z-index: -1;
+    opacity: 0;
+    height: auto!important;
+    visibility: hidden;
+    overflow: visible
+}
+
+html.accordion-menu-js dd.a-m-d-anim {
+    overflow: hidden;
+    display: block
+}
+
+dt.a-m-t p.heading.border_bottom {
+    border-bottom: 3px solid #eee
+}
+
+dt.a-m-t.a-m-t-expand p.heading.border_bottom {
+    border-bottom: 3px solid #fbdb0c
+}
+
+dt.a-m-t span.expand_show {
+    display: inline
+}
+
+dt.a-m-t span.expand_hide {
+    display: none
+}
+
+dt.a-m-t.a-m-t-expand span.expand_show {
+    display: none
+}
+
+dt.a-m-t.a-m-t-expand span.expand_hide {
+    display: inline
+}
+
+dt.a-m-t span.expand_show a {
+    font-size: 11px;
+    font-weight: normal;
+    color: #0671c1
+}
+
+small.verisign {
+    background-position: -24px -68px;
+    width: 58px;
+    height: 29px;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: bottom
+}
+
+.SeatTab {
+    border-bottom: 2px solid #f9bd05;
+    height: 45px
+}
+
+.SeatTab h6 {
+    padding-left: 5px;
+    margin: 0 5px 0 0;
+    font-weight: normal;
+    background: url('../../images/tabR5_horLft_blue.gif') 0 0 no-repeat;
+    font: 110% arial;
+    float: left
+}
+
+.SeatTab h6 a {
+    float: left;
+    display: block;
+    padding: 9px;
+    background: url('../../images/tabR5_horRgt_blue.gif') 100% 0 no-repeat;
+    color: #000
+}
+
+.SeatTab h6.active {
+    font-weight: bold;
+    background-image: url('../../images/TriptabR5_horLftActive_blue.gif')
+}
+
+.SeatTab h6.active a {
+    background-image: url('../../images/TriptabR5_horRgtActive_blue.gif');
+    color: #3f3f3f;
+    padding: 9px;
+    cursor: default
+}
+
+.SeatTab h2.active a:hover {
+    text-decoration: none;
+    cursor: default
+}
+
+html>body .SeatTab h6 a {
+    padding-bottom: 6px
+}
+
+.SeatTab h6 a:hover {
+    color: #3f3f3f
+}
+
+html>body .SeatTab {
+    overflow: inherit;
+    height: 45px
+}
+
+html>body .SeatTab h6.active a {
+    padding-bottom: 9px
+}
+
+#tabOverview {
+    border: 2px solid #f9bd05;
+    border-top: 0;
+    padding: 32px 8px 8px;
+    height: 1%;
+    width: 700px
+}
+
+.hide {
+    display: none
+}
+
+.show {
+    display: block
+}
+
+div#content div.credit_card_details p.captions {
+    margin-bottom: 5px
+}
+
+div#content div.credit_card_details p.captions label {
+    font-weight: bold;
+    font-size: 12px;
+    float: left;
+    margin-right: 14px
+}
+
+div#content div.credit_card_details p.form_fields input,
+div#content div.credit_card_details p.form_fields select {
+    float: left;
+    margin-right: 12px;
+    border: 1px solid #7f9db9;
+    color: black
+}
+
+div#content div.credit_card_details .card_type {
+    width: 144px
+}
+
+div#content div.credit_card_details .card_num {
+    width: 120px
+}
+
+div#content div.credit_card_details div.month_year_combine {
+    width: 280px
+}
+
+div#content div.credit_card_details .month {
+    width: 104px
+}
+
+div#content div.credit_card_details .year {
+    width: 92px
+}
+
+div#content div.credit_card_details .cvv {
+    width: 30px
+}
+
+div#content div.credit_card_details .address {
+    width: 272px
+}
+
+div#content div.credit_card_details .city,
+div#content div.credit_card_details .state,
+div#content div.credit_card_details .pin_zip {
+    width: 90px
+}
+
+div#content div.credit_card_details .country {
+    width: 165px
+}
+
+div#content div.credit_card_details span.cvvPic {
+    background-position: -120px -127px;
+    width: 76px;
+    height: 70px
+}
+
+div#content div.credit_card_details span.cvvDigits {
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+    margin: 30px 0 0 5px
+}
+
+div#content p.botttom_info {
+    font-size: 11px;
+    margin-bottom: 0
+}
+
+div#content div.debit_card_banks div.banks {
+    float: left;
+    width: 172px
+}
+
+div#content div.debit_card_banks div.banks ul li {
+    margin-bottom: 4px
+}
+
+div#content div.debit_card_banks input {
+    width: 14px;
+    height: 14px;
+    vertical-align: bottom;
+    padding: 0
+}
+
+div#content div.debit_card_banks label {
+    padding: 0;
+    margin: 0;
+    padding-left: 3px
+}
+
+div#content div.debit_card_banks div.banks.last {
+    margin-right: 0
+}
+
+div#content div.netbanking_details p select {
+    width: 135px;
+    color: #3f3f3f;
+    margin-left: 5px
+}
+
+div#content div.cash_details strong.coming_soon {
+    display: block;
+    margin-bottom: 3px
+}
+
+small.done_card {
+    background-position: -34px 0;
+    width: 66px;
+    height: 21px;
+    display: inline-block;
+    vertical-align: top
+}
+
+small.itzCash {
+    background-position: -34px -21px;
+    width: 61px;
+    height: 23px;
+    display: inline-block;
+    vertical-align: top
+}
+
+div#content div.pay_phone_details p {
+    margin-bottom: 5px
+}
+
+div#content div.pay_phone_details p.firstHead {
+    margin-bottom: 10px
+}
+
+div#content div.pay_phone_details p.dotted_border {
+    padding-bottom: 5px
+}
+
+div#content ul.important_info li {
+    list-style: disc outside none
+}
+
+div#content ul.important_info {
+    margin-left: 15px
+}
+
+div#content div.honeymoon_package p {
+    font-size: 11px;
+    color: #3f3f3f;
+    margin-bottom: 5px
+}
+
+div#content div#main p.departure_date {
+    line-height: 28px;
+    background-color: #e2eff8;
+    padding: 0 10px 0 8px;
+    margin-bottom: 18px
+}
+
+div.honeymoon_package h3 {
+    font-size: 18px;
+    color: #0671c1;
+    font-weight: normal;
+    margin-bottom: 5px
+}
+
+div.honeymoon_package span.date {
+    width: 290px
+}
+
+div.honeymoon_package img {
+    margin-bottom: 5px
+}
+
+div.honeymoon_package a.more {
+    font-size: 11px;
+    text-decoration: underline;
+    cursor: pointer
+}
+
+div#main p.agree input {
+    width: 12px;
+    height: 12px;
+    margin: 0 8px 0 0;
+    padding: 0
+}
+
+div#content div#main p.agree {
+    margin-bottom: 25px;
+    font-size: 11px
+}
+
+div#content div#main p.amount {
+    text-align: right;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 10px
+}
+
+div#main span.rupee {
+    color: #0671c1;
+    margin-left: 10px
+}
+
+div#content div#main p.continue_button {
+    margin-bottom: 20px;
+    width: 100%
+}
+
+div#content p.continue_button a {
+    color: #fff
+}
+
+div.honeymoon_area {
+    padding-bottom: 25px
+}
+
+div.destination {
+    width: 230px
+}
+
+ul.details li {
+    font-size: 11px;
+    margin-bottom: 2px
+}
+
+ul.details li.border {
+    border-bottom: 1px dashed #dfdede;
+    padding-bottom: 5px;
+    margin-bottom: 5px
+}
+
+div.accommdation {
+    width: 195px;
+    border-left: 1px dashed #dfdede;
+    border-right: 1px dashed #dfdede;
+    padding: 0 15px
+}
+
+div.accommdation span.down {
+    background-position: 0 -149px;
+    width: 9px;
+    height: 5px;
+    margin: 4px 4px 0 0;
+    cursor: pointer
+}
+
+div.accommdation span.up {
+    background-position: -13px -149px;
+    width: 9px;
+    height: 7px;
+    margin: 4px 4px 0 0;
+    cursor: pointer
+}
+
+div.accommdation span.partition {
+    padding: 0 6px
+}
+
+div.accommdation p.rating {
+    padding-left: 10px
+}
+
+div.accommdation div.hotel_description {
+    position: relative
+}
+
+div.accommdation div.hotel_details {
+    margin-left: 15px
+}
+
+div.accommdation span.select_star {
+    background-position: 0 -158px;
+    width: 50px;
+    height: 10px
+}
+
+div.accommdation span.unselect_star {
+    background-position: 0 -171px;
+    width: 60px;
+    height: 10px
+}
+
+div.accommdation p.brder_top {
+    border-top: 1px dashed #dfdede;
+    padding-top: 5px;
+    margin-top: 5px
+}
+
+div#content div.accommdation a {
+    color: #fa8503;
+    text-decoration: none;
+    font-weight: bold;
+    width: 175px
+}
+
+div#content div.accommdation p {
+    margin-bottom: 2px
+}
+
+div#content div.accommdation p.agree {
+    margin-bottom: 4px
+}
+
+div.package {
+    width: 240px;
+    padding-left: 18px
+}
+
+div.package a.bus_img {
+    background-position: -64px -158px;
+    width: 22px;
+    height: 22px
+}
+
+div.package span.text {
+    width: 230px
+}
+
+div.honeymoon_package div.package a.more {
+    margin-left: 8px;
+    cursor: pointer
+}
+
+ul.details li.bus {
+    border-bottom: 1px dashed #dfdede;
+    padding-bottom: 8px;
+    margin-bottom: 8px
+}
+
+div.passenger_details {
+    margin-bottom: 30px
+}
+
+div.passenger_details p.dotted_border1 {
+    padding-bottom: 5px
+}
+
+div.passenger_details p.dotted_border {
+    padding-bottom: 5px
+}
+
+div.passenger_details span.Sno {
+    width: 70px
+}
+
+div.passenger_details span.pass_name {
+    width: 250px
+}
+
+div.passenger_details span.pass_type {
+    width: 215px;
+    text-align: left
+}
+
+div.passenger_details span.taxes {
+    width: 90px;
+    text-align: right
+}
+
+div.passenger_details span.trav {
+    width: 125px;
+    text-align: left
+}
+
+div.passenger_details span.total {
+    width: 90px;
+    text-align: right
+}
+
+div#content.confirmation p.kindly {
+    font-size: 10px
+}
+
+div.passenger_details span.hotel_name {
+    width: 150px;
+    margin-left: 18px
+}
+
+div.passenger_details span.room {
+    width: 130px
+}
+
+div.passenger_details span.travelers {
+    width: 190px
+}
+
+div.passenger_details span.duration {
+    width: 130px
+}
+
+div.passenger_details span.room_type {
+    width: 85px
+}
+
+div.passenger_details span.package_name {
+    width: 160px
+}
+
+div.top_part {
+    margin: 10px 0
+}
+
+div#content.Payment span.right_mark {
+    background-position: 0 -184px;
+    width: 34px;
+    height: 32px;
+    margin-right: 15px
+}
+
+div#content.Payment span.thanks {
+    font-size: 18px;
+    color: #0671c1;
+    padding-bottom: 3px
+}
+
+div#content.Payment p.booking {
+    margin-bottom: 0
+}
+
+.flt {
+    font-size: 14px!important
+}
+
+div#content.Payment a.why {
+    font-size: 11px;
+    padding-left: 5px;
+    text-decoration: none
+}
+
+div#content.Payment p.comment a {
+    text-decoration: none
+}
+
+p.eticket {
+    background: #e2eff8;
+    line-height: 30px;
+    text-align: center
+}
+
+.border_bottom {
+    border-bottom: 3px solid #fbdb0c;
+    margin-bottom: 8px
+}
+
+div#content.Payment h2.flght_booking {
+    font-size: 15px;
+    color: #0671c1;
+    margin-bottom: 8px;
+    line-height: 25px
+}
+
+div#content.Payment a.print {
+    color: #0061aa;
+    text-decoration: none
+}
+
+div#content.Payment span.printer {
+    background-position: -38px -184px;
+    width: 24px;
+    height: 27px;
+    margin-right: 8px;
+    display: block
+}
+
+p.tooltip {
+    border: 1px solid #9c9c9c;
+    width: 155px;
+    font-size: 11px;
+    color: #3f3f3f;
+    padding: 8px 0 8px 8px;
+    margin-left: 50px;
+    position: relative;
+    background: #fff
+}
+
+span.cap {
+    background-position: -66px -188px;
+    width: 8px;
+    height: 18px;
+    float: left;
+    position: absolute;
+    left: -8px
+}
+
+.CallOutPayment {
+    font-size: 90%;
+    width: 305px;
+    padding: 5px 10px;
+    border: 1px solid #98a0a6;
+    background: #fff;
+    margin: 20px;
+    color: #888;
+    position: relative;
+    box-shadow: 2px 3px 3px #ccc;
+    -moz-box-shadow: 2px 3px 3px #ccc;
+    -webkit-box-shadow: 2px 3px 3px #ccc
+}
+
+.pointer1 {
+    background-position: -14px -47px;
+    width: 14px;
+    height: 8px;
+    margin: -13px 0 0 44px;
+    position: absolute
+}
+
+.pointerTooltip {
+    background-position: -14px -47px;
+    width: 14px;
+    height: 8px;
+    top: -8px;
+    left: 175px;
+    position: absolute
+}
+
+.pointerTooltipDown {
+    background-position: -15px -58px;
+    width: 14px;
+    height: 8px;
+    top: 177px;
+    left: 29px;
+    position: absolute
+}
+
+.pointerTooltipRight {
+    background-position: -77px -188px;
+    width: 28px;
+    height: 21px;
+    top: 44px;
+    left: 280px;
+    position: absolute
+}
+
+.errorMessageBlock {
+    background: #fff;
+    border: 1px solid #c9c9c9;
+    margin: 0 10px 10px 10px
+}
+
+.errorMessageBlock p {
+    border-bottom: 1px solid #c9c9c9;
+    padding: 5px;
+    color: #b92525;
+    font-weight: bold
+}
+
+.errorMessageBlock ul {
+    margin: 5px 0 0 10px
+}
+
+.errorMessageBlock ul li {
+    list-style-type: decimal;
+    font-size: 90%;
+    padding: 0 0 3px 0;
+    margin: 0 0 0 30px;
+    _margin-left: 35px;
+    color: #616161
+}
+
+.errorIcon {
+    background-position: -107px -2px;
+    width: 14px;
+    height: 13px;
+    margin: 1px 5px 0 0;
+    float: left
+}
+
+ul.errorField {
+    margin: -8px 0 10px 0;
+    padding: 0;
+    float: left;
+    clear: both
+}
+
+ul.errorField li {
+    padding: 0;
+    margin: 8px 0 0 15px;
+    font-size: 90%;
+    color: #b92525;
+    float: left;
+    width: 365px;
+    _display: inline
+}
+
+ul.errorField li span {
+    float: left;
+    width: 340px
+}
+
+.toolTip {
+    font-size: 90%;
+    width: 335px;
+    padding: 10px 10px 5px 10px;
+    border: 1px solid #98a0a6;
+    background: #fff;
+    margin: 20px;
+    color: #888;
+    position: relative;
+    box-shadow: 2px 3px 3px #ccc;
+    -moz-box-shadow: 2px 3px 3px #ccc;
+    -webkit-box-shadow: 2px 3px 3px #ccc;
+    display: block
+}
+
+.toolTip .borderTxt {
+    border-bottom: 1px dotted #595959;
+    padding-bottom: 5px
+}
+
+.toolTip ol {
+    color: #7f7f7f;
+    padding-top: 10px;
+    margin-left: 15px
+}
+
+.toolTip ol li {
+    list-style-type: disc;
+    margin-bottom: 5px
+}
+
+.toolTip ol li span {
+    border-bottom: 1px dashed #dfdede;
+    color: #000;
+    display: block;
+    width: 304px
+}
+
+h6.heading {
+    font-size: 120%;
+    font-weight: bold;
+    color: #0671c1;
+    border-bottom: 1px solid #fbdb0c;
+    padding-bottom: 3px
+}
+
+.closeProperty {
+    position: absolute;
+    top: 10px;
+    left: 290px;
+    width: 55px;
+    cursor: pointer
+}
+
+.closeToolTip {
+    background-position: -38px -49px;
+    width: 15px;
+    height: 15px;
+    float: right
+}
+
+.scroll {
+    overflow-y: none;
+    overflow-x: scroll;
+    height: 180px;
+    color: #000;
+    margin-top: 10px
+}
+
+.form_div {
+    width: 239px;
+    font-size: 12px;
+    margin-top: 10px;
+    color: #3f3f3f
+}
+
+.form_div p {
+    padding-bottom: 5px
+}
+
+.fntSize11 {
+    font-size: 11px!important;
+    padding: 5px 17px!important
+}
+
+.button {
+    margin-top: 10px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    background: none repeat scroll 0 0 #0671c1;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    color: #FFF;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1;
+    overflow: visible;
+    position: relative;
+    text-decoration: none!important;
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25);
+    width: auto
+}
+
+span.open2 {
+    background-position: -32px -99px;
+    width: 9px;
+    height: 8px;
+    margin: 4px 6px 0 0;
+    padding: 0
+}
+
+span.close2 {
+    background-position: -55px -98px;
+    width: 9px;
+    height: 8px;
+    margin: 4px 6px 0 0;
+    padding: 0
+}
+
+.txtBooking {
+    color: #0671c1;
+    margin-top: 5px;
+    display: block;
+    float: left
+}
+
+.fontBlack {
+    color: #000!important
+}
+
+.formClass {
+    display: block;
+    margin-bottom: 5px;
+    margin-left: 17px;
+    clear: both
+}
+
+html>body .browserWidth {
+    top: 286px!important
+}
+
+.errorPageText {
+    color: #191818;
+    font-size: 140%;
+    font-family: Calibri
+}
+
+.content_header {
+    cursor: pointer
+}
+
+.fourditscvv {
+    background: transparent url(../../images/common-header-footer.png) no-repeat scroll -151px -846px;
+    height: 58px;
+    width: 155px;
+    display: block;
+    padding-bottom: 3px
+}
+
+.threeditscvv {
+    background: transparent url(../../images/common-header-footer.png) no-repeat scroll -1px -846px;
+    height: 58px;
+    width: 152px;
+    display: block;
+    padding-bottom: 3px
+}
+
+div.accommdation span.city {
+    color: #3f3f3f;
+    font-weight: normal
+}
+
+#price_breakup_link {
+    font-size: 10px;
+    color: red;
+    text-decoration: underline;
+    padding-right: 5px;
+    cursor: pointer
+}
+
+div#price_breake_up_overlay .toolTip ol li {
+    list-style-type: none;
+    margin-bottom: 3px
+}
+
+div#price_breake_up_overlay span {
+    display: inline
+}
+
+div#price_breake_up_overlay .pointerTooltipDown {
+    left: 239px
+}
+
+.phoneno_or {
+    margin-left: 150px;
+    padding-top: 0;
+    padding-bottom: 0;
+    width: 130px!important
+}
+
+div#price_breake_up_overlay span.closeProperty {
+    left: 230px
+}
+
+span#wait_text {
+    display: none;
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 8px
+}
+
+div#price_breake_up_overlay {
+    width: 270px
+}
+
+div#price_breake_up_overlay div {
+    width: 270px
+}
+
+.closeBtn {
+    background-position: -38px -49px;
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    vertical-align: middle
+}
+
+#errorOverlayClose {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    cursor: pointer
+}
+
+#errorMessage {
+    width: auto;
+    color: red;
+    display: inline-block;
+    max-width: 225px
+}
+
+#errorOverlayTip {
+    top: 100%;
+    display: inline-block
+}
+
+div#errorOverlay ol {
+    margin-top: 4px;
+    width: auto;
+    padding: 0
+}
+
+div#errorOverlay ol li {
+    margin-right: 15px
+}
+
+div#errorOverlay {
+    display: none;
+    z-index: 1000;
+    padding: 0;
+    margin: 0;
+    width: auto
+}
+
+#contPayButton {
+    margin-top: 10px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    background: none repeat scroll 0 0 #0671c1;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    color: #FFF;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1;
+    overflow: visible;
+    text-decoration: none!important;
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25);
+    width: auto
+}
+
+div#pkg_transport ol li {
+    list-style-type: none;
+    margin-left: -7px
+}
+
+span.dash {
+    width: 8px!important
+}
+
+div.option {
+    background: #FFF none repeat scroll 0 0;
+    border: 1px solid #d3eeff;
+    margin: 10px 10px 0 0;
+    padding: 10px 10px 0
+}
+
+div.option p {
+    color: #000;
+    font-size: 11px;
+    margin-bottom: 10px
+}
+
+ul.tabs_button {
+    margin: 0 0 15px;
+    padding: 0
+}
+
+ul.tabs_button li {
+    float: left;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    margin-right: 14px
+}
+
+div.left_part p {
+    font-size: 12px;
+    margin: 0
+}
+
+div.left_part p.mode span.left {
+    padding: 5px 0 0 10px
+}
+
+div.left_part p.mode span.right {
+    padding-top: 4px
+}
+
+div.pay {
+    padding: 0 0 10px 5px
+}
+
+div.pay input {
+    height: 14px;
+    margin: 0 10px 0 0;
+    padding: 0
+}
+
+div.pay span.qtn {
+    background-position: -33px -17px;
+    float: left;
+    height: 16px;
+    margin-left: 8px;
+    width: 16px
+}
+
+div.sectional {
+    padding: 10px 0
+}
+
+ul.tabs_button li.last {
+    margin: 0
+}
+
+ul.note {
+    margin: 0;
+    padding: 0
+}
+
+ul.note li {
+    color: #000;
+    font-size: 11px;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    margin-bottom: 12px
+}
+
+div#partial_payment_overlay_body {
+    background: #FFF none repeat scroll 0 0
+}
+
+div#partial_payment_overlay_body p {
+    color: #000;
+    font-size: 12px;
+    margin: 0 0 10px
+}
+
+div#partial_payment_overlay_body p.small {
+    font-size: 11px;
+    margin-bottom: 5px
+}
+
+div#partial_payment_overlay_body p.border {
+    border-top: 1px solid #c0c0c0;
+    margin: 10px 0 5px
+}
+
+div#partial_payment_overlay_body p.notes {
+    color: #999;
+    font-size: 11px;
+    line-height: 15px;
+    margin: 10px 0 0
+}
+
+div#partial_payment_overlay span.closeProperty {
+    left: 230px
+}
+
+div#partial_payment_overlay_body p {
+    font-size: 11px;
+    margin-bottom: 5px
+}
+
+div#partial_payment_overlay {
+    width: 270px
+}
+
+div#partial_payment_overlay_body {
+    margin-top: 10px
+}
+
+div#partial_payment_overlay .pointerTooltip {
+    left: 55px
+}
+
+.errorField {
+    border: thin solid red!important
+}
+
+div.rules {
+    border: 1px solid #bddcf9;
+    background: white;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border-image: initial
+}
+
+div.discount {
+    background: #ffffed;
+    border-top: 0 solid #e2e2e2;
+    padding: 10px
+}
+
+div.discount span.coupon {
+    background: url("../../images/common_sprite.png") no-repeat scroll 0 0 transparent;
+    background-position: -347px -76px;
+    width: 50px;
+    height: 32px;
+    margin-right: 10px
+}
+
+div.rules span.yes {
+    width: 440px
+}
+
+div.rules span.e-coupon {
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 500px;
+    margin: 0 0 3px 0;
+    color: #3f3f3f
+}
+
+div.surcharges {
+    width: 224px;
+    background: white;
+    display: none
+}
+
+div.surcharges p.fees {
+    background: #0a70c4;
+    line-height: 26px;
+    padding-left: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white
+}
+
+div.surcharges_section {
+    padding: 10px 13px;
+    border: 1px solid #0a70c4;
+    border-top: 0;
+    border-image: initial
+}
+
+div.discount span.coupon1 {
+    margin-right: 35px;
+    width: 148px
+}
+
+div.discount input.e_coupon {
+    width: 135px
+}
+
+div.discount a.question_mark {
+    background: url("../../images/common_sprite.png") no-repeat scroll 0 0 transparent;
+    background-position: -64px -130px;
+    height: 12px;
+    margin: 3px 0 0 3px;
+    width: 12px
+}
+
+div.discount p.case_sensitive {
+    font-size: 11px;
+    padding: 0 0 12px 60px;
+    float: left
+}
+
+div.discount p.note {
+    font-size: 11px;
+    color: #3f3f3f;
+    float: left;
+    width: 660px
+}
+
+div.rules .border_top {
+    border-top: 1px dotted #3f3f3f;
+    padding-top: 10px
+}
+
+.needHlpBooking {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: url("../../images/needHlpBookingBg.png") repeat-x scroll left top transparent;
+    border-color: #999 #999 -moz-use-text-color;
+    border-style: solid solid none;
+    border-width: 1px 1px 0;
+    bottom: 0;
+    color: #FFF;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    height: 25px;
+    padding: 7px 10px 0;
+    position: fixed;
+    right: 10px;
+    width: 368px
+}
+
+.padT2 {
+    padding-top: 2px
+}
+
+.vrtAlgMdl {
+    vertical-align: middle
+}
+
+.needHlpBookingOpn {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #999 #999 -moz-use-text-color;
+    border-style: solid solid none;
+    border-width: 1px 1px 0;
+    bottom: 0;
+    position: fixed;
+    right: 10px;
+    width: 388px
+}
+
+.needHlpBookingOpn a {
+    color: #0671c1;
+    text-decoration: none
+}
+
+.needHlpBookingOpn .hd {
+    background: url("../../images/needHlpBookingBg.png") repeat-x scroll left top transparent;
+    color: #FFF;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    height: 25px;
+    padding: 7px 10px 0
+}
+
+.padT5 {
+    padding-top: 5px
+}
+
+.needHlpBookingOpn .bttm {
+    background: none repeat scroll 0 0 #FFF;
+    font-size: 12px;
+    height: 80px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 13px
+}
+
+.box {
+    background: url("../../images/boxBg.png") repeat-x scroll left top transparent;
+    border: 2px solid #dcdcde;
+    border-radius: 5px 5px 5px 5px;
+    color: #3f3f3f;
+    float: left;
+    font-size: 11px;
+    height: 38px;
+    line-height: 16px;
+    margin-right: 10px;
+    padding: 12px 10px 0;
+    width: 143px
+}
+
+.clear {
+    clear: both;
+    height: 1px;
+    line-height: 1px;
+    overflow: hidden
+}
+
+.boxEmail {
+    background: url("../../images/boxBg.png") repeat-x scroll left top transparent;
+    border: 2px solid #dcdcde;
+    border-radius: 5px 5px 5px 5px;
+    color: #3f3f3f;
+    float: left;
+    font-size: 16px;
+    height: 32px;
+    line-height: 16px;
+    margin-top: 15px;
+    padding: 18px 10px 0;
+    text-align: center;
+    width: 93%
+}
+
+.needHlpBookingOpn .bttm {
+    background: none repeat scroll 0 0 #FFF;
+    font-size: 12px;
+    height: 80px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 13px
+}
+
+.box {
+    color: #3f3f3f;
+    font-size: 11px;
+    line-height: 16px
+}
+
+.needHlpBookingOpn .bttm {
+    font-size: 12px
+}
+
+.needHlpBookingOpn {
+    border-style: solid solid none
+}
+
+.box strong {
+    font-size: 16px;
+    font-weight: normal
+}
+
+.boxEmail a {
+    color: #1a4da2;
+    text-decoration: none!important
+}
+
+.needHlpBookingOpn .bttm b {
+    color: #d86538;
+    font-weight: normal
+}
+
+.box b {
+    color: #1a4da2!important;
+    font-size: 16px;
+    font-weight: normal
+}
+
+.needHlpBookingOpn .bttm b {
+    color: #d86538;
+    display: block;
+    font-weight: normal;
+    margin-bottom: 10px
+}
+
+.box b {
+    color: #1a4da2!important;
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 0!important
+}
+
+.needHlpBookingOpn .bttm b a {
+    text-decoration: none!important
+}
+
+.algCntr {
+    text-align: center
+}
+
+#paymentBx {
+    width: 715px;
+    float: left;
+    color: #3f3f3f
+}
+
+#paymentBx img,
+input {
+    vertical-align: middle;
+    margin-top: 2px
+}
+
+#paymentBx .paymnetInr {
+    border: 1px solid #eee;
+    padding: 12px;
+    margin: 10px 0;
+    line-height: 16px;
+    position: relative;
+    height: 85px
+}
+
+#paymentBx .paymnetInr b {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px
+}
+
+.mrgL5 {
+    margin-left: 5px
+}
+
+.orbar {
+    background: url(../../images/orBar.png) left top no-repeat;
+    margin: 0 20px;
+    height: 64px;
+    width: 35px;
+    float: left;
+    position: relative;
+    top: -48px;
+    left: 152px
+}
+
+.boxCont {
+    font-size: 13px;
+    margin-top: 5px;
+    margin-right: 10px;
+    padding-right: 10px;
+    color: #7b7b7b;
+    width: 232px
+}
+
+#paymentBx .paymnetInr .recomndBx {
+    border: 1px solid #fde2c4;
+    background: #fdf5c6;
+    padding: 5px 10px;
+    position: absolute;
+    top: 28px;
+    left: 293px
+}
+
+#paymentBx .paymnetInr .recomndBx span {
+    background: url(../../images/lftArrow.png) left top no-repeat;
+    position: absolute;
+    top: 36%;
+    left: -9px;
+    width: 9px;
+    height: 15px
+}
+
+#paymentBx .paymnetInr .inputBx {
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 5px;
+    margin-bottom: 5px;
+    width: 80px
+}
+
+#paymentBx a {
+    color: #0671cc;
+    text-decoration: underline
+}
+
+#paymentBx a:hover {
+    text-decoration: none
+}
+
+.posRel {
+    position: relative
+}
+
+.hide {
+    display: none
+}
+
+#screen {
+    position: absolute;
+    background: #000;
+    top: 0;
+    left: 0;
+    z-index: 999
+}
+
+#overlay {
+    position: fixed;
+    top: 25%;
+    left: 25%;
+    width: 610px;
+    background: #fff;
+    border: 1px solid #d6d6d6;
+    border-radius: 6px;
+    z-index: 999;
+    padding: 10px;
+    font-size: 12px;
+    color: #3f3f3f
+}
+
+#overlay .closeIcon {
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    background: url(../../images/closeIcon2.png) left top no-repeat;
+    width: 15px;
+    height: 15px;
+    cursor: pointer
+}
+
+#balancePaymntverlay {
+    position: absolute;
+    top: 25px;
+    width: 600px;
+    background: #fff;
+    border: 1px solid #9a9fa3;
+    box-shadow: 1px 1px 0 #000;
+    z-index: 999;
+    padding: 10px;
+    font-size: 12px;
+    color: #3f3f3f
+}
+
+#balancePaymntverlay span.topArrow {
+    background: url(../../images/topArrow.png) left top no-repeat;
+    width: 17px;
+    height: 9px;
+    position: absolute;
+    top: -9px;
+    left: 9px;
+    display: block
+}
+
+#balancePaymntverlay span.topArrow1 {
+    background: url(../../images/topArrow.png) left top no-repeat;
+    width: 17px;
+    height: 9px;
+    position: absolute;
+    top: -9px;
+    left: 535px;
+    display: block
+}
+
+#balancePaymntverlay div.closeLink {
+    position: absolute;
+    top: 10px;
+    right: 10px
+}
+
+#balancePaymntverlay div.closeLink a {
+    text-decoration: none
+}
+
+#balancePaymntverlay div.closeLink img {
+    margin-top: -3px
+}
+
+ul.tab {
+    list-style: none;
+    margin: 10px 0;
+    padding: 0
+}
+
+ul.tab li {
+    float: left;
+    margin-right: 10px;
+    position: relative
+}
+
+ul.tab li.last {
+    margin-right: 0
+}
+
+ul.tab li a {
+    background: url(../../images/tabBg2.png) left top repeat-x;
+    height: 25px;
+    border: 1px solid #d0d0d0;
+    border-radius: 3px;
+    text-align: center;
+    padding: 5px 8px 0;
+    font-weight: bold;
+    display: block;
+    color: #3f3f3f!important;
+    text-decoration: none!important
+}
+
+ul.tab li a.select span {
+    width: 17px;
+    height: 10px;
+    display: block;
+    background: url(../../images/arrow.png) left top no-repeat;
+    position: absolute;
+    top: 31px;
+    left: 40%
+}
+
+#balancePaymntverlay .bttmSec {
+    margin-top: 15px;
+    line-height: 18px;
+    color: #3f3f3f;
+    font-size: 12px
+}
+
+#balancePaymntverlay .bttmSec ol {
+    margin: 0;
+    padding: 5px 5px 0 17px
+}
+
+*+html #balancePaymntverlay .bttmSec ol {
+    padding: 5px 5px 0 22px
+}
+
+ul.partPymntLstng {
+    margin: 10px 0 10px 10px;
+    padding: 0;
+    list-style-type: disc
+}
+
+ul.partPymntLstng li {
+    padding: 10px 0
+}
+
+#payDtlDD {
+    font-size: 12px
+}
+
+html>body .SeatTab {
+    height: 52px
+}
+
+.SeatTab {
+    border-bottom: 0
+}
+
+.SeatTab h6.active {
+    background: #ca3904!important;
+    border: solid 1px #ca3904;
+    color: #fff
+}
+
+html>body .SeatTab h6 a {
+    background: none!important;
+    padding-bottom: 10px;
+    border-bottom: 0;
+    width: 83px
+}
+
+html>body .SeatTab h6 {
+    border: solid 1px #ccc;
+    border-bottom: 0;
+    background: #fff!important;
+    padding-left: 0
+}
+
+html>body .SeatTab h6.active a {
+    color: #fff
+}
+
+#tabOverview {
+    border-style: solid;
+    border-width: 2px 1px 1px 1px;
+    border-color: #ca3904 #d1d1d1 #d1d1d1;
+    padding: 16px 8px 8px
+}
+
+div#content div.credit_card_details p.form_fields input,
+div#content div.credit_card_details p.form_fields select {
+    border: 1px solid #ccc;
+    color: black;
+    float: left;
+    margin-right: 12px
+}
+
+div#content div.credit_card_details .card_type {
+    width: 139px
+}
+
+div.total_amount {
+    background-color: #fffbe7;
+    margin: 30px 0 10px 0;
+    padding: 6px 12px
+}
+
+.cpay_information {
+    position: relative;
+    top: 10px
+}
+
+#tabOverview input[type="text"],
+#tabOverview input[type="password"],
+#tabOverview select {
+    padding: 2px
+}
+
+ul.term_list li a {
+    padding-bottom: 1px
+}
+
+ul.term_list a div.month_details {
+    height: 135px;
+    font-size: 11px
+}
+
+ul.term_list li a.active {
+    border: solid 1px #ffc136
+}
+
+ul.term_list li a.active div.bottom_arow {
+    top: 1px
+}
+
+p.bottom .button_green {
+    font-size: 13px;
+    height: 32px;
+    line-height: 1.2em;
+    width: 230px;
+    cursor: pointer
+}
+
+div.month_details p.rupee.last {
+    margin-bottom: 0
+}
+
+div.passenger_details span.addonName {
+    width: 350px;
+    text-align: left
+}
+
+div.passenger_details span.addonCost {
+    width: 100px;
+    text-align: left
+}
+
+.tnc p {
+    margin-bottom: 0!important
+}
+
+#tipStruct .tipPopup {
+    display: none
+}
+
+#tipStack {
+    position: absolute;
+    z-index: 1000;
+    left: 10px;
+    font-size: 86.9%;
+    line-height: 1.2em
+}
+
+.tipPopup {
+    padding: 0;
+    width: 255px;
+    background-color: #fff;
+    border: solid 1px #dedede
+}
+
+.tipPopup .mainHeading {
+    border-bottom: solid 1px #e3e3e3;
+    padding: 0 15px 8px 25px;
+    overflow: hidden
+}
+
+.tipPopup .mainHeading .titleTip {
+    font-weight: bold;
+    color: #cb3904
+}
+
+.tipPopup .message {
+    padding: 0 15px 0 25px;
+    line-height: 1.25em;
+    width: 84%
+}
+
+.tipPopup .mainHeading .closeTip {
+    cursor: pointer;
+    font-size: 130%
+}
+
+.make_relative {
+    position: relative
+}
+
+.append_bottom {
+    margin-bottom: 16px
+}
+
+.listing_contents {
+    border: solid 1px #dedede;
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    -o-box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2)
+}
+
+.clearFixTip:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden
+}
+
+.clearFixTip {
+    display: inline-block
+}
+
+.clear {
+    overflow: hidden
+}
+
+.prepend_topHalf {
+    margin-top: 8px
+}
+
+.flR {
+    float: right
+}
+
+.flL {
+    float: left
+}
+
+.fontSize11 {
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 110%
+}
+
+#colorbox,
+#cboxOverlay,
+#cboxWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    overflow: hidden
+}
+
+#cboxWrapper {
+    max-width: none
+}
+
+#cboxOverlay {
+    position: fixed;
+    width: 100%;
+    height: 100%
+}
+
+#cboxMiddleLeft,
+#cboxBottomLeft {
+    clear: left
+}
+
+#cboxContent {
+    position: relative
+}
+
+#cboxLoadedContent {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch
+}
+
+#cboxTitle {
+    margin: 0
+}
+
+#cboxLoadingOverlay,
+#cboxLoadingGraphic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%
+}
+
+#cboxPrevious,
+#cboxNext,
+#cboxClose,
+#cboxSlideshow {
+    cursor: pointer
+}
+
+.cboxPhoto {
+    float: left;
+    margin: auto;
+    border: 0;
+    display: block;
+    max-width: none;
+    -ms-interpolation-mode: bicubic
+}
+
+.cboxIframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 0
+}
+
+#colorbox,
+#cboxContent,
+#cboxLoadedContent {
+    box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box
+}
+
+#cboxOverlay {
+    background: #000
+}
+
+#colorbox {
+    outline: 0
+}
+
+#cboxTopLeft {
+    width: 14px;
+    height: 14px;
+    background: no-repeat 0 0
+}
+
+#cboxTopCenter {
+    height: 14px;
+    background: repeat-x top left
+}
+
+#cboxTopRight {
+    width: 14px;
+    height: 14px;
+    background: no-repeat -36px 0
+}
+
+#cboxBottomLeft {
+    width: 14px;
+    height: 43px;
+    background: no-repeat 0 -32px
+}
+
+#cboxBottomCenter {
+    height: 43px;
+    background: repeat-x bottom left
+}
+
+#cboxBottomRight {
+    width: 14px;
+    height: 43px;
+    background: no-repeat -36px -32px
+}
+
+#cboxMiddleLeft {
+    width: 14px;
+    background: repeat-y -175px 0
+}
+
+#cboxMiddleRight {
+    width: 14px;
+    background: repeat-y -211px 0
+}
+
+#cboxContent {
+    background: #fff;
+    overflow: visible
+}
+
+.cboxIframe {
+    background: #fff
+}
+
+#cboxError {
+    padding: 50px;
+    border: 1px solid #ccc
+}
+
+#cboxLoadedContent {
+    margin-bottom: 5px
+}
+
+#cboxLoadingOverlay {
+    background: no-repeat center center
+}
+
+#cboxLoadingGraphic {
+    background: no-repeat center center
+}
+
+#cboxTitle {
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+    color: #7c7c7c
+}
+
+#cboxCurrent {
+    position: absolute;
+    bottom: -25px;
+    left: 58px;
+    font-weight: bold;
+    color: #7c7c7c
+}
+
+#cboxPrevious,
+#cboxNext,
+#cboxSlideshow,
+#cboxClose {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    position: absolute;
+    bottom: -29px;
+    background: no-repeat 0 0;
+    width: 23px;
+    height: 23px;
+    text-indent: -9999px
+}
+
+#cboxPrevious:active,
+#cboxNext:active,
+#cboxSlideshow:active,
+#cboxClose:active {
+    outline: 0
+}
+
+#cboxPrevious {
+    left: 0;
+    background-position: -51px -25px
+}
+
+#cboxPrevious:hover {
+    background-position: -51px 0
+}
+
+#cboxNext {
+    left: 27px;
+    background-position: -75px -25px
+}
+
+#cboxNext:hover {
+    background-position: -75px 0
+}
+
+#cboxClose {
+    right: 0;
+    background-position: -100px -25px
+}
+
+#cboxClose:hover {
+    background-position: -100px 0
+}
+
+.cboxSlideshow_on #cboxSlideshow {
+    background-position: -125px 0;
+    right: 27px
+}
+
+.cboxSlideshow_on #cboxSlideshow:hover {
+    background-position: -150px 0
+}
+
+.cboxSlideshow_off #cboxSlideshow {
+    background-position: -150px -25px;
+    right: 27px
+}
+
+.cboxSlideshow_off #cboxSlideshow:hover {
+    background-position: -125px 0
+}
+
+@font-face {
+    font-family: 'din-regularregular';
+    src: url('../fonts/Din/dinr__-webfont.eot');
+    src: url('../fonts/Din/dinr__-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/Din/dinr__-webfont.woff2') format('woff2'), url('../fonts/Din/dinr__-webfont.woff') format('woff'), url('../fonts/Din/dinr__-webfont.ttf') format('truetype'), url('../fonts/Din/dinr__-webfont.svg#din-regularregular') format('svg');
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'din-lightregular';
+    src: url('../fonts/Din/dinl__-webfont.eot');
+    src: url('../fonts/Din/dinl__-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/Din/dinl__-webfont.woff2') format('woff2'), url('../fonts/Din/dinl__-webfont.woff') format('woff'), url('../fonts/Din/dinl__-webfont.ttf') format('truetype'), url('../fonts/Din/dinl__-webfont.svg#din-lightregular') format('svg');
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'dincondboldregular';
+    src: url('../fonts/Din/dincb_-webfont.eot');
+    src: url('../fonts/Din/dincb_-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/Din/dincb_-webfont.woff2') format('woff2'), url('../fonts/Din/dincb_-webfont.woff') format('woff'), url('../fonts/Din/dincb_-webfont.ttf') format('truetype'), url('../fonts/Din/dincb_-webfont.svg#dincondboldregular') format('svg');
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'din-boldalternateregular';
+    src: url('../fonts/Din/dinba_-webfont.eot');
+    src: url('../fonts/Din/dinba_-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/Din/dinba_-webfont.woff2') format('woff2'), url('../fonts/Din/dinba_-webfont.woff') format('woff'), url('../fonts/Din/dinba_-webfont.ttf') format('truetype'), url('../fonts/Din/dinba_-webfont.svg#din-boldalternateregular') format('svg');
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'DIN Medium';
+    src: url('../fonts/Din/dinm__-webfont.eot');
+    src: url('../fonts/Din/dinm__-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/Din/dinm__-webfont.woff2') format('woff2'), url('../fonts/Din/dinm__-webfont.woff') format('woff'), url('../fonts/Din/dinm__-webfont.ttf') format('truetype'), url('../fonts/Din/dinm__-webfont.svg#DIN Medium') format('svg');
+    font-weight: normal;
+    font-style: normal
+}
+
+.din_alternate_bold {
+    font-family: 'din-boldalternateregular'
+}
+
+.din_cond_bold {
+    font-family: 'dincondboldregular'
+}
+
+.din_medium {
+    font-family: 'DIN Medium'
+}
+
+.din_regular {
+    font-family: 'din-regularregular'
+}
+
+.din_light {
+    font-family: 'din-lightregular'
+}
+
+.rowMargin {
+    margin: 0 -25px
+}
+
+.append_bottom10 {
+    margin-bottom: 10px
+}
+
+.append_bottom15 {
+    margin-bottom: 15px
+}
+
+.append_bottom20 {
+    margin-bottom: 20px
+}
+
+.append_bottom25 {
+    margin-bottom: 25px
+}
+
+.append_bottom30 {
+    margin-bottom: 30px
+}
+
+.append_bottom45 {
+    margin-bottom: 45px
+}
+
+.append_bottom48 {
+    margin-bottom: 48px
+}
+
+.make_relative {
+    position: relative
+}
+
+.checkbox-group input[type=checkbox] {
+    display: none
+}
+
+.checkbox-group label {
+    padding-left: 5px;
+    float: left
+}
+
+.checkbox-group label span {
+    display: block;
+    position: absolute;
+    left: 28px
+}
+
+.checkbox-group label .check_box {
+    background: 0;
+    height: 16px;
+    width: 16px;
+    z-index: 9;
+    left: 0;
+    border: 1px solid #8b8b8b
+}
+
+.checkbox-group label .check {
+    top: 10px;
+    left: 6px;
+    width: 5px;
+    height: 10px;
+    border: 2px solid #fff;
+    border-top: 0;
+    border-left: none;
+    opacity: 0;
+    z-index: 10;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    transform: rotate(180deg)
+}
+
+input[type=checkbox]:checked ~ label .check_box {
+    background: #0055b7
+}
+
+input[type=checkbox]:checked ~ label .check {
+    opacity: 1;
+    -webkit-transform: scale(1) rotate(45deg);
+    -moz-transform: scale(1) rotate(45deg);
+    transform: scale(1) rotate(45deg)
+}
+
+.checkbox-group span.labeltext {
+    position: relative;
+    left: 0
+}
+
+.radio,
+.radioContainer {
+    position: relative
+}
+
+.radio {
+    display: inline-block
+}
+
+.radio input {
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 15px
+}
+
+.radio input:checked+.outer .inner {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1
+}
+
+.radio input:checked+.outer {
+    border: 2px solid #0055b7
+}
+
+.radio input:checked+.outer .inner {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+    background-color: #0055b7
+}
+
+.radio .outer {
+    height: 18px;
+    width: 18px;
+    display: block;
+    float: left;
+    margin: 8px 10px 10px 0;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    background-color: #fff
+}
+
+.radio .inner {
+    -webkit-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+    height: 14px;
+    width: 14px;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    display: block;
+    margin: 2px;
+    border-radius: 50%;
+    background-color: #2e3092;
+    opacity: 0
+}
+
+.hldReview-drpdwn,
+.hldReview-arrow,
+.active-star,
+.inactive-star,
+.hldReview-defaultRet,
+.hldReview-defaultDep,
+.accordion-arrow {
+    background: url('../images/holiday_review_sprite.png') no-repeat;
+    font-size: 0;
+    display: inline-block
+}
+
+.hldReview-container .hldReview-btn {
+    background-color: #cb3904;
+    color: #fff;
+    border-radius: 2px;
+    font-size: 16px;
+    text-align: center;
+    padding: 11px 32px;
+    text-decoration: none;
+    min-width: 115px;
+    box-sizing: border-box
+}
+
+.hldReview-btn:hover {
+    background-color: #d83d05
+}
+
+.hldReview-container {
+    background-color: #fff
+}
+
+.hLdReview-wrapper {
+    width: 1170px;
+    margin: 0 auto
+}
+
+.hldReview-content {
+    padding-bottom: 70px
+}
+
+.hldReview-bgCover {
+    background: url('../images/bg_cover.jpg');
+    width: 100%;
+    min-height: 392px
+}
+
+.hldReview-journeyInfo {
+    padding: 55px 0
+}
+
+.hldReview-fld {
+    color: #fff;
+    font-size: 20px;
+    line-height: 21px
+}
+
+.hldReview-dest h2 {
+    color: #fff;
+    font-size: 28px;
+    font-family: 'din-boldalternateregular'
+}
+
+.hldReview-subHdng {
+    font-size: 20px;
+    color: rgba(256, 256, 256, 0.6)
+}
+
+.hldReview-paxNum {
+    color: #fff;
+    font-size: 22px
+}
+
+.hldReview-stdPckg {
+    margin-left: 15px
+}
+
+.hldReview-stdPckg:before {
+    content: '';
+    position: absolute;
+    left: -12px;
+    top: 8px;
+    width: 4px;
+    height: 4px;
+    background: rgba(256, 256, 256, 0.6);
+    border-radius: 50%
+}
+
+.hldReview-fare {
+    color: #fff;
+    font-size: 38px
+}
+
+.hldReview-drpdwn {
+    background-position: -38px -44px;
+    width: 13px;
+    height: 8px;
+    vertical-align: middle;
+    margin-left: 10px
+}
+
+.hldReview-drpdwn.active {
+    background-position: -54px -44px
+}
+
+.hldReview-expandedFare {
+    border: 1px solid #fff;
+    min-height: 165px;
+    border-radius: 4px;
+    padding: 10px 32px;
+    min-width: 457px;
+    position: absolute;
+    top: 75px;
+    right: 0;
+    box-sizing: border-box
+}
+
+.hldReview-fareTxt {
+    color: #fff;
+    font-size: 20px;
+    line-height: 30px
+}
+
+.arrow-up {
+    display: none;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #fff;
+    position: absolute;
+    right: 70px;
+    top: -15px
+}
+
+.triangle {
+    position: absolute;
+    width: 20px;
+    top: -1px;
+    right: 75px
+}
+
+.triangle>div {
+    width: 20px;
+    height: 2px;
+    background: transparent
+}
+
+.triangle>div:before {
+    content: " ";
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #fff;
+    -webkit-transform: rotate(56deg);
+    -moz-transform: rotate(56deg);
+    -ms-transform: rotate(56deg);
+    transform: rotate(56deg);
+    position: absolute;
+    top: -8px;
+    right: -5px
+}
+
+.triangle>div:after {
+    content: " ";
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #fff;
+    -webkit-transform: rotate(-56deg);
+    -moz-transform: rotate(-56deg);
+    -ms-transform: rotate(-56deg);
+    transform: rotate(-56deg);
+    position: absolute;
+    top: -8px;
+    left: -5px
+}
+
+.hldReview-tabs {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3)
+}
+
+.hldReview-tabs li {
+    display: inline-block;
+    margin-right: 34px
+}
+
+.hldReview-tabs li a {
+    font-size: 18px;
+    color: #9b9b9b;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 25px 30px 15px;
+    display: inline-block
+}
+
+.hldReview-tabs li.active {
+    border-bottom: 5px solid #0055b7
+}
+
+.hldReview-tabs li.active a {
+    color: #2f2f2f
+}
+
+.hldReview-tabs-sticky.hldReview-tabs-sticky--fixed {
+    background: #fff;
+    position: fixed;
+    z-index: 111;
+    top: 0;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    transform: translateZ(0)
+}
+
+.hldReview-blank_sticky {
+    height: 69px;
+    display: none
+}
+
+.hldReview-tabContent h3 {
+    color: #2f2f2f;
+    font-size: 18px;
+    font-family: 'din-boldalternateregular';
+    margin-bottom: 30px
+}
+
+.hldReview-htlDest {
+    color: #2f2f2f;
+    font-size: 16px
+}
+
+.hldReview-htlCity {
+    color: #cb3904
+}
+
+.hldReview-htlInOut {
+    color: #9b9b9b
+}
+
+.hldReview-htlList {
+    padding: 0 25px;
+    width: 33.33%;
+    height: 298px;
+    box-sizing: border-box;
+    background: transparent
+}
+
+.hldReview-htlImg {
+    border: solid 1px #d8d8d8;
+    cursor: pointer;
+    position: relative;
+    border-radius: 4px
+}
+
+.hldReview-gdt {
+    width: 100%;
+    height: 100%
+}
+
+.hldReview-gdt img {
+    max-width: 100%;
+    height: 233px
+}
+
+.hldReview-htlImg .hldReview-gdt:after {
+    content: '';
+    background: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2
+}
+
+.hldReview-htlInfo {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 10
+}
+
+.active-star {
+    background-position: -2px -41px;
+    width: 14px;
+    height: 14px
+}
+
+.inactive-star {
+    background-position: -19px -41px;
+    width: 14px;
+    height: 14px
+}
+
+.hldReview-htlName {
+    color: #fff;
+    font-size: 16px
+}
+
+.hldReview-roomMeal {
+    color: #fff;
+    font-size: 12px;
+    line-height: 13px
+}
+
+.hldReview-select {
+    cursor: pointer
+}
+
+.hldReview-select label {
+    font-size: 18px;
+    color: #8b8b8b;
+    font-family: 'din-boldalternateregular';
+    margin-left: 5px;
+    cursor: pointer
+}
+
+.selected .hldReview-select {
+    background-color: #96d25a;
+    border: 0
+}
+
+.selected .hldReview-select label {
+    color: #fff
+}
+
+.selected .hldReview-htlImg {
+    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.4);
+    border: 0
+}
+
+.hldReview-note {
+    font-size: 12px;
+    color: #7f7f7f
+}
+
+.hldReview-htlList .similarHtl {
+    border: 1px solid #d8d8d8;
+    width: 100%;
+    height: 100%
+}
+
+.hldReview-similarHtl {
+    font-size: 18px;
+    color: #2f2f2f;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 190px;
+    text-align: center
+}
+
+.orange_txt {
+    color: #cb3904
+}
+
+.viewMore {
+    font-size: 16px;
+    color: #0055b7;
+    text-decoration: none
+}
+
+.hldReview-tabContainer {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 45px 0
+}
+
+.hldReview-fltsctn {
+    padding-left: 52px
+}
+
+.hldReview-onwardFlt,
+.hldReview-returnFlt {
+    width: 50%;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden
+}
+
+.hldReview-fltSeperator {
+    border-right: 1px solid #b0b0b0;
+    position: absolute;
+    height: 100%;
+    left: 50%;
+    top: 0
+}
+
+.hldReview-returnFlt {
+    border: 0
+}
+
+.hldReview-fltList {
+    border: 1px solid #e5e5e5;
+    box-sizing: border-box
+}
+
+.hldReview-fltHdng {
+    font-size: 16px;
+    color: #cb3904;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 15px 20px 12px
+}
+
+.hldReview-fltInfo {
+    padding: 15px 20px
+}
+
+.hldReview-fltFrom,
+.hldReview-fltTo {
+    min-width: 165px;
+    padding-right: 30px
+}
+
+.hldReview-fltTo {
+    padding-right: 0
+}
+
+.hldReview-fltCity {
+    font-size: 18px;
+    color: #2f2f2f
+}
+
+.hldReview-fltTime {
+    font-size: 14px;
+    color: #9b9b9b
+}
+
+.hldReview-arrow {
+    background-position: -118px -9px;
+    width: 12px;
+    height: 10px;
+    margin-top: 5px
+}
+
+.hldReview-stops {
+    min-width: 85px;
+    text-align: center;
+    margin-right: 30px
+}
+
+.hldReview-stopTxt {
+    font-size: 10px;
+    color: #9b9b9b;
+    line-height: 11px
+}
+
+.hldReview-airlineInfo {
+    font-size: 12px;
+    color: #2f2f2f
+}
+
+.hldReview-flt .hldReview-select {
+    padding: 5px 15px;
+    line-height: 20px;
+    display: inline-block;
+    margin-bottom: 5px
+}
+
+.hldReview-fltListing-wrapper.selected .hldReview-select {
+    background: #96d25a;
+    border-radius: 4px;
+    padding: 5px 15px
+}
+
+.hldReview-fltListing-wrapper.selected .hldReview-fltList {
+    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2);
+    border: solid 2px #96d25a;
+    background: #fff
+}
+
+.hldReview-fltListing-wrapper.selected {
+    background: #fff
+}
+
+.hldReview-fltLogo,
+.hldReview-defaultRet,
+.hldReview-defaultDep {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 12px;
+    left: 20px
+}
+
+.hldReview-fltLogo .logoFlight {
+    height: 26px
+}
+
+.hldReview-defaultRet {
+    background-position: -82px -4px
+}
+
+.hldReview-defaultDep {
+    background-position: -42px -4px
+}
+
+.hldReview-fltLayover {
+    border-top: 1px solid #e5e5e5;
+    padding-top: 16px
+}
+
+.hldReview-layovertxt {
+    position: absolute;
+    top: -10px;
+    left: 35%;
+    font-size: 8px;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    text-align: center;
+    border-radius: 100px;
+    padding: 3px 15px;
+    line-height: 11px;
+    color: #656565;
+    font-family: 'din-regularregular'
+}
+
+.hldReview-activitiesList {
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e5e5e5
+}
+
+.hldReview-activitiesLogo {
+    width: 10%
+}
+
+.hldReview-activitiesIcon {
+    background: url('../images/selectActivities.png');
+    width: 58px;
+    height: 37px;
+    display: inline-block
+}
+
+.hldReview-activityInfo {
+    width: 45%
+}
+
+.hldReview-activityName {
+    color: #2f2f2f;
+    font-size: 16px
+}
+
+.hldReview-actSubTxt {
+    font-size: 14px;
+    color: #9b9b9b
+}
+
+.hldReview-activityPriceSctn {
+    width: 30%
+}
+
+.hldReview-activityPrice {
+    font-size: 18px;
+    color: #2f2f2f;
+    margin-right: 5px
+}
+
+.hldReview-actBtn {
+    width: 15%
+}
+
+.hldReview-btn.secondary {
+    background-color: #616161;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 16px;
+    text-align: center;
+    padding: 11px 30px;
+    text-decoration: none;
+    min-width: 168px;
+    box-sizing: border-box
+}
+
+.hldReview-btn.secondary:hover {
+    background-color: #808080
+}
+
+.hldReview-activitiesList.selected .hldReview-btn {
+    background-color: #96d25a
+}
+
+.hldReview-InclusionsList {
+    max-height: 400px
+}
+
+.hldReview-InclusionsList ul {
+    padding: 0 15px
+}
+
+.hldReview-InclusionsList li {
+    list-style-type: disc;
+    color: #2f2f2f;
+    font-size: 12px;
+    margin-bottom: 10px
+}
+
+.hldReview-payment label .labeltext {
+    font-family: 'DIN Medium';
+    font-size: 12px;
+    color: #2f2f2f
+}
+
+.hldReview-payment .hldReview-btn {
+    padding: 13px 32px
+}
+
+.hldReview-paymentHdng {
+    color: #2f2f2f;
+    font-size: 14px
+}
+
+.hldReview-paymentSubTxt {
+    color: #535353;
+    font-size: 10px;
+    line-height: 12px
+}
+
+.hldReview-paymentEmail {
+    max-width: 282px
+}
+
+.hldReview-accordion {
+    border: 1px solid #e5e5e5
+}
+
+.hldReview-accordionHeader {
+    padding: 15px 20px;
+    cursor: pointer
+}
+
+.hldReview-accordionHdng {
+    font-size: 14px;
+    color: #2f2f2f
+}
+
+.hldReview-accordionContent {
+    font-size: 12px;
+    line-height: 20px;
+    color: #535353;
+    padding: 12px 30px;
+    border-top: 1px solid #e5e5e5
+}
+
+.hldReview-accordionContent li {
+    list-style-type: disc;
+    margin-bottom: 10px
+}
+
+.hldReview-policies .viewMore {
+    font-size: 10px
+}
+
+.hldReview-accordion.last {
+    margin-bottom: 0
+}
+
+.accordion-arrow {
+    background-position: -71px -43px;
+    width: 13px;
+    height: 8px
+}
+
+.accordion-arrow.open {
+    background-position: -86px -43px
+}
+
+.hldReview-payment .checkbox-group label {
+    padding-left: 30px
+}
+
+.hldReview-payment .checkbox-group label .check {
+    top: -1px
+}
+
+.hldReview-payment .checkbox-group label .check_box {
+    top: -2px
+}
+
+.hldReview-payment .checkbox-group label .labeltext {
+    color: #0055b7
+}
+
+.hldReview-htlList .radio .outer,
+.hldReview-flt .radio .outer {
+    margin: 0 10px 0 0;
+    background: transparent
+}
+
+.hldReview-htlList .hldReview-select label,
+.hldReview-flt .hldReview-select label {
+    margin-left: 0;
+    display: block
+}
+
+.hldReview-htlList .radio input,
+.hldReview-flt .radio input {
+    top: 4px;
+    margin: 0;
+    left: 105px
+}
+
+.hldReview-htlList .labeltext,
+.hldReview-flt .labeltext {
+    line-height: 22px
+}
+
+.hldReview-htlList .radio input:checked+.outer .inner,
+.hldReview-flt .radio input:checked+.outer .inner {
+    background-color: #3a5f15
+}
+
+.hldReview-htlList .radio input:checked+.outer,
+.hldReview-flt .radio input:checked+.outer {
+    border: 2px solid #3a5f15
+}
+
+.hldReview-htlList .radio .inner,
+.hldReview-flt .radio .inner {
+    width: 12px;
+    height: 12px;
+    margin: 3px
+}
+
+.hldReview-htlList .hldReview-select {
+    padding: 0
+}
+
+.hldReview-htlList .hldReview-select label {
+    line-height: 58px
+}
+
+.hldReview-htlList .radio input {
+    top: 22px
+}
+
+.hldReview-htlList .radio .outer {
+    margin: 18px 10px 0 15px
+}
+
+.hldReview-payment .hldReview-select {
+    padding: 0
+}
+
+.hldReview-payment .hldReview-select label {
+    margin-left: 0
+}
+
+.hldReview-payment .radio .outer {
+    margin-top: 0
+}
+
+.hldReview-payment .radio input {
+    top: 2px
+}
+
+.hldReview-container-md .hldReview-tabs li a {
+    padding: 25px 15px 15px
+}
+
+.hldReview-container-md .hldReview-tabs li {
+    margin-right: 25px
+}
+
+.hldReview-container-md .hldReview-btn.secondary {
+    padding: 10px
+}
+
+.hldReview-container-md .hLdReview-wrapper {
+    width: 894px
+}
+
+.hldReview-container-md .radio .outer {
+    width: 15px;
+    height: 15px
+}
+
+.hldReview-container-md .hldReview-htlList .radio input {
+    top: 14px
+}
+
+.hldReview-container-md .hldReview-htlList .radio .outer {
+    margin: 12px 10px 10px
+}
+
+.hldReview-container-md .radio .inner {
+    width: 9px;
+    height: 9px
+}
+
+.hldReview-container-md .hldReview-fltListing-wrapper,
+.hldReview-container-md .hldReview-htlRow {
+    padding: 0 38px;
+    box-sizing: border-box
+}
+
+.hldReview-container-md .hldReview-htl .viewMore {
+    padding: 0 38px
+}
+
+.hldReview-container-md .hldReview-fltRow .hldReview-select {
+    padding: 4px 8px
+}
+
+.hldReview-container-md .hldReview-fltListing-wrapper.selected .hldReview-select {
+    padding: 4px 8px
+}
+
+.hldReview-container-md .hldReview-select label {
+    font-size: 16px
+}
+
+.hldReview-container-md .hldReview-fltCity {
+    font-size: 13px
+}
+
+.hldReview-container-md .hldReview-fltTime {
+    font-size: 11px
+}
+
+.hldReview-container-md .hldReview-stopTxt {
+    font-size: 8px
+}
+
+.hldReview-container-md .hldReview-airlineInfo {
+    font-size: 10px
+}
+
+.hldReview-container-md .hldReview-fltFrom,
+.hldReview-container-md .hldReview-fltTo {
+    min-width: 106px;
+    padding-right: 5px
+}
+
+.hldReview-container-md .hldReview-stops {
+    min-width: 80px;
+    margin-right: 5px
+}
+
+.hldReview-container-md .hldReview-fltLogo {
+    width: 34px;
+    height: 26px;
+    display: inline-block
+}
+
+.hldReview-container-md .hldReview-htlList .labeltext,
+.hldReview-container-md .hldReview-flt .labeltext {
+    font-size: 14px
+}
+
+.hldReview-container-md .hldReview-htlList .labeltext {
+    line-height: 40px
+}
+
+.hldReview-container-md .hldReview-htlList {
+    height: 205px
+}
+
+.hldReview-container-md .hldReview-htlList.similarHtl {
+    height: 200px
+}
+
+.hldReview-container-md .hldReview-gdt img {
+    height: 160px
+}
+
+.hldReview-container-md .hldReview-htlName {
+    font-size: 12px
+}
+
+.hldReview-container-md .hldReview-roomMeal {
+    font-size: 10px;
+    line-height: 12px
+}
+
+.hldReview-container-md .hldReview-htlList .hldReview-select label {
+    line-height: 40px
+}
+
+.hldReview-container-md .hldReview-hopContainer {
+    border-top: 1px solid #e5e5e5;
+    margin-bottom: 5px
+}
+
+.hldReview-container-md .hldReview-layovertxt {
+    left: 30%
+}
+
+.hldReview-container-md .hldReview-fltInfo {
+    padding: 10px
+}
+
+.hldReview-container-md .hldReview-flt.hldReview-tabContainer {
+    border: 0;
+    padding: 20px 0
+}
+
+.hldReview-container-md .hldReview-flt .viewMore {
+    padding: 0 38px
+}
+
+.hldReview-container-md .hldReview-fltdivider {
+    padding: 0 20px
+}
+
+.hldReview-container-md .hldReview-fltdivider:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    border-top: 1px dashed rgba(0, 0, 0, 0.5);
+    width: 97%
+}
+
+.hldReview-container-md .hldReview-fltdivider-txt {
+    color: #fff;
+    font-size: 18px;
+    background: #cb3904;
+    padding: 10px 25px;
+    display: inline-block;
+    border-radius: 100px;
+    position: relative;
+    z-index: 10
+}
+
+.hldReview-container-md .hldReview-fltList {
+    display: inline-block;
+    width: 100%
+}
+
+.hldReview-container-md .hldReview-fltList-single {
+    width: 50%
+}
+
+.hldReview-container-md .hldReview-fltList-single .hldReview-fltSeperator {
+    display: none
+}
+
+.hldReview-container-md .hldReview-fltList-single .hldReview-fltblk {
+    width: 100%
+}
+
+.hldReview-container-md .hldReview-defaultRet {
+    background-position: -69px -36px;
+    width: 34px;
+    height: 32px
+}
+
+.hldReview-container-md .hldReview-defaultDep {
+    background-position: -99px -36px;
+    width: 34px;
+    height: 32px
+}
+
+.hldReview-container-md .hldReview-fltLogo img {
+    max-width: 100%
+}
+
+.hldReview-container-md .hldReview-tabContent h3,
+.hldReview-container-md .viewMore,
+.hldReview-container-md .hldReview-htlDest,
+.hldReview-container-md .hldReview-similarHtl,
+.hldReview-container-md .hldReview-fltdivider-txt,
+.hldReview-container-md .hldReview-fltHdng {
+    font-size: 14px
+}
+
+.hldReview-container-md .hldReview-fltCity {
+    font-size: 12px
+}
+
+.hldReview-container-md .hldReview-layovertxt.nofltChange {
+    left: 40%
+}
+</style>
+
+<script type="text/javascript">
+	$('#payment').click(function(){
+        $('#edit_icon').removeClass("hide");
+		$('.abc1').removeClass("active active_one")
+		$('.abc1').addClass( " selected" );
+		$('.abc2').removeClass( "hide" );
+		$('.xyz1').css("display", "none")
+	});
+
+	$("#edit_icon").click(function(){
+       $('#edit_icon').addClass("hide");
+	   $('.abc1').removeClass( " selected" );
+	   $('.abc1').addClass("active active_one")
+	   $('.abc2').addClass( "hide" );
+	   $('.xyz1').css("display", "block");
+	});
+</script>
