@@ -47,7 +47,7 @@ config.action_mailer.raise_delivery_errors = true
       port:                     587,
       domain:              'gmail.com',
       user_name:        'deepankan.chitragupt786@gmail.com',
-      password:           'ugn13991399786',
+      password:           '***********',
       authentication:   'plain',
       enable_starttls_auto: true 
   }
