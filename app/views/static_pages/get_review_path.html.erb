@@ -2,7 +2,7 @@
   <div class="body-wrapper">
     <div class="wrapper-padding">
 
-
+<%= form_tag booking_path do |f| %>
      <div class=" accordian_section append_bottom">
    <h3 class="abc1 accordian_info clearFix active active_one">
       <span class="step_icon flL">1</span><span class="flL step_heading RobotoRegular">Review Package
@@ -238,7 +238,7 @@
             </p>
             <!-- Deal code form -->
             <div class="dealCode_formSection" style="margin-top: 5px; margin-bottom: 5px">
-               <form name="deal_form" id="deal_form" method="post" action="#" class="clearFix append_bottomHalf">
+               
                   <!-- Deal code input -->
                   <!-- E Voucher input -->
                   <span class="flL inner_dealfields voucher_effect last">
@@ -250,7 +250,7 @@
                   <!-- /E Voucher input -->
                   <a class="secondary_button flL btnDisabled" style="margin: 1%; height: auto">Apply</a>
                   
-               </form>
+             
             </div>
             <!-- /Deal code form -->
          </div>
@@ -359,7 +359,7 @@
 
 
 <div class="abc2 accordian_section append_bottom hide" style="">
-   <form method="post" action="/holidays/rearchBookingTravellerAndPaymentDetails.act" name="payment_details_form" id="payment_details_form">
+
       <input type="hidden" name="ecouponNo" value="" id="ecouponNo">
       <input type="hidden" name="hotelsSelected" value="" id="hotelsSelected">
       <input type="hidden" name="flightsSelected" value="" id="flightsSelected">
@@ -431,7 +431,8 @@
                <span class="flL"> <label class="make_block append_bottomHalf font_12 black adult_age"><strong>Date
                of Birth</strong></label> <span class="make_block clearFix"> 
                <span class="input_field date_expiry flL"> 
-               <input type="text" name="onlineBookedPax[0].dob" value="DD-MM-YYYY" readonly="readonly" id="ad_dob_0" class="primary_passenger_age lead_info pax_dob ad_dob hasDatepicker" onclick="dateSelector(this.id)">
+              
+                              <%= date_field_tag "dob", class: "primary_passenger_age lead_info pax_dob ad_dob hasDatepicker"%>
                </span>
                </span> 
                </span> 
@@ -519,7 +520,7 @@
                <span class="flL"> <label class="make_block append_bottomHalf font_12 black adult_age"><strong>Date
                of Birth</strong></label> <span class="make_block clearFix"> 
                <span class="input_field date_expiry flL"> 
-               <input type="text" name="onlineBookedPax[1].dob" value="DD-MM-YYYY" readonly="readonly" id="ad_dob_1" class="adult_age lead_info pax_dob ad_dob hasDatepicker" onclick="dateSelector(this.id)">
+                <%= date_field_tag "dob2", class: "primary_passenger_age lead_info pax_dob ad_dob hasDatepicker"%>
                </span>
                </span> 
                </span> 
@@ -582,12 +583,14 @@
                </div>
                <div class="clearFix">
                   <p class="bottom alR">
-                     <button id="trav_pay_form_submit" type="button" value="Continue and Make Payment" class="button_green mrgnT5" onclick="createUserScoreCookie('review.makempayment');onClickOmniturePayment('DOM','')">Continue and Make Payment</button>
+                     <%= submit_tag "Continue and Make Payment", class: "button_green mrgnT5"%> <!-- 
+                     <button id="trav_pay_form_submit" type="button" value="Continue and Make Payment" class="" onclick="createUserScoreCookie('review.makempayment');onClickOmniturePayment('DOM','')"></button> -->
                      <span id="wait_text">Please wait...</span>
                   </p>
                </div>
             </div>
          </dd>
+        
          <!--/ Package  important information -->
          <div class="toolTip" id="errorOverlay" style="position:absolute;">
             <ol>
@@ -627,7 +630,7 @@
          <!--/ JS files -->
       </div>
       <!-- /Accordian-Details -->
-   </form>
+   <%end%>
 </div>
 
     </div>
@@ -8987,11 +8990,7 @@ input[type=checkbox]:checked ~ label .check {
 
 <script type="text/javascript">
 	$('#payment').click(function(){
-        $('#edit_icon').removeClass("hide");
-		$('.abc1').removeClass("active active_one")
-		$('.abc1').addClass( " selected" );
-		$('.abc2').removeClass( "hide" );
-		$('.xyz1').css("display", "none")
+      
 	});
 
 	$("#edit_icon").click(function(){
@@ -9001,4 +9000,22 @@ input[type=checkbox]:checked ~ label .check {
 	   $('.abc2').addClass( "hide" );
 	   $('.xyz1').css("display", "block");
 	});
+
+   $('#payment').click(function(e){
+
+      var user = "<%= current_user%>"
+      if (user == ""){
+         $('.overlay').css("display","block")
+         $('.autorize-popup').css("height", "auto")
+         $('.autorize-popup').css("top", "45%")
+         return false;
+         e.stopPropagation();
+      }else{
+         $('#edit_icon').removeClass("hide");
+      $('.abc1').removeClass("active active_one")
+      $('.abc1').addClass( " selected" );
+      $('.abc2').removeClass( "hide" );
+      $('.xyz1').css("display", "none")
+      }
+   });
 </script>

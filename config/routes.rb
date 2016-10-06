@@ -24,6 +24,7 @@ end
   post 'static_pages/upload_doc' => 'static_pages#upload_doc', :as => "upload_doc"
   post 'static_pages/go_let_me_plan' => 'static_pages#go_let_me_plan', as: :go_let_me_plan
   get 'static_pages/get_review_path' => 'static_pages#get_review_path', as: :get_review
+  post 'static_pages/get_booking_path' => 'static_pages#get_booking_path', as: :booking
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

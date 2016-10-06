@@ -4,13 +4,13 @@ class StaticPagesController < ApplicationController
       
       	#@client_ip = remote_ip()
       	#@client_ip = "172.20.10.2"
-        @client_ip = "bangalore"
+        @client_ip = "Bangalore"
       
-        result = RestClient.get "http://api.worldweatheronline.com/premium/v1/weather.ashx?key=#{API_WEATHER}&q=#{@client_ip}&format=json&num_of_days=#{NO_OF_DAY_WEATHER}&includelocation=yes&tp=24" 
+        #result = RestClient.get "http://api.worldweatheronline.com/premium/v1/weather.ashx?key=#{API_WEATHER}&q=#{@client_ip}&format=json&num_of_days=#{NO_OF_DAY_WEATHER}&includelocation=yes&tp=24" 
        
-        @result = JSON.parse(result)   
-        @result = @result['data']
-        # @result = []
+        #@result = JSON.parse(result)   
+        #@result = @result['data']
+         @result = []
          
       end 
 
@@ -164,6 +164,20 @@ def go_let_me_plan
 end
 
 def get_review_path
+end
+
+def get_booking_path
+	
+	@random_number = SecureRandom.hex(3)
+	@first_name1 = params["onlineBookedPax"]["0"][".firstName"]
+	@last_name1 = params["onlineBookedPax"]["0"][".lastName"]
+	@email1 = params["onlineBookedPax"]["0"][".email"]
+	@mobile_no1 = params["onlineBookedPax"]["0"][".mobileNo"]
+	@first_name2 = params["onlineBookedPax"]["1"][".firstName"]
+	@last_name2 = params["onlineBookedPax"]["1"][".lastName"]
+	# @email2 = params["onlineBookedPax"]["1"][".email"]
+	# @mobile_no2 = params["onlineBookedPax"]["1"][".mobileNo"]
+	User.send_mail(@random_number, @first_name1, @last_name1, @email1, @mobile_no1,@first_name2 ,@last_name2, params, current_user   )
 end
 
 

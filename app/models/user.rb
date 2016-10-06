@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :timeoutable, :omniauthable
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
   mount_uploaders :avatars, AvatarUploader
   has_many :otps
   has_many :bookings
@@ -53,6 +53,12 @@ TEMP_EMAIL_PREFIX = 'change@me'
 
   def email_verified?
   	self.email && self.email !~ TEMP_EMAIL_REGEX
+  end
+
+
+   def self.send_mail(random_number, first_name1, last_name1, email1, mobile_no1,first_name2 ,last_name2, params, user )
+  
+    UserMailer.send_mail(random_number, first_name1, last_name1, email1, mobile_no1,first_name2 ,last_name2, params, user ).deliver
   end
 
 

@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   skip_before_filter  :verify_authenticity_token
+  after_filter :store_location
+
    #before_filter :switch_label
  # auto_session_timeout 30.seconds
 
@@ -31,4 +33,13 @@ class ApplicationController < ActionController::Base
         redirect_to(labels_url(subdomain: false), alert: "Please select a Label!")
       end
     end
+
+  def store_location
+   # store last url as long as it isn't a /users path
+   session[:previous_url] = request.fullpath unless request.fullpath =~ /\/users/
+  end
+
+  def after_sign_in_path_for(resource)
+   session[:previous_url] || root_path
+  end
 end

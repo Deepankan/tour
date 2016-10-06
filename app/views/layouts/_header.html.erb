@@ -5,9 +5,9 @@
 			
 			   <% if user_signed_in?%>
 			   <div class="header-phone">
-                 <label><%= link_to current_user.try(:name), "#"%>
-                 <%= link_to 'Logout', destroy_user_session_path, :method=>'delete', class: "glyphicon glyphicon-log-out"%>
-                 </label></div>
+                <b> <label ><%= link_to current_user.try(:name), "#", style: "color: aqua;    font-size: 174%;"%>
+                 <%= link_to 'Logout', destroy_user_session_path, :method=>'delete', class: "glyphicon glyphicon-log-out", style: "color: aqua;    font-size: 174%;"%>
+                 </label></b></div>
 			   <%else%>
 			   <div class="header-account">
 			     <a href="#">My account</a></div>
@@ -168,7 +168,7 @@
 			<div class="header-logo">
               <%=link_to (image_tag("/assets/tour_travel.jpg")),root_path %> 
 			
-			<div class="header-right">
+			<div class="header-right" style="margin-top: auto;">
 				<div class="hdr-srch">
 					<a href="#" class="hdr-srch-btn"></a>
 				</div>
